@@ -14,7 +14,7 @@ function darkmode() {
     document.querySelector(".darkmode i").className = "gg-sun";
 
     localStorage.setItem("darkmode", "on");
-  document.body.setAttribute("data-theme", "dark");
+    document.body.setAttribute("data-theme", "dark");
 }
 
 function lightmode() {
