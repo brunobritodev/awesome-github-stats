@@ -1,4 +1,5 @@
 using AwesomeGithubStats.Core.Interfaces;
+using AwesomeGithubStats.Core.Models;
 using AwesomeGithubStats.Core.Services;
 using FluentAssertions;
 using Moq;
@@ -12,17 +13,20 @@ namespace Tests.UnitTests
     {
         private readonly GithubService _githubService;
         private readonly Mock<IGithubUserStore> _githubUserStore;
+        private readonly Mock<ICacheService> _cacheService;
 
         public GithubServiceTests()
         {
             _githubUserStore = new Mock<IGithubUserStore>();
+            _cacheService = new Mock<ICacheService>();
 
-            _githubService = new GithubService(_githubUserStore.Object);
+            _githubService = new GithubService(_githubUserStore.Object, _cacheService.Object);
         }
 
         [Fact]
         public async Task Should_Get_User_Stats()
         {
+            _cacheService.Setup(s => s.Get<UserStats>(It.IsAny<string>())).Returns((UserStats)null);
             _githubUserStore.Setup(s => s.GetUserInformationByYear(It.IsAny<string>(), It.IsAny<int>())).ReturnsAsync(UserDataFaker.GetFixedContributionsFromYear);
             _githubUserStore.Setup(s => s.GetUserInformation(It.IsAny<string>())).ReturnsAsync(UserDataFaker.GetFixedUserInformation());
 
