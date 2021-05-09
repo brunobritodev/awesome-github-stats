@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-azure:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: src
