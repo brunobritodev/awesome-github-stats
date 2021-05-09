@@ -31,6 +31,8 @@ namespace Microsoft.Extensions.DependencyInjection
             services.Configure<RankDegree>(options => configuration.GetSection("RankDegree").Bind(options));
             services.AddScoped<IGithubService, GithubService>();
             services.AddScoped<IGithubUserStore, GithubUserStore>();
+            services.AddScoped<IRankService, RankService>();
+
             services.AddHttpClient("github", c =>
             {
                 var pat = GithubOptions.NextPat();
