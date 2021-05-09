@@ -40,6 +40,7 @@ namespace AwesomeGithubStats
                     .AddApiExplorer();
             }
 
+            services.AddMemoryCache();
             services.ConfigureGithubServices(_configuration);
             services.AddHealthChecks();
 
