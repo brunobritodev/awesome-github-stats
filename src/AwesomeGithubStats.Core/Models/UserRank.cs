@@ -20,8 +20,9 @@ namespace AwesomeGithubStats.Core.Models
         private void CalculateRank()
         {
             var totalPoints = RankPoints.Total();
+            var totalDegree = _rankDegree.Total();
             var userScore = UserStats.GetScore(RankPoints) / 100;
-            var cdf = 100 - Normalcdf(userScore, _rankDegree.Total(), totalPoints);
+            var cdf = 100 - Normalcdf(userScore, totalDegree, totalPoints);
             foreach (var degree in _rankDegree.OrderByDescending(b => b.Value))
             {
                 if (cdf > degree.Value)
