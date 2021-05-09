@@ -32,8 +32,13 @@ namespace AwesomeGithubStats.Models
             var pointsInActualRank = _rank.Score - _rankDegree[_rank.Level];
 
             var percentualInActualRank = pointsInActualRank / rankSize;
+            var sliceSize = 100.0 / slices;
+            var slicePartToAdd = sliceSize * percentualInActualRank;
 
+            ProgressBar = sliceMinSize + slicePartToAdd;
         }
+
+        public double ProgressBar { get; set; }
 
         public async Task<Stream> Svg()
         {
