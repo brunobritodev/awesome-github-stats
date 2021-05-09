@@ -1,6 +1,6 @@
 {
-  "StarsLabel": "Stars",
-  "PullRequestLabel": "Pull Requests",
+  "StarsLabel": "Total Stars",
+  "PullRequestLabel": "Total PRs",
   "IssuesLabel": "Issues",
   "CommitsLabel": "Commits"
 }
