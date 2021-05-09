@@ -44,7 +44,7 @@ namespace AwesomeGithubStats.Models
             CalculateProgressBar(rank);
             var fs = await File.ReadAllTextAsync(_file);
             var svgFinal = fs
-                .Replace("{{Name}}", rank.UserStats.Name)
+                .Replace("{{Name}}", rank.UserStats.Name.Truncate(30))
                 .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
                 .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(ProgressBar):F}")
                 .Replace("{{TextColor}}", styles.TextColor)
@@ -56,7 +56,7 @@ namespace AwesomeGithubStats.Models
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
         }
-       
+
         private double CalculateCircleProgress(double value)
         {
             var radius = 50;
