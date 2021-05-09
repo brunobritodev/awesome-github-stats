@@ -55,7 +55,7 @@ namespace Tests.UnitTests
         }
 
         [Fact]
-        public void Should_Calculate_Rank_SPlus()
+        public void Should_Calculate_Rank_SPlusPlus()
         {
             _rankPoints.Setup(s => s.Value).Returns(new RankPoints()
             {
@@ -92,7 +92,7 @@ namespace Tests.UnitTests
                 CommitsToAnotherRepositories = 22526,
                 CommitsToMyRepositories = 2827
             });
-            rank.Level.Should().Be("S+");
+            rank.Level.Should().Be("S++");
             rank.Score.Should().BeGreaterOrEqualTo(69884);
         }
 
@@ -121,7 +121,7 @@ namespace Tests.UnitTests
 
 
         [Fact]
-        public void Should_Not_Be_Rank_SPlus()
+        public void Should_Be_Rank_SPlus()
         {
             var rank = _rankService.CalculateRank(new UserStats()
             {
