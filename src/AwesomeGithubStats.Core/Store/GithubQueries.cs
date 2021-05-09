@@ -52,6 +52,9 @@ namespace AwesomeGithubStats.Core.Store
                           }
                         }
                         commitContributionsByRepository{
+                          contributions {
+                            totalCount
+                          }
                           repository{
                             nameWithOwner
                             stargazerCount
