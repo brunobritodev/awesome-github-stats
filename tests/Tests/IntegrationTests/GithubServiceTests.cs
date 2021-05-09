@@ -23,6 +23,7 @@ namespace Tests.IntegrationTests
         [InlineData("kamranahmedse")]
         [InlineData("MichelliBrito")]
         [InlineData("ralmsdeveloper")]
+        [InlineData("anuraghazra")]
         public async Task Should_Get_User_Information(string username)
         {
             var stats = await _githubService.GetUserStats(username);
