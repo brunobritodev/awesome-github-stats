@@ -15,14 +15,17 @@ namespace AwesomeGithubStats.Core.Services
         private readonly ICacheService _cacheService;
         private readonly RankDegree _degree;
 
-        public SvgService(IWebHostEnvironment environment, ICacheService cacheService, IOptions<RankDegree> rankDegree)
+        public SvgService(
+            IWebHostEnvironment environment,
+            ICacheService cacheService,
+            IOptions<RankDegree> rankDegree)
         {
             _degree = rankDegree.Value;
             _contentRoot = environment.ContentRootPath;
             _cacheService = cacheService;
         }
 
-        public async Task<Stream> GetUserStatsImage(UserRank rank)
+        public async Task<Stream> GetUserStatsImage(UserRank rank, UserStatsOptions options)
         {
             var file = await GetFile("user-stats.svg");
             var svg = new UserStatsSvg(file, _degree);

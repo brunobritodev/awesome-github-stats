@@ -6,6 +6,6 @@ namespace AwesomeGithubStats.Core.Interfaces
 {
     public interface ISvgService
     {
-        Task<Stream> GetUserStatsImage(UserRank rank);
+        Task<Stream> GetUserStatsImage(UserRank rank, UserStatsOptions options);
     }
 }
