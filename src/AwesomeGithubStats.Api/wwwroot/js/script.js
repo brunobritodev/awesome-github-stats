@@ -33,7 +33,7 @@ let preview = {
             .join("&");
         // generate links and markdown
         let user = document.getElementById("user").value;
-        user = user == null ? "brunohbrito" : user;
+        user = user == "" ? "brunohbrito" : user;
         const imageURL = `${window.location.origin}/user-stats/${user}?${query}`;
         const demoImageURL = `user-stats/${user}/preview?${query}`;
         const repoLink = "https://github.com/brunohbrito/awesome-github-stats";
@@ -149,7 +149,7 @@ let tooltip = {
 };
 
 // refresh preview on interactions with the page
-document.addEventListener("keyup", () => preview.update(), false);
+document.addEventListener("blur", () => preview.update(), false);
 document.addEventListener("click", () => preview.update(), false);
 
 // when the page loads
