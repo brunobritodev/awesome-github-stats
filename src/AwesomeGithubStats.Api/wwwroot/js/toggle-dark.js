@@ -26,4 +26,6 @@ function lightmode() {
 
 if (localStorage.getItem("darkmode") === null && window.matchMedia("(prefers-color-scheme: dark)").matches == true) {
     darkmode();
+} else {
+    lightmode();
 }
