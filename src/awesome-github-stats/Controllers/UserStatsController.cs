@@ -4,9 +4,9 @@ using AwesomeGithubStats.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
 
 namespace AwesomeGithubStats.Controllers
 {
@@ -20,9 +20,9 @@ namespace AwesomeGithubStats.Controllers
         private readonly IWebHostEnvironment _environment;
         private RankDegree _degree;
 
-        public UserStatsController(ILogger<UserStatsController> logger, 
-            IGithubService githubService, 
-            IRankService rankService, 
+        public UserStatsController(ILogger<UserStatsController> logger,
+            IGithubService githubService,
+            IRankService rankService,
             IWebHostEnvironment environment,
             IOptions<RankDegree> rankDegree)
         {
@@ -56,7 +56,7 @@ namespace AwesomeGithubStats.Controllers
             });
 
             var svg = new UserStatsSvg(rank, Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
-            return File(await svg.Svg(), "image/svg+xml; charset=utf-8");
+            return File(await svg.Svg(new Styles()), "image/svg+xml; charset=utf-8");
         }
     }
 }
