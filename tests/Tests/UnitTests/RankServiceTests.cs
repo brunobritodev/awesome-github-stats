@@ -69,7 +69,7 @@ namespace Tests.UnitTests
                 CreatedRepositories = 616,
                 DirectStars = 424912,
                 Followers = 42719,
-                IndirectStars = 0,
+                IndirectStars = 1053005,
                 Issues = 4146,
                 PullRequests = 1400,
                 PullRequestsToAnotherRepositories = 849,
