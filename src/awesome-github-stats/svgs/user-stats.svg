@@ -112,7 +112,7 @@
           </svg>
 
           <text class="stat bold" x="25" y="12.5">Total Stars:</text>
-          <text class="stat" x="160" y="12.5" data-testid="stars">{{TotalStars}}</text>
+          <text class="stat" x="160" y="12.5" data-testid="stars">{{Stars}}</text>
         </g>
       </g>
       <g transform="translate(0, 25)">
@@ -123,7 +123,7 @@
           </svg>
 
           <text class="stat bold" x="25" y="12.5">Total Commits:</text>
-          <text class="stat" x="160" y="12.5" data-testid="commits">2.8k</text>
+          <text class="stat" x="160" y="12.5" data-testid="commits">{{Commits}}</text>
         </g>
       </g>
       <g transform="translate(0, 50)">
@@ -134,7 +134,7 @@
           </svg>
 
           <text class="stat bold" x="25" y="12.5">Total PRs:</text>
-          <text class="stat" x="160" y="12.5" data-testid="prs">136</text>
+          <text class="stat" x="160" y="12.5" data-testid="prs">{{PRS}}</text>
         </g>
       </g>
       <g transform="translate(0, 75)">
@@ -145,7 +145,7 @@
           </svg>
 
           <text class="stat bold" x="25" y="12.5">Total Issues:</text>
-          <text class="stat" x="160" y="12.5" data-testid="issues">42</text>
+          <text class="stat" x="160" y="12.5" data-testid="issues">{{Issuers}}</text>
         </g>
       </g>
       <g transform="translate(0, 100)">
@@ -156,7 +156,7 @@
           </svg>
 
           <text class="stat bold" x="25" y="12.5">Contributed to:</text>
-          <text class="stat" x="160" y="12.5" data-testid="contribs">9</text>
+          <text class="stat" x="160" y="12.5" data-testid="contribs">{{Contributions}}</text>
         </g>
       </g>
     </svg>
