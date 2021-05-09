@@ -15,7 +15,7 @@ namespace AwesomeGithubStats.Models
 
         public UserStatsSvg(string file, RankDegree rankDegree)
         {
-            _file = file;
+            _file = Path.Combine(file, @"svgs\", "user-stats.svg");
             _rankDegree = rankDegree;
         }
 
