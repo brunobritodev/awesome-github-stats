@@ -7,7 +7,7 @@
     }
 
     .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #333;
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: {{TextColor}};
     }
 
     .stagger {
@@ -16,7 +16,7 @@
     }
 
     .rank-text {
-      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333;
+      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: {{TextColor}};
       animation: scaleInAnimation 0.3s ease-in-out forwards;
     }
 
@@ -25,8 +25,8 @@
     }
 
     .icon {
-      fill: #4c71f2;
-      display: none;
+      fill: {{IconColor}};
+      display: {{ShowIcon}};
     }
 
     .rank-circle-rim {
@@ -37,7 +37,7 @@
     }
 
     .rank-circle {
-      stroke: #2f80ed;
+      stroke: {{TitleColor}};
       stroke-dasharray: 250;
       fill: none;
       stroke-width: 6;
