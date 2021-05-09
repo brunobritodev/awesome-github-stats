@@ -1,4 +1,5 @@
 ﻿using AwesomeGithubStats.Core.Models;
+using System;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -42,11 +43,25 @@ namespace AwesomeGithubStats.Models
         public async Task<Stream> Svg(Styles styles)
         {
             CalculateProgressBar();
-
             var fs = await File.ReadAllTextAsync(_file);
-            var svgFinal = fs.Replace("{{Name}}", _rank.UserStats.Name);
+            var svgFinal = fs
+                .Replace("{{Name}}", _rank.UserStats.Name)
+                .Replace("{{ProgressBarStart}}", CalculateCircleProgress(0));
+
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
+        }
+
+        private double CalculateCircleProgress(double value)
+        {
+            var radius = 40;
+            var c = Math.PI * (radius * 2);
+
+            if (value < 0) value = 0;
+            if (value > 100) value = 100;
+
+            var percentage = ((100 - value) / 100) * c;
+            return percentage;
         }
     }
 }
