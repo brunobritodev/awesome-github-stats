@@ -1,339 +1,339 @@
 [
   {
     "Theme": "default",
-    "TitleColor": "#2f80ed",
-    "IconColor": "#4c71f2",
-    "TextColor": "#333",
-    "BackgroundColor": "#fffefe",
-    "BorderColor": "#e4e2e2"
+    "TitleColor": "2f80ed",
+    "IconColor": "4c71f2",
+    "TextColor": "333",
+    "BackgroundColor": "fffefe",
+    "BorderColor": "e4e2e2"
   },
   {
     "Theme": "default-repocard",
-    "TitleColor": "#2f80ed",
-    "IconColor": "#586069",
-    "TextColor": "#333",
-    "BackgroundColor": "#fffefe"
+    "TitleColor": "2f80ed",
+    "IconColor": "586069",
+    "TextColor": "333",
+    "BackgroundColor": "fffefe"
   },
   {
     "Theme": "dark",
-    "TitleColor": "#fff",
-    "IconColor": "#79ff97",
-    "TextColor": "#9f9f9f",
-    "BackgroundColor": "#151515"
+    "TitleColor": "fff",
+    "IconColor": "79ff97",
+    "TextColor": "9f9f9f",
+    "BackgroundColor": "151515"
   },
   {
     "Theme": "radical",
-    "TitleColor": "#fe428e",
-    "IconColor": "#f8d847",
-    "TextColor": "#a9fef7",
-    "BackgroundColor": "#141321"
+    "TitleColor": "fe428e",
+    "IconColor": "f8d847",
+    "TextColor": "a9fef7",
+    "BackgroundColor": "141321"
   },
   {
     "Theme": "merko",
-    "TitleColor": "#abd200",
-    "IconColor": "#b7d364",
-    "TextColor": "#68b587",
-    "BackgroundColor": "#0a0f0b"
+    "TitleColor": "abd200",
+    "IconColor": "b7d364",
+    "TextColor": "68b587",
+    "BackgroundColor": "0a0f0b"
   },
   {
     "Theme": "gruvbox",
-    "TitleColor": "#fabd2f",
-    "IconColor": "#fe8019",
-    "TextColor": "#8ec07c",
-    "BackgroundColor": "#282828"
+    "TitleColor": "fabd2f",
+    "IconColor": "fe8019",
+    "TextColor": "8ec07c",
+    "BackgroundColor": "282828"
   },
   {
     "Theme": "tokyonight",
-    "TitleColor": "#70a5fd",
-    "IconColor": "#bf91f3",
-    "TextColor": "#38bdae",
-    "BackgroundColor": "#1a1b27"
+    "TitleColor": "70a5fd",
+    "IconColor": "bf91f3",
+    "TextColor": "38bdae",
+    "BackgroundColor": "1a1b27"
   },
   {
     "Theme": "onedark",
-    "TitleColor": "#e4bf7a",
-    "IconColor": "#8eb573",
-    "TextColor": "#df6d74",
-    "BackgroundColor": "#282c34"
+    "TitleColor": "e4bf7a",
+    "IconColor": "8eb573",
+    "TextColor": "df6d74",
+    "BackgroundColor": "282c34"
   },
   {
     "Theme": "cobalt",
-    "TitleColor": "#e683d9",
-    "IconColor": "#0480ef",
-    "TextColor": "#75eeb2",
-    "BackgroundColor": "#193549"
+    "TitleColor": "e683d9",
+    "IconColor": "0480ef",
+    "TextColor": "75eeb2",
+    "BackgroundColor": "193549"
   },
   {
     "Theme": "synthwave",
-    "TitleColor": "#e2e9ec",
-    "IconColor": "#ef8539",
-    "TextColor": "#e5289e",
-    "BackgroundColor": "#2b213a"
+    "TitleColor": "e2e9ec",
+    "IconColor": "ef8539",
+    "TextColor": "e5289e",
+    "BackgroundColor": "2b213a"
   },
   {
     "Theme": "highcontrast",
-    "TitleColor": "#e7f216",
-    "IconColor": "#00ffff",
-    "TextColor": "#fff",
-    "BackgroundColor": "#000"
+    "TitleColor": "e7f216",
+    "IconColor": "00ffff",
+    "TextColor": "fff",
+    "BackgroundColor": "000"
   },
   {
     "Theme": "dracula",
-    "TitleColor": "#ff6e96",
-    "IconColor": "#79dafa",
-    "TextColor": "#f8f8f2",
-    "BackgroundColor": "#282a36"
+    "TitleColor": "ff6e96",
+    "IconColor": "79dafa",
+    "TextColor": "f8f8f2",
+    "BackgroundColor": "282a36"
   },
   {
     "Theme": "prussian",
-    "TitleColor": "#bddfff",
-    "IconColor": "#38a0ff",
-    "TextColor": "#6e93b5",
-    "BackgroundColor": "#172f45"
+    "TitleColor": "bddfff",
+    "IconColor": "38a0ff",
+    "TextColor": "6e93b5",
+    "BackgroundColor": "172f45"
   },
   {
     "Theme": "monokai",
-    "TitleColor": "#eb1f6a",
-    "IconColor": "#e28905",
-    "TextColor": "#f1f1eb",
-    "BackgroundColor": "#272822"
+    "TitleColor": "eb1f6a",
+    "IconColor": "e28905",
+    "TextColor": "f1f1eb",
+    "BackgroundColor": "272822"
   },
   {
     "Theme": "vue",
-    "TitleColor": "#41b883",
-    "IconColor": "#41b883",
-    "TextColor": "#273849",
-    "BackgroundColor": "#fffefe"
+    "TitleColor": "41b883",
+    "IconColor": "41b883",
+    "TextColor": "273849",
+    "BackgroundColor": "fffefe"
   },
   {
     "Theme": "vue-dark",
-    "TitleColor": "#41b883",
-    "IconColor": "#41b883",
-    "TextColor": "#fffefe",
-    "BackgroundColor": "#273849"
+    "TitleColor": "41b883",
+    "IconColor": "41b883",
+    "TextColor": "fffefe",
+    "BackgroundColor": "273849"
   },
   {
     "Theme": "shades-of-purple",
-    "TitleColor": "#fad000",
-    "IconColor": "#b362ff",
-    "TextColor": "#a599e9",
-    "BackgroundColor": "#2d2b55"
+    "TitleColor": "fad000",
+    "IconColor": "b362ff",
+    "TextColor": "a599e9",
+    "BackgroundColor": "2d2b55"
   },
   {
     "Theme": "nightowl",
-    "TitleColor": "#c792ea",
-    "IconColor": "#ffeb95",
-    "TextColor": "#7fdbca",
-    "BackgroundColor": "#011627"
+    "TitleColor": "c792ea",
+    "IconColor": "ffeb95",
+    "TextColor": "7fdbca",
+    "BackgroundColor": "011627"
   },
   {
     "Theme": "buefy",
-    "TitleColor": "#7957d5",
-    "IconColor": "#ff3860",
-    "TextColor": "#363636",
-    "BackgroundColor": "#ffffff"
+    "TitleColor": "7957d5",
+    "IconColor": "ff3860",
+    "TextColor": "363636",
+    "BackgroundColor": "ffffff"
   },
   {
     "Theme": "blue-green",
-    "TitleColor": "#2f97c1",
-    "IconColor": "#f5b700",
-    "TextColor": "#0cf574",
-    "BackgroundColor": "#040f0f"
+    "TitleColor": "2f97c1",
+    "IconColor": "f5b700",
+    "TextColor": "0cf574",
+    "BackgroundColor": "040f0f"
   },
   {
     "Theme": "algolia",
-    "TitleColor": "#00AEFF",
-    "IconColor": "#2DDE98",
-    "TextColor": "#FFFFFF",
-    "BackgroundColor": "#050F2C"
+    "TitleColor": "00AEFF",
+    "IconColor": "2DDE98",
+    "TextColor": "FFFFFF",
+    "BackgroundColor": "050F2C"
   },
   {
     "Theme": "great-gatsby",
-    "TitleColor": "#ffa726",
-    "IconColor": "#ffb74d",
-    "TextColor": "#ffd95b",
-    "BackgroundColor": "#000000"
+    "TitleColor": "ffa726",
+    "IconColor": "ffb74d",
+    "TextColor": "ffd95b",
+    "BackgroundColor": "000000"
   },
   {
     "Theme": "darcula",
-    "TitleColor": "#BA5F17",
-    "IconColor": "#84628F",
-    "TextColor": "#BEBEBE",
-    "BackgroundColor": "#242424"
+    "TitleColor": "BA5F17",
+    "IconColor": "84628F",
+    "TextColor": "BEBEBE",
+    "BackgroundColor": "242424"
   },
   {
     "Theme": "bear",
-    "TitleColor": "#e03c8a",
-    "IconColor": "#00AEFF",
-    "TextColor": "#bcb28d",
-    "BackgroundColor": "#1f2023"
+    "TitleColor": "e03c8a",
+    "IconColor": "00AEFF",
+    "TextColor": "bcb28d",
+    "BackgroundColor": "1f2023"
   },
   {
     "Theme": "solarized-dark",
-    "TitleColor": "#268bd2",
-    "IconColor": "#b58900",
-    "TextColor": "#859900",
-    "BackgroundColor": "#002b36"
+    "TitleColor": "268bd2",
+    "IconColor": "b58900",
+    "TextColor": "859900",
+    "BackgroundColor": "002b36"
   },
   {
     "Theme": "solarized-light",
-    "TitleColor": "#268bd2",
-    "IconColor": "#b58900",
-    "TextColor": "#859900",
-    "BackgroundColor": "#fdf6e3"
+    "TitleColor": "268bd2",
+    "IconColor": "b58900",
+    "TextColor": "859900",
+    "BackgroundColor": "fdf6e3"
   },
   {
     "Theme": "chartreuse-dark",
-    "TitleColor": "#7fff00",
-    "IconColor": "#00AEFF",
-    "TextColor": "#fff",
-    "BackgroundColor": "#000"
+    "TitleColor": "7fff00",
+    "IconColor": "00AEFF",
+    "TextColor": "fff",
+    "BackgroundColor": "000"
   },
   {
     "Theme": "nord",
-    "TitleColor": "#81a1c1",
-    "TextColor": "#d8dee9",
-    "IconColor": "#88c0d0",
-    "BackgroundColor": "#2e3440"
+    "TitleColor": "81a1c1",
+    "TextColor": "d8dee9",
+    "IconColor": "88c0d0",
+    "BackgroundColor": "2e3440"
   },
   {
     "Theme": "gotham",
-    "TitleColor": "#2aa889",
-    "IconColor": "#599cab",
-    "TextColor": "#99d1ce",
-    "BackgroundColor": "#0c1014"
+    "TitleColor": "2aa889",
+    "IconColor": "599cab",
+    "TextColor": "99d1ce",
+    "BackgroundColor": "0c1014"
   },
   {
     "Theme": "material-palenight",
-    "TitleColor": "#c792ea",
-    "IconColor": "#89ddff",
-    "TextColor": "#a6accd",
-    "BackgroundColor": "#292d3e"
+    "TitleColor": "c792ea",
+    "IconColor": "89ddff",
+    "TextColor": "a6accd",
+    "BackgroundColor": "292d3e"
   },
   {
     "Theme": "graywhite",
-    "TitleColor": "#24292e",
-    "IconColor": "#24292e",
-    "TextColor": "#24292e",
-    "BackgroundColor": "#ffffff"
+    "TitleColor": "24292e",
+    "IconColor": "24292e",
+    "TextColor": "24292e",
+    "BackgroundColor": "ffffff"
   },
   {
     "Theme": "vision-friendly-dark",
-    "TitleColor": "#ffb000",
-    "IconColor": "#785ef0",
-    "TextColor": "#ffffff",
-    "BackgroundColor": "#000000"
+    "TitleColor": "ffb000",
+    "IconColor": "785ef0",
+    "TextColor": "ffffff",
+    "BackgroundColor": "000000"
   },
   {
     "Theme": "ayu-mirage",
-    "TitleColor": "#f4cd7c",
-    "IconColor": "#73d0ff",
-    "TextColor": "#c7c8c2",
-    "BackgroundColor": "#1f2430"
+    "TitleColor": "f4cd7c",
+    "IconColor": "73d0ff",
+    "TextColor": "c7c8c2",
+    "BackgroundColor": "1f2430"
   },
   {
     "Theme": "midnight-purple",
-    "TitleColor": "#9745f5",
-    "IconColor": "#9f4bff",
-    "TextColor": "#ffffff",
-    "BackgroundColor": "#000000"
+    "TitleColor": "9745f5",
+    "IconColor": "9f4bff",
+    "TextColor": "ffffff",
+    "BackgroundColor": "000000"
   },
   {
     "Theme": "calm",
-    "TitleColor": "#e07a5f",
-    "IconColor": "#edae49",
-    "TextColor": "#ebcfb2",
-    "BackgroundColor": "#373f51"
+    "TitleColor": "e07a5f",
+    "IconColor": "edae49",
+    "TextColor": "ebcfb2",
+    "BackgroundColor": "373f51"
   },
   {
     "Theme": "flag-india",
-    "TitleColor": "#ff8f1c",
-    "IconColor": "#250E62",
-    "TextColor": "#509E2F",
-    "BackgroundColor": "#ffffff"
+    "TitleColor": "ff8f1c",
+    "IconColor": "250E62",
+    "TextColor": "509E2F",
+    "BackgroundColor": "ffffff"
   },
   {
     "Theme": "omni",
-    "TitleColor": "#FF79C6",
-    "IconColor": "#e7de79",
-    "TextColor": "#E1E1E6",
-    "BackgroundColor": "#191622"
+    "TitleColor": "FF79C6",
+    "IconColor": "e7de79",
+    "TextColor": "E1E1E6",
+    "BackgroundColor": "191622"
   },
   {
     "Theme": "react",
-    "TitleColor": "#61dafb",
-    "IconColor": "#61dafb",
-    "TextColor": "#ffffff",
-    "BackgroundColor": "#20232a"
+    "TitleColor": "61dafb",
+    "IconColor": "61dafb",
+    "TextColor": "ffffff",
+    "BackgroundColor": "20232a"
   },
   {
     "Theme": "jolly",
-    "TitleColor": "#ff64da",
-    "IconColor": "#a960ff",
-    "TextColor": "#ffffff",
-    "BackgroundColor": "#291B3E"
+    "TitleColor": "ff64da",
+    "IconColor": "a960ff",
+    "TextColor": "ffffff",
+    "BackgroundColor": "291B3E"
   },
   {
     "Theme": "maroongold",
-    "TitleColor": "#F7EF8A",
-    "IconColor": "#F7EF8A",
-    "TextColor": "#E0AA3E",
-    "BackgroundColor": "#260000"
+    "TitleColor": "F7EF8A",
+    "IconColor": "F7EF8A",
+    "TextColor": "E0AA3E",
+    "BackgroundColor": "260000"
   },
   {
     "Theme": "yeblu",
-    "TitleColor": "#ffff00",
-    "IconColor": "#ffff00",
-    "TextColor": "#ffffff",
-    "BackgroundColor": "#002046"
+    "TitleColor": "ffff00",
+    "IconColor": "ffff00",
+    "TextColor": "ffffff",
+    "BackgroundColor": "002046"
   },
   {
     "Theme": "blueberry",
-    "TitleColor": "#82aaff",
-    "IconColor": "#89ddff",
-    "TextColor": "#27e8a7",
-    "BackgroundColor": "#242938"
+    "TitleColor": "82aaff",
+    "IconColor": "89ddff",
+    "TextColor": "27e8a7",
+    "BackgroundColor": "242938"
   },
   {
     "Theme": "slateorange",
-    "TitleColor": "#faa627",
-    "IconColor": "#faa627",
-    "TextColor": "#ffffff",
-    "BackgroundColor": "#36393f"
+    "TitleColor": "faa627",
+    "IconColor": "faa627",
+    "TextColor": "ffffff",
+    "BackgroundColor": "36393f"
   },
   {
     "Theme": "kacho-ga",
-    "TitleColor": "#bf4a3f",
-    "IconColor": "#a64833",
-    "TextColor": "#d9c8a9",
-    "BackgroundColor": "#402b23"
+    "TitleColor": "bf4a3f",
+    "IconColor": "a64833",
+    "TextColor": "d9c8a9",
+    "BackgroundColor": "402b23"
   },
   {
     "Theme": "outrun",
-    "TitleColor": "#ffcc00",
-    "IconColor": "#ff1aff",
-    "TextColor": "#8080ff",
-    "BackgroundColor": "#141439"
+    "TitleColor": "ffcc00",
+    "IconColor": "ff1aff",
+    "TextColor": "8080ff",
+    "BackgroundColor": "141439"
   },
   {
     "Theme": "ocean-dark",
-    "TitleColor": "#8957B2",
-    "IconColor": "#FFFFFF",
-    "TextColor": "#92D534",
-    "BackgroundColor": "#151A28"
+    "TitleColor": "8957B2",
+    "IconColor": "FFFFFF",
+    "TextColor": "92D534",
+    "BackgroundColor": "151A28"
   },
   {
     "Theme": "city-lights",
-    "TitleColor": "#5D8CB3",
-    "IconColor": "#4798FF",
-    "TextColor": "#718CA1",
-    "BackgroundColor": "#1D252C"
+    "TitleColor": "5D8CB3",
+    "IconColor": "4798FF",
+    "TextColor": "718CA1",
+    "BackgroundColor": "1D252C"
   },
   {
     "Theme": "github-dark",
-    "TitleColor": "#58A6FF",
-    "IconColor": "#1F6FEB",
-    "TextColor": "#C3D1D9",
-    "BackgroundColor": "#0D1117"
+    "TitleColor": "58A6FF",
+    "IconColor": "1F6FEB",
+    "TextColor": "C3D1D9",
+    "BackgroundColor": "0D1117"
   }
 ]

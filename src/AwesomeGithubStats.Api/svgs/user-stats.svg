@@ -7,7 +7,7 @@
     }
 
     .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: {{TextColor}};
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #{{TextColor}};
     }
 
     .stagger {
@@ -16,7 +16,7 @@
     }
 
     .rank-text {
-      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: {{TextColor}};
+      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #{{TextColor}};
       animation: scaleInAnimation 0.3s ease-in-out forwards;
     }
 
@@ -25,19 +25,19 @@
     }
 
     .icon {
-      fill: {{IconColor}};
+      fill: #{{IconColor}};
       display: {{ShowIcon}};
     }
 
     .rank-circle-rim {
-      stroke: {{TitleColor}};
+      stroke: #{{TitleColor}};
       fill: none;
       stroke-width: 6;
       opacity: 0.2;
     }
 
     .rank-circle {
-      stroke: {{TitleColor}};
+      stroke: #{{TitleColor}};
       stroke-dasharray: 320;
       fill: none;
       stroke-width: 6;
@@ -81,7 +81,7 @@
 
   </style>
 
-  <rect data-testid="card-bg" x="0.5" y="0.5" rx="4.5" height="99%" stroke="{{BorderColor}}" width="450" fill="{{BackgroundColor}}" stroke-opacity="1"/>
+  <rect data-testid="card-bg" x="0.5" y="0.5" rx="4.5" height="99%" stroke="#{{BorderColor}}" width="450" fill="#{{BackgroundColor}}" stroke-opacity="1"/>
 
 
   <g data-testid="card-title" transform="translate(25, 35)">
