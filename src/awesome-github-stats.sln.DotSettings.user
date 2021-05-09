@@ -9,6 +9,7 @@
     &lt;TestId&gt;xUnit::C4A910E3-661C-42DD-88E1-957A807EE2C4::net5.0::Tests.IntegrationTests.GithubServiceTests.Should_Get_User_Specific_Year_Information&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::C4A910E3-661C-42DD-88E1-957A807EE2C4::net5.0::Tests.UnitTests.RankServiceTests.Should_Calculate_Rank&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::C4A910E3-661C-42DD-88E1-957A807EE2C4::net5.0::Tests.UnitTests.RankServiceTests.Should_Calculate_Rank_SPlus&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::C4A910E3-661C-42DD-88E1-957A807EE2C4::net5.0::Tests.UnitTests.RankServiceTests.Should_Calculate_Rank_C&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b9a321f7_002D8cbb_002D4b2f_002D9e24_002D1fff69f8cb6b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Should_Get_User_Information" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

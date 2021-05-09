@@ -18,7 +18,7 @@ namespace AwesomeGithubStats.Core.Services
         public UserRank CalculateRank(UserStats userStats)
         {
 
-            return new UserRank(_rankPoints, userStats, _rankDegree);
+            return new(_rankPoints, userStats, _rankDegree);
         }
     }
 }
