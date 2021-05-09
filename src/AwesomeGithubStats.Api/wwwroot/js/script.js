@@ -27,7 +27,7 @@ let preview = {
         );
         // convert parameters to query string
         const encode = encodeURIComponent;
-        const query = Object.keys(params)
+        let query = Object.keys(params)
             .filter((key) => params[key] !== this.defaults[key])
             .map((key) => encode(key) + "=" + encode(params[key]))
             .join("&");
