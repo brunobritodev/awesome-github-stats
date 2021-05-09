@@ -2,6 +2,7 @@
 using AwesomeGithubStats.Core.Models;
 using AwesomeGithubStats.Core.Services;
 using AwesomeGithubStats.Core.Store;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using System;
 
@@ -29,9 +30,11 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.Configure<RankPoints>(options => configuration.GetSection("RankPoints").Bind(options));
             services.Configure<RankDegree>(options => configuration.GetSection("RankDegree").Bind(options));
+            services.AddMemoryCache();
             services.AddScoped<IGithubService, GithubService>();
             services.AddScoped<IGithubUserStore, GithubUserStore>();
             services.AddScoped<IRankService, RankService>();
+            services.AddScoped<IMemoryCache, MemoryCache>();
 
             services.AddHttpClient("github", c =>
             {
