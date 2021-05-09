@@ -23,6 +23,7 @@ namespace AwesomeGithubStats.Models
 
         private void CalculateProgressBar()
         {
+
             var slices = _rankDegree.Count;
             var slicesToTheEnd = _rankDegree.Count(c => c.Value > _rank.Score);
             var sliceMinSize = (100.0 / slices) * (slices - slicesToTheEnd);
