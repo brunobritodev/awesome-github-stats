@@ -1,10 +1,8 @@
 ﻿using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
-using AwesomeGithubStats.Core.Models.Svgs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace AwesomeGithubStats.Controllers
@@ -43,9 +41,8 @@ namespace AwesomeGithubStats.Controllers
             return File(content, "image/svg+xml; charset=utf-8");
         }
 
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] UserStatsOptions options)
         {
-            var svg = new UserStatsCard(Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
             var rank = _rankService.CalculateRank(new UserStats()
             {
                 Login = "brunohbrito",
@@ -64,7 +61,7 @@ namespace AwesomeGithubStats.Controllers
                 CommitsToAnotherRepositories = 51,
                 CommitsToMyRepositories = 365
             });
-            var content = await _svgService.GetUserStatsImage(rank);
+            var content = await _svgService.GetUserStatsImage(rank, options);
 
             return File(content, "image/svg+xml; charset=utf-8");
         }
