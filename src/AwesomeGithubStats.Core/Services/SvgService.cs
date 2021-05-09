@@ -43,6 +43,7 @@ namespace AwesomeGithubStats.Core.Services
 
             var translations = await GetTranslations(options.Locale ?? "en");
             var styles = await GetStyle(options.Theme ?? "default");
+            var test = styles.GetHashCode();
             styles.Apply(options);
 
             return svg.Svg(rank, styles, translations);
@@ -57,7 +58,10 @@ namespace AwesomeGithubStats.Core.Services
 
             var styles = _cacheService.Get<IEnumerable<CardStyles>>(CacheKeys.StyleKey);
             if (styles != null)
-                return styles.Theme(theme) with { };
+            {
+                var test = styles.GetHashCode();
+                return styles.Theme(theme);
+            }
 
             var jsonContent = await File.ReadAllTextAsync(ThemeFile);
             styles = JsonSerializer.Deserialize<IEnumerable<CardStyles>>(jsonContent);
