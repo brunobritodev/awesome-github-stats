@@ -3,8 +3,9 @@
     public class RankPoints
     {
         public double PullRequests { get; set; } = 0.2;
-        public double CommitsToMyRepositories { get; set; } = 0.5;
         public double Commits { get; set; } = 0.5;
+        public double CommitsToMyRepositories { get; set; } = 0.5;
+        public double CommitsToAnotherRepositories { get; set; } = 2;
         public double PullRequestsToAnotherRepositories { get; set; } = 1.2;
         public double Issues { get; set; } = 1;
         public double CreatedRepositories { get; set; } = 0.3;
