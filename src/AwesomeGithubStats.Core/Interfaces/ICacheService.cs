@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AwesomeGithubStats.Core.Util
+namespace AwesomeGithubStats.Core.Interfaces
 {
     public interface ICacheService
     {

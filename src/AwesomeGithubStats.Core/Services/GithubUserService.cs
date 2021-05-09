@@ -20,11 +20,11 @@ namespace AwesomeGithubStats.Core.Services
 
         public async Task<UserStats> GetUserStats(string username)
         {
-            var stats = _memoryCache.Get<UserData>(username);
+            var stats = _memoryCache.Get<UserStats>(username);
             if (stats != null)
-                return stats
+                return stats;
 
-                var user = await _githubUserStore.GetUserInformation(username);
+            var user = await _githubUserStore.GetUserInformation(username);
             if (user == null)
                 return new UserStats();
             var tasks = new List<Task<ContributionsCollection>>();
@@ -36,6 +36,8 @@ namespace AwesomeGithubStats.Core.Services
 
             var result = await Task.WhenAll(tasks).ConfigureAwait(false);
             var userStats = new UserStats(result.Where(w => w != null).ToList(), user);
+
+            _memoryCache.Set(username, userStats);
 
             return userStats;
         }
