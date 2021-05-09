@@ -38,7 +38,7 @@
 
     .rank-circle {
       stroke: {{TitleColor}};
-      stroke-dasharray: 250;
+      stroke-dasharray: 320;
       fill: none;
       stroke-width: 6;
       stroke-linecap: round;
