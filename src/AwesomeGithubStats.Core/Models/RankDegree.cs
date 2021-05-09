@@ -18,4 +18,11 @@ namespace AwesomeGithubStats.Core.Models
             return this.OrderByDescending(o => o.Value).Last();
         }
     }
+
+    public class Degree
+    {
+        public string Rank { get; set; }
+        public int Points { get; set; }
+        public bool CountSliceProgressBar { get; set; }
+    }
 }
