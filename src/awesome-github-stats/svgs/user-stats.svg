@@ -44,7 +44,7 @@
 
     @keyframes rankAnimation {
     from {
-    stroke-dashoffset: 190.32741228718345;
+    stroke-dashoffset: 251.32741228718345;
     }
     to {
     stroke-dashoffset: 128.18370927033266;
