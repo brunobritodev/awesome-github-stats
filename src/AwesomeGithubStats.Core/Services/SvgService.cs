@@ -27,21 +27,36 @@ namespace AwesomeGithubStats.Core.Services
 
         public async Task<Stream> GetUserStatsImage(UserRank rank, UserStatsOptions options)
         {
-            var file = await GetFile("user-stats.svg");
-            var svg = new UserStatsSvg(file, _degree);
+            var file = await GetSvgFile("user-stats.svg");
+            var svg = new UserStatsCard(file, _degree);
 
-            return svg.Svg(rank, new Styles());
+
+
+            return svg.Svg(rank, new CardStyles());
         }
 
-        private async Task<string> GetFile(string file)
+        private async Task<string> GetTranslationsFile(string language)
         {
-            var svgContent = _cacheService.Get<string>($"FILE:{file}");
+            var svgContent = _cacheService.Get<string>($"FILE:TRANSLATIONS:{language}");
+            if (!string.IsNullOrEmpty(svgContent))
+                return svgContent;
+
+            var file = Path.Combine(_contentRoot, @"translations\", language.ToLower());
+            svgContent = await File.ReadAllTextAsync();
+
+            _cacheService.Set($"FILE:TRANSLATIONS:{language}", svgContent, TimeSpan.FromDays(30));
+
+            return svgContent;
+        }
+        private async Task<string> GetSvgFile(string file)
+        {
+            var svgContent = _cacheService.Get<string>($"FILE:SVG:{file}");
             if (!string.IsNullOrEmpty(svgContent))
                 return svgContent;
 
             svgContent = await File.ReadAllTextAsync(Path.Combine(_contentRoot, @"svgs\", "user-stats.svg"));
 
-            _cacheService.Set($"FILE:{file}", svgContent, TimeSpan.FromDays(30));
+            _cacheService.Set($"FILE:SVG:{file}", svgContent, TimeSpan.FromDays(30));
 
             return svgContent;
         }
