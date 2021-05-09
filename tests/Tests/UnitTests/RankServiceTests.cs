@@ -97,7 +97,7 @@ namespace Tests.UnitTests
         }
 
         [Fact]
-        public void Should_Calculate_Rank()
+        public void Should_Calculate_Rank_S()
         {
             var rank = _rankService.CalculateRank(new UserStats()
             {
