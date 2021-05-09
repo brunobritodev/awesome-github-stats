@@ -151,6 +151,6 @@ namespace AwesomeGithubStats.Core.Models
         public string TotalStars() => FormatNumber(DirectStars + IndirectStars);
         public string TotalPullRequests() => FormatNumber(PullRequests);
         public string TotalIssues() => FormatNumber(Issues);
-        public string ContributedFor() => FormatNumber(ContributedTo);
+        public string TotalContributedFor() => FormatNumber(ContributedTo);
     }
 }

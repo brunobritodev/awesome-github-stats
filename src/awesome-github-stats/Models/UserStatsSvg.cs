@@ -52,7 +52,10 @@ namespace AwesomeGithubStats.Models
                 .Replace("{{IconColor}}", styles.IconColor)
                 .Replace("{{ShowIcons}}", styles.ShowIcons ? "block" : "none")
                 .Replace("{{Stars}}", rank.UserStats.TotalStars())
-                .Replace("{{Commits}}", rank.UserStats.TotalStars());
+                .Replace("{{Commits}}", rank.UserStats.TotalCommits())
+                .Replace("{{PRS}}", rank.UserStats.TotalPullRequests())
+                .Replace("{{Issuers}}", rank.UserStats.TotalIssues())
+                .Replace("{{Contributions}}", rank.UserStats.TotalContributedFor());
 
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
