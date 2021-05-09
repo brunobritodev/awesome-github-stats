@@ -42,9 +42,11 @@ let preview = {
         const stats = `${window.location.origin}/user-stats/${user}/stats`;
 
         // update rank link
-        document.getElementById("rankLink").value = rank;
+        document.getElementById("rankLink").innerText = rank;
+        document.getElementById("rankLink").href = rank;
         // update stats link
-        document.getElementById("statsLink").value = stats;
+        document.getElementById("statsLink").innerText = stats;
+        document.getElementById("statsLink").href = stats;
         // update image preview
         document.querySelector(".output img").src = demoImageURL;
         // update markdown
