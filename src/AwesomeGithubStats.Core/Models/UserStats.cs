@@ -53,6 +53,7 @@ namespace AwesomeGithubStats.Core.Models
 
         public UserStats()
         {
+            LastFetch = DateTime.Now;
         }
         /// <summary>
         /// When data was fetched
