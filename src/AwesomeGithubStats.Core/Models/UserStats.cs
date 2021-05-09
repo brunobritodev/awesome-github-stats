@@ -134,5 +134,10 @@ namespace AwesomeGithubStats.Core.Models
 
             return sumProducts; // / rankPoints.Total(Login);
         }
+
+        public int TotalStars()
+        {
+            return DirectStars + IndirectStars;
+        }
     }
 }
