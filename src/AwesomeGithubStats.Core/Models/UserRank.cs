@@ -16,7 +16,7 @@
 
         /// <summary>
         /// This score is based in user sindresorhus. An astonishing developer with many, many contributions.
-        /// His weighted score is 70.000.
+        /// His score is 2,094,175.5 and weighted score is 70.000.
         /// </summary>
         private void CalculateRank()
         {
