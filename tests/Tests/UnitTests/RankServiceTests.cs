@@ -118,5 +118,27 @@ namespace Tests.UnitTests
             rank.Score.Should().BeGreaterOrEqualTo(58937);
         }
 
+        [Fact]
+        public void Should_Calculate_Rank_()
+        {
+            var rank = _rankService.CalculateRank(new UserStats()
+            {
+                Commits = 576,
+                CommitsToAnotherRepositories = 26,
+                ContributedTo = 22,
+                CommitsToMyRepositories = 56,
+                ContributedToNotOwnerRepositories = 9,
+                ContributedToOwnRepositories = 13,
+                CreatedRepositories = 23,
+                DirectStars = 5296,
+                Followers = 2787,
+                IndirectStars = 7821,
+                Issues = 60,
+                PullRequests = 19,
+                PullRequestsToAnotherRepositories = 10,
+            });
+            rank.Level.Should().Be("S");
+            rank.Score.Should().BeGreaterOrEqualTo(58937);
+        }
     }
 }
