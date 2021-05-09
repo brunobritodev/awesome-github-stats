@@ -120,7 +120,7 @@ namespace AwesomeGithubStats.Core.Models
 
         public double GetScore(RankPoints rankPoints)
         {
-            return (PullRequests * rankPoints.PullRequests) +
+            var sumProducts = (PullRequests * rankPoints.PullRequests) +
                    (Commits * rankPoints.Commits) +
                    (PullRequestsToAnotherRepositories * rankPoints.PullRequestsToAnotherRepositories) +
                    (Issues * rankPoints.Issues) +
@@ -131,6 +131,8 @@ namespace AwesomeGithubStats.Core.Models
                    (ContributedToOwnRepositories * rankPoints.ContributedToOwnRepositories) +
                    (ContributedToNotOwnerRepositories * rankPoints.ContributedToNotOwnerRepositories) +
                    (Followers * rankPoints.Followers);
+
+            return sumProducts / rankPoints.Total();
         }
     }
 }
