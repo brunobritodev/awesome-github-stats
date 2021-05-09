@@ -25,8 +25,13 @@ namespace AwesomeGithubStats.Models
             var slices = _rankDegree.Count;
             var slicesToTheEnd = _rankDegree.Count(c => c.Value > rank.Score);
             var sliceMinSize = (100.0 / slices) * (slices - slicesToTheEnd);
-            var nextRank = _rankDegree.OrderBy(o => o.Value).First(f => f.Value > rank.Score);
+            var nextRank = _rankDegree.OrderBy(o => o.Value).FirstOrDefault(f => f.Value > rank.Score);
+            if (nextRank.Key == null)
+            {
+                ProgressBar = 100;
+                return;
 
+            }
             var rankSize = nextRank.Value - _rankDegree[rank.Level];
             var pointsInActualRank = rank.Score - _rankDegree[rank.Level];
 
