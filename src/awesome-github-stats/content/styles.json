@@ -106,16 +106,14 @@
     "BackgroundColor": "fffefe"
   },
   {
-    "Theme": "",
-    ",: null,
+    "Theme": "vue-dark",
     "TitleColor": "41b883",
     "IconColor": "41b883",
     "TextColor": "fffefe",
     "BackgroundColor": "273849"
   },
   {
-    "Theme": "",
-    ",: null,
+    "Theme": "shades-of-purple",
     "TitleColor": "fad000",
     "IconColor": "b362ff",
     "TextColor": "a599e9",
@@ -136,8 +134,7 @@
     "BackgroundColor": "ffffff"
   },
   {
-    "Theme": "",
-    ",: null,
+    "Theme": "blue-green",
     "TitleColor": "2f97c1",
     "IconColor": "f5b700",
     "TextColor": "0cf574",

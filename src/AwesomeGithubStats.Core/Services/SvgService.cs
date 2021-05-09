@@ -39,12 +39,30 @@ namespace AwesomeGithubStats.Core.Services
             var file = await GetSvgFile("user-stats.svg");
             var svg = new UserStatsCard(file, _degree);
 
-            var translations = options.HasTranslations() ? await GetTranslationsFile(options.Locale) : await GetTranslationsFile("en");
+            var translations = options.HasTranslations() ? await GetTranslations(options.Locale) : await GetTranslations("en");
 
             return svg.Svg(rank, new CardStyles(), translations);
         }
 
-        private async Task<CardTranslations> GetTranslationsFile(string language)
+
+
+        private async Task<CardStyles> GetStyle(string theme)
+        {
+            if (!File.Exists(TranslationFile))
+                return new CardTranslations();
+
+            var translations = _cacheService.Get<IEnumerable<CardTranslations>>(CacheKeys.TranslationKey);
+            if (translations != null)
+                return translations.Language(language);
+
+            var jsonContent = await File.ReadAllTextAsync(TranslationFile);
+            translations = JsonSerializer.Deserialize<IEnumerable<CardTranslations>>(jsonContent);
+
+            _cacheService.Set(CacheKeys.TranslationKey, translations, TimeSpan.FromDays(30));
+
+            return translations.Language(language);
+        }
+        private async Task<CardTranslations> GetTranslations(string language)
         {
             if (!File.Exists(TranslationFile))
                 return new CardTranslations();
