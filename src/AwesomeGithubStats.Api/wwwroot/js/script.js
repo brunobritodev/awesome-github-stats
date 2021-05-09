@@ -36,7 +36,7 @@ let preview = {
         const user = document.getElementById("user").text;
         const demoImageURL = `user-stats/${user}?${query}`;
         const repoLink = "https://github.com/brunohbrito/awesome-github-stats";
-        const md = `[![GitHub Streak](${imageURL})](${repoLink})`;
+        const md = `[![My Awesome Stats](${imageURL})](${repoLink})`;
         // update image preview
         document.querySelector(".output img").src = demoImageURL;
         // update markdown
