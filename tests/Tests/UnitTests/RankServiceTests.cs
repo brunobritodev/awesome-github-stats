@@ -26,7 +26,8 @@ namespace Tests.UnitTests
                 IndirectStars = 0.55,
                 Issues = 1,
                 PullRequests = 0.2,
-                PullRequestsToAnotherRepositories = 1.2
+                PullRequestsToAnotherRepositories = 1.2,
+                ContributedTo = 1
             });
             rankDegree.Setup(s => s.Value).Returns(new RankDegree()
                 {
