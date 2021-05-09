@@ -1,8 +1,10 @@
 ﻿using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
 using AwesomeGithubStats.Core.Models.Svgs;
+using AwesomeGithubStats.Core.Util;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -47,16 +49,16 @@ namespace AwesomeGithubStats.Core.Services
             if (!File.Exists(TranslationFile))
                 return new CardTranslations();
 
-            var translations = _cacheService.Get<CardTranslations>(CacheKeys.TranslationKey);
+            var translations = _cacheService.Get<IEnumerable<CardTranslations>>(CacheKeys.TranslationKey);
             if (translations != null)
-                return translations;
+                return translations.Language(language);
 
-            var jsonContent = await File.ReadAllTextAsync(file);
-            translations = JsonSerializer.Deserialize<CardTranslations>(jsonContent);
+            var jsonContent = await File.ReadAllTextAsync(TranslationFile);
+            translations = JsonSerializer.Deserialize<IEnumerable<CardTranslations>>(jsonContent);
 
             _cacheService.Set(CacheKeys.TranslationKey, translations, TimeSpan.FromDays(30));
 
-            return translations;
+            return translations.Language(language);
         }
         private async Task<string> GetSvgFile(string file)
         {
