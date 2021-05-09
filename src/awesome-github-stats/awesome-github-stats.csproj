@@ -16,8 +16,4 @@
     <ProjectReference Include="..\AwesomeGithubStats.Core\AwesomeGithubStats.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="svgs\" />
-  </ItemGroup>
-
 </Project>
