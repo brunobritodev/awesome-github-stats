@@ -47,7 +47,11 @@ namespace AwesomeGithubStats.Models
             var svgFinal = fs
                 .Replace("{{Name}}", _rank.UserStats.Name)
                 .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
-                .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(0):F}");
+                .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(0):F}")
+                .Replace("{{TextColor}}", _rank.UserStats.Name)
+                .Replace("{{TitleColor}}", _rank.UserStats.Name)
+                .Replace("{{IconColor}}", _rank.UserStats.Name)
+                .Replace("{{Name}}", _rank.UserStats.Name);
 
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));

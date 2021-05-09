@@ -30,7 +30,7 @@
     }
 
     .rank-circle-rim {
-      stroke: #2f80ed;
+      stroke: {{TitleColor}};
       fill: none;
       stroke-width: 6;
       opacity: 0.2;
