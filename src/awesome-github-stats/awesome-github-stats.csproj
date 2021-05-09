@@ -13,11 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Queries\" />
+    <ProjectReference Include="..\AwesomeGithubStats.Core\AwesomeGithubStats.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AwesomeGithubStats.Core\AwesomeGithubStats.Core.csproj" />
+    <Folder Include="svgs\" />
   </ItemGroup>
 
 </Project>
