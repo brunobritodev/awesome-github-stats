@@ -17,8 +17,6 @@ namespace AwesomeGithubStats.Models
             _rank = rank;
             _file = file;
             _rankDegree = rankDegree;
-
-            CalculateProgressBar();
         }
 
         private void CalculateProgressBar()
@@ -41,8 +39,10 @@ namespace AwesomeGithubStats.Models
 
         public double ProgressBar { get; set; }
 
-        public async Task<Stream> Svg()
+        public async Task<Stream> Svg(Styles styles)
         {
+            CalculateProgressBar();
+
             var fs = await File.ReadAllTextAsync(_file);
             var svgFinal = fs.Replace("{{Name}}", _rank.UserStats.Name);
 
