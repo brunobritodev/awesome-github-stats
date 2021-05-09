@@ -403,3 +403,4 @@ D:\workspace\awesome-github-stats\tests\Tests\obj\Debug\net5.0\Tests.dll
 D:\workspace\awesome-github-stats\tests\Tests\obj\Debug\net5.0\ref\Tests.dll
 D:\workspace\awesome-github-stats\tests\Tests\obj\Debug\net5.0\Tests.pdb
 D:\workspace\awesome-github-stats\tests\Tests\obj\Debug\net5.0\Tests.genruntimeconfig.cache
+D:\workspace\awesome-github-stats\tests\Tests\bin\Debug\net5.0\appsettings.json
