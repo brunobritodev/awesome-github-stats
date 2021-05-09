@@ -7,48 +7,54 @@
     }
 
     .stat {
-    font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #333;
-    }
-    .stagger {
-    opacity: 0;
-    animation: fadeInAnimation 0.3s ease-in-out forwards;
-    }
-    .rank-text {
-    font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333;
-    animation: scaleInAnimation 0.3s ease-in-out forwards;
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #333;
     }
 
-    .bold { font-weight: 700 }
+    .stagger {
+      opacity: 0;
+      animation: fadeInAnimation 0.3s ease-in-out forwards;
+    }
+
+    .rank-text {
+      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333;
+      animation: scaleInAnimation 0.3s ease-in-out forwards;
+    }
+
+    .bold { 
+      font-weight: 700 
+    }
+
     .icon {
-    fill: #4c71f2;
-    display: none;
+      fill: #4c71f2;
+      display: none;
     }
 
     .rank-circle-rim {
-    stroke: #2f80ed;
-    fill: none;
-    stroke-width: 6;
-    opacity: 0.2;
+      stroke: #2f80ed;
+      fill: none;
+      stroke-width: 6;
+      opacity: 0.2;
     }
+
     .rank-circle {
-    stroke: #2f80ed;
-    stroke-dasharray: 250;
-    fill: none;
-    stroke-width: 6;
-    stroke-linecap: round;
-    opacity: 0.8;
-    transform-origin: -10px 8px;
-    transform: rotate(-90deg);
-    animation: rankAnimation 1s forwards ease-in-out;
+      stroke: #2f80ed;
+      stroke-dasharray: 250;
+      fill: none;
+      stroke-width: 6;
+      stroke-linecap: round;
+      opacity: 0.8;
+      transform-origin: -10px 8px;
+      transform: rotate(-90deg);
+      animation: rankAnimation 1s forwards ease-in-out;
     }
 
     @keyframes rankAnimation {
-    from {
-    stroke-dashoffset: 251.32741228718345;
-    }
-    to {
-    stroke-dashoffset: 128.18370927033266;
-    }
+      from {
+        stroke-dashoffset: 251.32741228718345;
+      }
+      to {
+        stroke-dashoffset: 128.18370927033266;
+      }
     }
 
 
