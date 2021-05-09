@@ -15,6 +15,7 @@ namespace AwesomeGithubStats.Core.Services
         private readonly string _contentRoot;
         private readonly ICacheService _cacheService;
         private readonly RankDegree _degree;
+        private string SvgFolder { get; set; }
 
         public SvgService(
             IWebHostEnvironment environment,
@@ -24,7 +25,10 @@ namespace AwesomeGithubStats.Core.Services
             _degree = rankDegree.Value;
             _contentRoot = environment.ContentRootPath;
             _cacheService = cacheService;
+            SvgFolder = Path.Combine(_contentRoot, @"\svgs");
         }
+
+
 
         public async Task<Stream> GetUserStatsImage(UserRank rank, UserStatsOptions options)
         {
@@ -33,7 +37,7 @@ namespace AwesomeGithubStats.Core.Services
 
             var translations = options.HasTranslations() ? await GetTranslationsFile(options.Locale) : await GetTranslationsFile("en");
 
-            return svg.Svg(rank, new CardStyles());
+            return svg.Svg(rank, new CardStyles(), translations);
         }
 
         private async Task<CardTranslations> GetTranslationsFile(string language)
@@ -59,7 +63,7 @@ namespace AwesomeGithubStats.Core.Services
             if (!string.IsNullOrEmpty(svgContent))
                 return svgContent;
 
-            svgContent = await File.ReadAllTextAsync(Path.Combine(_contentRoot, @"svgs\", "user-stats.svg"));
+            svgContent = await File.ReadAllTextAsync(Path.Combine(SvgFolder, "user-stats.svg"));
 
             _cacheService.Set($"FILE:SVG:{file}", svgContent, TimeSpan.FromDays(30));
 
