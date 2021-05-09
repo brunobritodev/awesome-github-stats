@@ -1,5 +1,6 @@
 ﻿using AwesomeGithubStats.Core.Models;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace AwesomeGithubStats.Models
 {
@@ -14,14 +15,13 @@ namespace AwesomeGithubStats.Models
             _file = file;
         }
 
-        public Stream Svg()
+        public async Task<string> Svg()
         {
             var inMemoryCopy = new MemoryStream();
-            using var fs = File.OpenRead(_file);
-            fs.CopyTo(inMemoryCopy);
+            var fs = await File.ReadAllTextAsync(_file);
 
-            inMemoryCopy.Seek(0, SeekOrigin.Begin);
-            return inMemoryCopy;
+            fs.Replace("{{Name}}", _rank.UserStats.Name);
+            return fs;
         }
     }
 }
