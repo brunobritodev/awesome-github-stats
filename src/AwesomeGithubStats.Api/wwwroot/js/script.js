@@ -33,7 +33,8 @@ let preview = {
             .join("&");
         // generate links and markdown
         const imageURL = `${window.location.origin}?${query}`;
-        const user = document.getElementById("user").text;
+        let user = document.getElementById("user").text;
+        user = user == null ? "brunohbrito" : user;
         const demoImageURL = `user-stats/${user}?${query}`;
         const repoLink = "https://github.com/brunohbrito/awesome-github-stats";
         const md = `[![My Awesome Stats](${imageURL})](${repoLink})`;
