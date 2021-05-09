@@ -63,7 +63,7 @@ namespace AwesomeGithubStats.Controllers
         [HttpGet("teste")]
         public IActionResult teste()
         {
-            var coent = System.IO.File.ReadAllText(Path.Combine(_environment.ContentRootPath, @"content\", "circle.svg"));
+            var coent = System.IO.File.ReadAllText(Path.Combine(_environment.ContentRootPath, @"svgs\", "circle.svg"));
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(coent));
             return File(ms, "image/svg+xml; charset=utf-8");
         }
