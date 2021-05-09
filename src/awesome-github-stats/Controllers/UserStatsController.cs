@@ -3,6 +3,8 @@ using AwesomeGithubStats.Core.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AwesomeGithubStats.Controllers
@@ -57,29 +59,13 @@ namespace AwesomeGithubStats.Controllers
             return Ok(rank);
         }
 
-        public async Task<IActionResult> Get([FromQuery] UserStatsOptions options)
-        {
-            var rank = _rankService.CalculateRank(new UserStats()
-            {
-                Login = "brunohbrito",
-                Name = "Bruno Brito",
-                Commits = 4674,
-                ContributedTo = 49,
-                ContributedToNotOwnerRepositories = 13,
-                ContributedToOwnRepositories = 36,
-                CreatedRepositories = 53,
-                DirectStars = 1366,
-                Followers = 375,
-                IndirectStars = 48472,
-                Issues = 57,
-                PullRequests = 210,
-                PullRequestsToAnotherRepositories = 20,
-                CommitsToAnotherRepositories = 51,
-                CommitsToMyRepositories = 365
-            });
-            var content = await _svgService.GetUserStatsImage(rank, options);
 
-            return File(content, "image/svg+xml; charset=utf-8");
+        [HttpGet("teste")]
+        public IActionResult teste()
+        {
+            var coent = System.IO.File.ReadAllText(Path.Combine(_environment.ContentRootPath, @"content\", "circle.svg"));
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(coent));
+            return File(ms, "image/svg+xml; charset=utf-8");
         }
     }
 }
