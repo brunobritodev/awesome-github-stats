@@ -43,23 +43,24 @@ namespace Tests.UnitTests
 
             _rankService = new RankService(rankPoints.Object, rankDegree.Object);
         }
+
         [Fact]
         public void Should_Calculate_Rank_C()
         {
             var rank = _rankService.CalculateRank(new UserStats()
             {
-                Commits = 187,
-                ContributedTo = 24,
+                Commits = 187, // 187
+                ContributedTo = 24, // 0
                 ContributedToNotOwnerRepositories = 0,
-                ContributedToOwnRepositories = 24,
-                CreatedRepositories = 26,
-                DirectStars = 520, // 
-                Followers = 2467,
+                ContributedToOwnRepositories = 24, // 12
+                CreatedRepositories = 26, // 7.8
+                DirectStars = 520, // 520
+                Followers = 2467, // 1,110.15
                 IndirectStars = 0,
                 Issues = 0,
                 PullRequests = 0,
                 PullRequestsToAnotherRepositories = 0,
-
+                // Total: 1836.95
             });
             rank.Level.Should().Be("💪");
             rank.Score.Should().Be(100);
