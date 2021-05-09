@@ -1,3 +1,6 @@
 {
-
+  "StarsLabel": "Stars",
+  "PullRequestLabel": "Pull Requests",
+  "IssuesLabel": "Issues",
+  "CommitsLabel": "Commits"
 }
