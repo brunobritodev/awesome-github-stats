@@ -1,0 +1,46 @@
+name: MASTER - Build & Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy-azure:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: src
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Setup .NET 5
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+
+      - name: dotnet publish
+        run: dotnet publish --no-build ./AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj -c Release -o ./out/ags
+
+      - name: Azure Login
+        uses: azure/login@v1.1
+        with:
+          creds: ${{ secrets.AZURE_DEPLOY }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v1
+        with:
+          app-name: awesome-github-stats
+          package: ./src/out/ags
