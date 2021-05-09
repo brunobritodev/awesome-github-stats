@@ -25,7 +25,6 @@ namespace Tests.UnitTests
                     {"A", 20},
                     {"💪",0}
                 }
-
             );
 
             _rankService = new RankService(rankPoints.Object, rankDegree.Object);
