@@ -73,7 +73,7 @@ namespace Tests.UnitTests
                 Name = "Sindre Sorhus",
                 PullRequests = 1400,
                 PullRequestsToAnotherRepositories = 849,
-
+                //CommitsToAnotherRepositories = 
             });
             rank.Level.Should().Be("S+");
             rank.Score.Should().Be(100);
