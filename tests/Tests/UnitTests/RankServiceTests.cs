@@ -18,16 +18,15 @@ namespace Tests.UnitTests
             rankPoints.Setup(s => s.Value).Returns(new RankPoints()
             {
                 Commits = 1,
-                ContributedToNotOwnerRepositories = 2.30,
-                ContributedToOwnRepositories = 0.50,
+                ContributedToNotOwnerRepositories = 2.3,
+                ContributedToOwnRepositories = 0.5,
+                CreatedRepositories = 0.3,
+                DirectStars = 1.0,
+                Followers = 0.45,
+                IndirectStars = 0.55,
                 Issues = 1,
-                DirectStars = 1.75,
-                IndirectStars = 0.75,
-                PullRequests = 0.5,
-                Followers = 1,
-                CreatedRepositories = 0.5,
-                PullRequestsToAnotherRepositories = 2,
-                ContributedTo = 1
+                PullRequests = 0.2,
+                PullRequestsToAnotherRepositories = 1.2
             });
             rankDegree.Setup(s => s.Value).Returns(new RankDegree()
                 {
