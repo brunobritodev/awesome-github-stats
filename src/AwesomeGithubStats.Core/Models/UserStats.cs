@@ -26,12 +26,14 @@ namespace AwesomeGithubStats.Core.Models
             Login = user.Login;
 
             Commits = result.Sum(s => s.TotalCommitContributions + s.RestrictedContributionsCount);
+
             PullRequests = user.PullRequests.TotalCount;
             CreatedRepositories = result.Sum(s => s.TotalRepositoryContributions);
 
             DirectStars = MyRepositories.Sum(s => s.StargazerCount);
 
             PullRequestsToAnotherRepositories = result.SelectMany(s => s.PullRequestContributionsByRepository).Where(w => !w.Repository.NameWithOwner.Contains(user.Login)).Sum(s => s.Contributions.TotalCount);
+            CommitsToAnotherRepositories = result.SelectMany(s => s.CommitContributionsByRepository).Where(w => !w.Repository.NameWithOwner.Contains(user.Login)).Sum(s => s.Contributions.TotalCount);
             IndirectStars = RepositoriesNotOwnedByMe.Sum(s => s.StargazerCount);
             Issues = user.Issues.TotalCount;
 
@@ -40,6 +42,7 @@ namespace AwesomeGithubStats.Core.Models
             ContributedToOwnRepositories = MyRepositories.Count();
             Followers = user.Followers.TotalCount;
         }
+
 
         public UserStats()
         {
@@ -71,7 +74,11 @@ namespace AwesomeGithubStats.Core.Models
         /// </summary>
         public int Commits { get; set; }
         /// <summary>
-        /// How many pr was made for repositories that user wasn't the owner
+        /// Commits made in repositories that user isn't the owner
+        /// </summary>
+        public int CommitsToAnotherRepositories { get; set; }
+        /// <summary>
+        /// How many pr was made for repositories that user isn't the owner
         /// </summary>
         public int PullRequestsToAnotherRepositories { get; set; }
         /// <summary>
