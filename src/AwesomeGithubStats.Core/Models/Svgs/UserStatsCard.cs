@@ -1,5 +1,6 @@
 ﻿using Humanizer;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -21,16 +22,19 @@ namespace AwesomeGithubStats.Core.Models.Svgs
         {
 
             var slices = RankDegree.Count;
-            var slicesToTheEnd = RankDegree.Count(c => c.Value > rank.Score);
+            var slicesToTheEnd = RankDegree.Count(c => c.Points > rank.Score);
             var sliceMinSize = (100.0 / slices) * (slices - slicesToTheEnd);
-            var nextRank = RankDegree.OrderBy(o => o.Value).FirstOrDefault(f => f.Value > rank.Score);
-            if (nextRank.Key == null)
+            var nextRank = RankDegree.OrderBy(o => o.Points).FirstOrDefault(f => f.Points > rank.Score);
+            if (nextRank.Rank == null)
             {
                 ProgressBar = 100;
                 return;
 
             }
-            var rankSize = nextRank.Value - RankDegree[rank.Level];
+
+            var teste = new Dictionary<string, int>();
+            
+            var rankSize = nextRank.Points - RankDegree[rank.Level];
             var pointsInActualRank = rank.Score - RankDegree[rank.Level];
 
             var percentualInActualRank = pointsInActualRank / rankSize;

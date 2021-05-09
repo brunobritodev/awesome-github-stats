@@ -19,13 +19,13 @@ namespace Tests.UnitTests
             _rankPoints.Setup(s => s.Value).Returns(new RankPoints());
             rankDegree.Setup(s => s.Value).Returns(new RankDegree()
                 {
-                    {"S++", 300000},
-                    {"S+", 63000},
-                    {"S", 32000},
-                    {"A++", 21000},
-                    {"A+", 14000},
-                    {"A", 7000},
-                    {"💪",0}
+                    new(){Rank = "S++",Points = 300000},
+                    new(){Rank = "S+",Points =  63000},
+                    new(){Rank = "S",Points =  32000},
+                    new(){Rank = "A++",Points =  21000},
+                    new(){Rank = "A+",Points =  14000},
+                    new(){Rank = "A",Points =  7000},
+                    new(){Rank = "💪",Points = 0}
                 }
             );
 
