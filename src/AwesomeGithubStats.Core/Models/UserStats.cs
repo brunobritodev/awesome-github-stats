@@ -22,26 +22,26 @@ namespace AwesomeGithubStats.Core.Models
             Login = user.Login;
 
             // Remove from uniqueRepo the user repos
-            MyContributionsToAnotherRepositories = uniqueRepos.Where(othersRepo => !othersRepo.Repository.NameWithOwner.Contains(user.Login)).ToList();
-            MyContributions = uniqueRepos.Where(s => s.Repository.NameWithOwner.Contains(user.Login)).ToList();
+            var myContributionsToAnotherRepositories = uniqueRepos.Where(othersRepo => !othersRepo.Repository.NameWithOwner.Contains(user.Login)).ToList();
+            var myContributions = uniqueRepos.Where(s => s.Repository.NameWithOwner.Contains(user.Login)).ToList();
 
 
             Commits = result.Sum(s => s.TotalCommitContributions + s.RestrictedContributionsCount);
 
             PullRequests = user.PullRequests.TotalCount;
             CreatedRepositories = result.Sum(s => s.TotalRepositoryContributions);
-            CommitsToMyRepositories = MyContributions.Sum(s => s.Contributions.TotalCount);
-            DirectStars = MyContributions.Sum(s => s.Repository.StargazerCount);
+            CommitsToMyRepositories = myContributions.Sum(s => s.Contributions.TotalCount);
+            DirectStars = myContributions.Sum(s => s.Repository.StargazerCount);
 
 
             PullRequestsToAnotherRepositories = result.SelectMany(s => s.PullRequestContributionsByRepository).Where(w => !w.Repository.NameWithOwner.Contains(user.Login)).Sum(s => s.Contributions.TotalCount);
-            IndirectStars = MyContributionsToAnotherRepositories.Sum(s => s.Repository.StargazerCount);
+            IndirectStars = myContributionsToAnotherRepositories.Sum(s => s.Repository.StargazerCount);
             Issues = user.Issues.TotalCount;
             CommitsToAnotherRepositories = Commits - CommitsToMyRepositories;
 
-            ContributedTo = MyContributions.Count() + MyContributionsToAnotherRepositories.Count();
-            ContributedToNotOwnerRepositories = MyContributionsToAnotherRepositories.Count();
-            ContributedToOwnRepositories = MyContributions.Count();
+            ContributedTo = myContributions.Count() + myContributionsToAnotherRepositories.Count();
+            ContributedToNotOwnerRepositories = myContributionsToAnotherRepositories.Count();
+            ContributedToOwnRepositories = myContributions.Count();
             Followers = user.Followers.TotalCount;
         }
 
@@ -61,14 +61,6 @@ namespace AwesomeGithubStats.Core.Models
         /// </summary>
         public string Name { get; set; }
 
-        /// <summary>
-        /// Contributions made in user own repository
-        /// </summary>
-        public IEnumerable<RepositoryContribution> MyContributions { get; set; }
-        /// <summary>
-        /// Repositories that user contributedFor but isn't owned by him/her
-        /// </summary>
-        public IEnumerable<RepositoryContribution> MyContributionsToAnotherRepositories { get; set; }
         /// <summary>
         /// How many pull requests was made
         /// </summary>
