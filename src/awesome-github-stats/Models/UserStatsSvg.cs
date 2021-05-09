@@ -1,4 +1,5 @@
 ﻿using AwesomeGithubStats.Core.Models;
+using Humanizer;
 using System;
 using System.IO;
 using System.Linq;
@@ -49,7 +50,8 @@ namespace AwesomeGithubStats.Models
                 .Replace("{{TextColor}}", styles.TextColor)
                 .Replace("{{TitleColor}}", styles.TitleColor)
                 .Replace("{{IconColor}}", styles.IconColor)
-                .Replace("{{ShowIcons}}", styles.ShowIcons ? "block" : "none");
+                .Replace("{{ShowIcons}}", styles.ShowIcons ? "block" : "none")
+                .Replace("{{Stars}}", rank.UserStats.TotalStars().ToMetric(MetricNumeralFormats.UseShortScaleWord));
 
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
