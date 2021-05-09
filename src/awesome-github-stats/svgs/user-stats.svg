@@ -50,10 +50,10 @@
 
     @keyframes rankAnimation {
       from {
-        stroke-dashoffset: 251.32741228718345;
+        stroke-dashoffset: {{ProgressBarStart}};
       }
       to {
-        stroke-dashoffset: 128.18370927033266;
+        stroke-dashoffset: {{ProgressBarEnd}};
       }
     }
 
@@ -62,20 +62,20 @@
 
     /* Animations */
     @keyframes scaleInAnimation {
-    from {
-    transform: translate(-5px, 5px) scale(0);
-    }
-    to {
-    transform: translate(-5px, 5px) scale(1);
-    }
+      from {
+        transform: translate(-5px, 5px) scale(0);
+      }
+      to {
+        transform: translate(-5px, 5px) scale(1);
+      }
     }
     @keyframes fadeInAnimation {
-    from {
-    opacity: 0;
-    }
-    to {
-    opacity: 1;
-    }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
 
