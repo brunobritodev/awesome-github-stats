@@ -5,7 +5,7 @@
     "IconColor": "4c71f2",
     "TextColor": "333",
     "BackgroundColor": "fffefe",
-    "border-color": "e4e2e2"
+    "BorderColor": "e4e2e2"
   },
   {
     "Theme": "default-repocard",

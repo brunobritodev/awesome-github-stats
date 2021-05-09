@@ -8,5 +8,6 @@
         public bool ShowIcons { get; set; } = true;
         public string Theme { get; set; } = "default";
         public string BackgroundColor { get; set; } = "#fffefe";
+        public string BorderColor { get; set; } = "#e4e2e2";
     }
 }
