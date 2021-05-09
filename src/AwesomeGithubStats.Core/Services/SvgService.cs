@@ -31,7 +31,7 @@ namespace AwesomeGithubStats.Core.Services
             var file = await GetSvgFile("user-stats.svg");
             var svg = new UserStatsCard(file, _degree);
 
-
+            var translations = options.HasTranslations() ? await GetTranslationsFile(options.Locale) : await GetTranslationsFile("en");
 
             return svg.Svg(rank, new CardStyles());
         }
