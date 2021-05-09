@@ -16,12 +16,12 @@ namespace AwesomeGithubStats.Models
             _file = file;
         }
 
-        public async Task<string> Svg()
+        public async Task<Stream> Svg()
         {
-            var inMemoryCopy = new MemoryStream();
             var fs = await File.ReadAllTextAsync(_file);
+            var svgFinal = fs.Replace("{{Name}}", _rank.UserStats.Name);
 
-            return new MemoryStream(Encoding.UTF8.GetBytes(fs.Replace("{{Name}}", _rank.UserStats.Name)));
+            return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
         }
     }
 }

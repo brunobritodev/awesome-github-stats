@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace AwesomeGithubStats.Controllers
 {
@@ -26,7 +27,7 @@ namespace AwesomeGithubStats.Controllers
         }
 
         [HttpGet, ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
-        public IActionResult Get(string username)
+        public async Task<IActionResult> Get(string username)
         {
             var rank = _rankService.CalculateRank(new UserStats()
             {
@@ -48,7 +49,7 @@ namespace AwesomeGithubStats.Controllers
             });
 
             var svg = new UserStatsSvg(rank, Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"));
-            return File(svg.Svg(), "image/svg+xml; charset=utf-8");
+            return File(await svg.Svg(), "image/svg+xml; charset=utf-8");
         }
     }
 }
