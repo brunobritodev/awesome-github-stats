@@ -33,6 +33,7 @@ namespace AwesomeGithubStats.Core.Util
         }
 
         public static CardTranslations Language(this IEnumerable<CardTranslations> translations, [NotNull] string language) => translations.FirstOrDefault(f => f.Locale.ToLower().Equals(language.ToLower()));
+        public static CardStyles Theme(this IEnumerable<CardStyles> translations, [NotNull] string theme) => translations.FirstOrDefault(f => f.Theme.ToLower().Equals(theme.ToLower()));
 
     }
 }
