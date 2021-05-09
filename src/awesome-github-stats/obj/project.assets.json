@@ -1045,6 +1045,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Humanizer.Core": "2.10.1",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Http": "5.0.0",
@@ -4047,7 +4048,6 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "AwesomeGithubStats.Core >= 1.0.0",
-      "Humanizer.Core >= 2.10.1",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.13",
       "Swashbuckle.AspNetCore >= 6.1.4"
     ]
@@ -4100,10 +4100,6 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Humanizer.Core": {
-            "target": "Package",
-            "version": "[2.10.1, )"
-          },
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
             "version": "[1.10.13, )"
@@ -4134,13 +4130,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "No Authorization header detected"
-    }
-  ]
+  }
 }

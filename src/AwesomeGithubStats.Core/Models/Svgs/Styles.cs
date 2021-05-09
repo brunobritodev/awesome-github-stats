@@ -1,4 +1,4 @@
-﻿namespace AwesomeGithubStats.Models
+﻿namespace AwesomeGithubStats.Core.Models.Svgs
 {
     public class Styles
     {

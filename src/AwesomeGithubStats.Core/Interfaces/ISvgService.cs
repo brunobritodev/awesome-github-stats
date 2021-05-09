@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AwesomeGithubStats.Core.Interfaces
 {
-    class ISvgService
+    public interface ISvgService
     {
+                       
     }
 }

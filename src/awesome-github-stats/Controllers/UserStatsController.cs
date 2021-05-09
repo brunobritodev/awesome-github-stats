@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.IO;
 using System.Threading.Tasks;
+using AwesomeGithubStats.Core.Models.Svgs;
 
 namespace AwesomeGithubStats.Controllers
 {
@@ -36,7 +37,7 @@ namespace AwesomeGithubStats.Controllers
         [HttpGet("{username}"), ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
         public async Task<IActionResult> Get(string username)
         {
-            var svg = new UserStatsSvg(Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
+            var svg = new UserStatsSvg(_environment.ContentRootPath, _degree);
             var userStats = await _githubService.GetUserStats(username);
 
             var rank = _rankService.CalculateRank(userStats);

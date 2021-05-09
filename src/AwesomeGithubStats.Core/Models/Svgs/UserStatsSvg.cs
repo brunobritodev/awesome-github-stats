@@ -1,10 +1,10 @@
 ﻿using AwesomeGithubStats.Core.Models;
-using Humanizer;
 using System;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AwesomeGithubStats.Core.Models.Svgs;
 
 namespace AwesomeGithubStats.Models
 {

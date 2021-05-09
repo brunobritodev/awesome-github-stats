@@ -30,7 +30,7 @@ namespace AwesomeGithubStats.Core.Services
             stats = await GetStatsFromGithub(username);
 
             _memoryCache.Set(username, stats);
-
+            
             return stats;
         }
 

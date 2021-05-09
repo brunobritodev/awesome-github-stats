@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Humanizer.Core/2.10.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Humanizer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Humanizer.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -957,6 +966,22 @@
     }
   },
   "libraries": {
+    "Humanizer.Core/2.10.1": {
+      "sha512": "A68teQ7Jo2+/7iCc5+KxUvyxpBjbJus6vDeN8TFP18HUEOsJCJ2A2eXo28bjecu+sNndFukU+tPFskVdhIu0tw==",
+      "type": "package",
+      "path": "humanizer.core/2.10.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "humanizer.core.2.10.1.nupkg.sha512",
+        "humanizer.core.nuspec",
+        "lib/netstandard1.0/Humanizer.dll",
+        "lib/netstandard1.0/Humanizer.xml",
+        "lib/netstandard2.0/Humanizer.dll",
+        "lib/netstandard2.0/Humanizer.xml",
+        "logo.png"
+      ]
+    },
     "Microsoft.CSharp/4.0.1": {
       "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
       "type": "package",
@@ -3726,6 +3751,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Humanizer.Core >= 2.10.1",
       "Microsoft.Extensions.Configuration.Abstractions >= 5.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 5.0.0",
       "Microsoft.Extensions.Http >= 5.0.0",
@@ -3777,6 +3803,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Humanizer.Core": {
+            "target": "Package",
+            "version": "[2.10.1, )"
+          },
           "Microsoft.Extensions.Configuration.Abstractions": {
             "target": "Package",
             "version": "[5.0.0, )"
