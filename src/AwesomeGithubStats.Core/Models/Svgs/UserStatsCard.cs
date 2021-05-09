@@ -79,7 +79,9 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 .Replace("{{IconColor}}", cardStyles.IconColor)
                 .Replace("{{BackgroundColor}}", cardStyles.BackgroundColor)
                 .Replace("{{BorderColor}}", cardStyles.BorderColor)
-                .Replace("{{ShowIcons}}", cardStyles.ShowIcons ? "block" : "none");
+                .Replace("{{ShowIcons}}", cardStyles.ShowIcons ? "block" : "none")
+                .Replace("{{TextPosition}}", cardStyles.ShowIcons ? "25" : "0");
+
 
             if (ShowCircleProgressBar)
                 svgFinal = svgFinal.Replace("{{ProgressBar}}", CircleProgressBar);
