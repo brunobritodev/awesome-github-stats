@@ -35,7 +35,6 @@ namespace AwesomeGithubStats.Core.Models
 
 
             PullRequestsToAnotherRepositories = result.SelectMany(s => s.PullRequestContributionsByRepository).Where(w => !w.Repository.NameWithOwner.Contains(user.Login)).Sum(s => s.Contributions.TotalCount);
-            CommitsToAnotherRepositories =
             IndirectStars = MyContributionsToAnotherRepositories.Sum(s => s.Repository.StargazerCount);
             Issues = user.Issues.TotalCount;
             CommitsToAnotherRepositories = Commits - CommitsToMyRepositories;
