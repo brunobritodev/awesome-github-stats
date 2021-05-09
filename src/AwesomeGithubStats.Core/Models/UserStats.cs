@@ -1,5 +1,6 @@
 ﻿using AwesomeGithubStats.Core.Models.Responses;
 using AwesomeGithubStats.Core.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -43,7 +44,9 @@ namespace AwesomeGithubStats.Core.Models
             ContributedToNotOwnerRepositories = myContributionsToAnotherRepositories.Count();
             ContributedToOwnRepositories = myContributions.Count();
             Followers = user.Followers.TotalCount;
+            LastFetch = DateTime.Now;
         }
+
 
         public int CommitsToMyRepositories { get; set; }
 
@@ -51,6 +54,10 @@ namespace AwesomeGithubStats.Core.Models
         public UserStats()
         {
         }
+        /// <summary>
+        /// When data was fetched
+        /// </summary>
+        public DateTime LastFetch { get; set; }
 
         /// <summary>
         /// Login of user
