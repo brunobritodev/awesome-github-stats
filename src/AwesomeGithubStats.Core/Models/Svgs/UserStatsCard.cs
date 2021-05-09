@@ -6,12 +6,12 @@ using System.Text;
 
 namespace AwesomeGithubStats.Core.Models.Svgs
 {
-    public class UserStatsSvg
+    public class UserStatsCard
     {
         public string File { get; }
         public RankDegree RankDegree { get; }
 
-        public UserStatsSvg(string file, RankDegree rankDegree)
+        public UserStatsCard(string file, RankDegree rankDegree)
         {
             File = file;
             RankDegree = rankDegree;
@@ -42,17 +42,17 @@ namespace AwesomeGithubStats.Core.Models.Svgs
 
         public double ProgressBar { get; set; }
 
-        public Stream Svg(UserRank rank, Styles styles)
+        public Stream Svg(UserRank rank, CardStyles cardStyles)
         {
             CalculateProgressBar(rank);
             var svgFinal = File
                 .Replace("{{Name}}", rank.UserStats.Name.Truncate(30))
                 .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
                 .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(ProgressBar):F}")
-                .Replace("{{TextColor}}", styles.TextColor)
-                .Replace("{{TitleColor}}", styles.TitleColor)
-                .Replace("{{IconColor}}", styles.IconColor)
-                .Replace("{{ShowIcons}}", styles.ShowIcons ? "block" : "none")
+                .Replace("{{TextColor}}", cardStyles.TextColor)
+                .Replace("{{TitleColor}}", cardStyles.TitleColor)
+                .Replace("{{IconColor}}", cardStyles.IconColor)
+                .Replace("{{ShowIcons}}", cardStyles.ShowIcons ? "block" : "none")
                 .Replace("{{Stars}}", rank.UserStats.TotalStars())
                 .Replace("{{Commits}}", rank.UserStats.TotalCommits())
                 .Replace("{{PRS}}", rank.UserStats.TotalPullRequests())

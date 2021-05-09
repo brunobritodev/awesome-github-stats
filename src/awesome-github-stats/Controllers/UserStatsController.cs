@@ -33,11 +33,11 @@ namespace AwesomeGithubStats.Controllers
         }
 
         [HttpGet("{username}"), ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
-        public async Task<IActionResult> Get(string username)
+        public async Task<IActionResult> Get(string username, [FromQuery] UserStatsOptions options)
         {
             var userStats = await _githubService.GetUserStats(username);
             var rank = _rankService.CalculateRank(userStats);
-            var content = await _svgService.GetUserStatsImage(rank);
+            var content = await _svgService.GetUserStatsImage(rank, options);
 
 
             return File(content, "image/svg+xml; charset=utf-8");
