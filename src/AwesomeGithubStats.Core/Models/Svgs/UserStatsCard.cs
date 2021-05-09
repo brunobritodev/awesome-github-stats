@@ -42,7 +42,7 @@ namespace AwesomeGithubStats.Core.Models.Svgs
 
         public double ProgressBar { get; set; }
 
-        public Stream Svg(UserRank rank, CardStyles cardStyles)
+        public Stream Svg(UserRank rank, CardStyles cardStyles, CardTranslations cardTranslations)
         {
             CalculateProgressBar(rank);
             var svgFinal = File
@@ -58,7 +58,15 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 .Replace("{{PRS}}", rank.UserStats.TotalPullRequests())
                 .Replace("{{Issuers}}", rank.UserStats.TotalIssues())
                 .Replace("{{Contributions}}", rank.UserStats.TotalContributedFor())
-                .Replace("{{Level}}", rank.Level);
+                .Replace("{{Level}}", rank.Level)
+                // Translations
+                .Replace("{{StarsLabel}}", cardTranslations.StarsLabel)
+                .Replace("{{PullRequestLabel}}", cardTranslations.PullRequestLabel)
+                .Replace("{{IssuesLabel}}", cardTranslations.IssuesLabel)
+                .Replace("{{CommitsLabel}}", cardTranslations.CommitsLabel)
+                .Replace("{{ContributionsLabel}}", cardTranslations.ContributionsLabel);
+
+
 
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
