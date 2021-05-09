@@ -10,12 +10,13 @@ namespace Tests.UnitTests
     public class RankServiceTests
     {
         private RankService _rankService;
+        private Mock<IOptions<RankPoints>> _rankPoints;
 
         public RankServiceTests()
         {
-            var rankPoints = new Mock<IOptions<RankPoints>>();
+            _rankPoints = new Mock<IOptions<RankPoints>>();
             var rankDegree = new Mock<IOptions<RankDegree>>();
-            rankPoints.Setup(s => s.Value).Returns(new RankPoints());
+            _rankPoints.Setup(s => s.Value).Returns(new RankPoints());
             rankDegree.Setup(s => s.Value).Returns(new RankDegree()
                 {
                     {"S+", 99},
@@ -56,6 +57,7 @@ namespace Tests.UnitTests
         [Fact]
         public void Should_Calculate_Rank_SPlus()
         {
+            _rankPoints.Setup(s => s.Value).Returns(new RankPoints());
             var rank = _rankService.CalculateRank(new UserStats()
             {
                 Login = "sindresorhus",
