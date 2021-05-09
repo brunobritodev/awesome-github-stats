@@ -16,6 +16,7 @@ namespace AwesomeGithubStats.Core.Services
         private readonly ICacheService _cacheService;
         private readonly RankDegree _degree;
         private string SvgFolder { get; set; }
+        private string TranslationFolder { get; set; }
 
         public SvgService(
             IWebHostEnvironment environment,
@@ -26,6 +27,7 @@ namespace AwesomeGithubStats.Core.Services
             _contentRoot = environment.ContentRootPath;
             _cacheService = cacheService;
             SvgFolder = Path.Combine(_contentRoot, @"\svgs");
+            TranslationFolder = Path.Combine(_contentRoot, @"\translations");
         }
 
 
@@ -42,18 +44,18 @@ namespace AwesomeGithubStats.Core.Services
 
         private async Task<CardTranslations> GetTranslationsFile(string language)
         {
-            var file = Path.Combine(_contentRoot, @"translations\", $"{language.ToLower()}.json");
+            var file = Path.Combine(TranslationFolder, $"{language.ToLower()}.json");
             if (!File.Exists(file))
-                file = Path.Combine(_contentRoot, @"translations\", "en.json"); ;
+                file = Path.Combine(TranslationFolder, "en.json"); ;
 
-            var translations = _cacheService.Get<CardTranslations>($"FILE:TRANSLATIONS:{language}");
+            var translations = _cacheService.Get<CardTranslations>(CacheKeys.TranslationKey(language));
             if (translations != null)
                 return translations;
 
             var jsonContent = await File.ReadAllTextAsync(file);
             translations = JsonSerializer.Deserialize<CardTranslations>(jsonContent);
 
-            _cacheService.Set($"FILE:TRANSLATIONS:{language}", translations, TimeSpan.FromDays(30));
+            _cacheService.Set(CacheKeys.TranslationKey(language), translations, TimeSpan.FromDays(30));
 
             return translations;
         }
@@ -65,7 +67,7 @@ namespace AwesomeGithubStats.Core.Services
 
             svgContent = await File.ReadAllTextAsync(Path.Combine(SvgFolder, "user-stats.svg"));
 
-            _cacheService.Set($"FILE:SVG:{file}", svgContent, TimeSpan.FromDays(30));
+            _cacheService.Set(CacheKeys.SvgKey(file), svgContent, TimeSpan.FromDays(30));
 
             return svgContent;
         }
