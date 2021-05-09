@@ -5,7 +5,7 @@ namespace AwesomeGithubStats.Core.Models
 {
     public class RankDegree : Dictionary<string, int>
     {
-        public double MaxPoints { get; set; } = 20000;
+        public double MaxPoints { get; set; } = 7000;
 
         public KeyValuePair<string, int> InRange(double value)
         {
