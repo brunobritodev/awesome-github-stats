@@ -20,9 +20,9 @@ namespace AwesomeGithubStats.Core.Util
             _logger = logger;
         }
 
-        public void Set<T>(string key, T value, DateTimeOffset? ttl = null)
+        public void Set<T>(string key, T value, TimeSpan? ttl = null)
         {
-            _memoryCache.Set(key, value, DefaultOptions);
+            _memoryCache.Set(key, value, ttl ?? TimeSpan.FromHours(1));
         }
 
         public T Get<T>(string key) where T : class
