@@ -1,13 +1,13 @@
-﻿using AwesomeGithubStats.Core.Interfaces;
+﻿using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.IO;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AwesomeGithubStats.Controllers
+namespace AwesomeGithubStats.Api.Controllers
 {
     [ApiController]
     [Route("user-stats")]

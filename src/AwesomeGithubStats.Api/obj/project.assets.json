@@ -4059,11 +4059,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workspace\\awesome-github-stats\\src\\awesome-github-stats\\AwesomeGithubStats.Api.csproj",
+      "projectUniqueName": "D:\\workspace\\awesome-github-stats\\src\\AwesomeGithubStats.Api\\AwesomeGithubStats.Api.csproj",
       "projectName": "AwesomeGithubStats.Api",
-      "projectPath": "D:\\workspace\\awesome-github-stats\\src\\awesome-github-stats\\AwesomeGithubStats.Api.csproj",
+      "projectPath": "D:\\workspace\\awesome-github-stats\\src\\AwesomeGithubStats.Api\\AwesomeGithubStats.Api.csproj",
       "packagesPath": "C:\\Users\\Bruno Brito\\.nuget\\packages\\",
-      "outputPath": "D:\\workspace\\awesome-github-stats\\src\\awesome-github-stats\\obj\\",
+      "outputPath": "D:\\workspace\\awesome-github-stats\\src\\AwesomeGithubStats.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

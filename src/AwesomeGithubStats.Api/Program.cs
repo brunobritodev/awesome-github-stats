@@ -1,10 +1,10 @@
+using System;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
-using System;
 
-namespace AwesomeGithubStats
+namespace AwesomeGithubStats.Api
 {
     public class Program
     {
