@@ -8,6 +8,11 @@ namespace AwesomeGithubStats.Core.Models.Svgs
 {
     public class UserStatsCard
     {
+        private const string CircleProgressBar = @"
+<circle class=""rank-circle-rim"" cx=""-10"" cy=""8"" r=""50""/>
+<circle class=""rank-circle"" cx=""-10"" cy=""8"" r=""50"" />
+";
+
         public string File { get; }
         public RankDegree RankDegree { get; }
 
@@ -46,7 +51,7 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 ProgressBar = 0;
         }
 
-        public bool ShowCircleProgressBar { get; set; }
+        public bool ShowCircleProgressBar { get; set; } = true;
         public double ProgressBar { get; set; }
 
         public Stream Svg(UserRank rank, CardStyles cardStyles, CardTranslations cardTranslations)
@@ -75,6 +80,9 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 .Replace("{{BackgroundColor}}", cardStyles.BackgroundColor)
                 .Replace("{{BorderColor}}", cardStyles.BorderColor)
                 .Replace("{{ShowIcons}}", cardStyles.ShowIcons ? "block" : "none");
+
+            if (ShowCircleProgressBar)
+                svgFinal = svgFinal.Replace("{{ProgressBar}}", CircleProgressBar);
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
         }
