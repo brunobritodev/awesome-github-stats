@@ -1,39 +1,37 @@
-﻿using AwesomeGithubStats.Core.Models;
+﻿using Humanizer;
 using System;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using AwesomeGithubStats.Core.Models.Svgs;
 
-namespace AwesomeGithubStats.Models
+namespace AwesomeGithubStats.Core.Models.Svgs
 {
     public class UserStatsSvg
     {
-        private readonly string _file;
-        private readonly RankDegree _rankDegree;
+        public string File { get; }
+        public RankDegree RankDegree { get; }
 
         public UserStatsSvg(string file, RankDegree rankDegree)
         {
-            _file = Path.Combine(file, @"svgs\", "user-stats.svg");
-            _rankDegree = rankDegree;
+            File = file;
+            RankDegree = rankDegree;
         }
 
         private void CalculateProgressBar(UserRank rank)
         {
 
-            var slices = _rankDegree.Count;
-            var slicesToTheEnd = _rankDegree.Count(c => c.Value > rank.Score);
+            var slices = RankDegree.Count;
+            var slicesToTheEnd = RankDegree.Count(c => c.Value > rank.Score);
             var sliceMinSize = (100.0 / slices) * (slices - slicesToTheEnd);
-            var nextRank = _rankDegree.OrderBy(o => o.Value).FirstOrDefault(f => f.Value > rank.Score);
+            var nextRank = RankDegree.OrderBy(o => o.Value).FirstOrDefault(f => f.Value > rank.Score);
             if (nextRank.Key == null)
             {
                 ProgressBar = 100;
                 return;
 
             }
-            var rankSize = nextRank.Value - _rankDegree[rank.Level];
-            var pointsInActualRank = rank.Score - _rankDegree[rank.Level];
+            var rankSize = nextRank.Value - RankDegree[rank.Level];
+            var pointsInActualRank = rank.Score - RankDegree[rank.Level];
 
             var percentualInActualRank = pointsInActualRank / rankSize;
             var sliceSize = 100.0 / slices;
@@ -44,11 +42,10 @@ namespace AwesomeGithubStats.Models
 
         public double ProgressBar { get; set; }
 
-        public async Task<Stream> Svg(UserRank rank, Styles styles)
+        public Stream Svg(UserRank rank, Styles styles)
         {
             CalculateProgressBar(rank);
-            var fs = await File.ReadAllTextAsync(_file);
-            var svgFinal = fs
+            var svgFinal = File
                 .Replace("{{Name}}", rank.UserStats.Name.Truncate(30))
                 .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
                 .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(ProgressBar):F}")

@@ -34,6 +34,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IGithubService, GithubService>();
             services.AddScoped<IGithubUserStore, GithubUserStore>();
             services.AddScoped<IRankService, RankService>();
+            services.AddScoped<ISvgService, SvgService>();
             services.AddScoped<ICacheService, MemoryCacheService>();
 
             services.AddHttpClient("github", c =>

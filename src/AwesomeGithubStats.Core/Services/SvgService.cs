@@ -24,9 +24,9 @@ namespace AwesomeGithubStats.Core.Services
         public async Task<Stream> GetUserStatsImage(UserRank rank)
         {
             var file = await GetFile("user-stats.svg");
-            var svg = new UserStatsSvg(_contentRoot, _degree);
+            var svg = new UserStatsSvg(file, _degree);
 
-            var content = await svg.Svg(rank, new Styles());
+            return svg.Svg(rank, new Styles());
         }
 
         private async Task<string> GetFile(string file)
