@@ -8,6 +8,8 @@ on:
 jobs:
   deploy-azure:
     runs-on: ubuntu-latest
+    env:
+      PAT__0: ${{ secrets.GITHUB_TOKEN }}
     defaults:
       run:
         working-directory: src
@@ -32,7 +34,7 @@ jobs:
         run: dotnet test --no-build --verbosity normal
 
       - name: dotnet publish
-        run: dotnet publish -e "PATS__0=${{ secrets.GITHUB_TOKEN }}" --no-build ./AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj -c Release -o ./out/ags
+        run: dotnet publish ./AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj -c Release -o ./out/ags
 
       - name: Azure Login
         uses: azure/login@v1.1
