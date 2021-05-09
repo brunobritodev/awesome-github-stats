@@ -47,7 +47,7 @@ namespace AwesomeGithubStats.Models
             var svgFinal = fs
                 .Replace("{{Name}}", _rank.UserStats.Name)
                 .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
-                .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(0):F}")
+                .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(ProgressBar):F}")
                 .Replace("{{TextColor}}", styles.TextColor)
                 .Replace("{{TitleColor}}", styles.TitleColor)
                 .Replace("{{IconColor}}", styles.IconColor)
@@ -59,7 +59,7 @@ namespace AwesomeGithubStats.Models
 
         private double CalculateCircleProgress(double value)
         {
-            var radius = 40;
+            var radius = 50;
             var c = Math.PI * (radius * 2);
 
             if (value < 0) value = 0;
