@@ -29,7 +29,7 @@ namespace Tests.UnitTests
             var stats = await _githubService.GetUserStats("brunohbrito");
             stats.Name.Should().Be("Bruno Brito");
             stats.Commits.Should().Be(1457);
-            stats.ContributedTo.Should().Be(25);
+            stats.ContributedTo.Should().Be(26);
             stats.CreatedRepositories.Should().Be(10);
             stats.DirectStars.Should().Be(1136);
             stats.IndirectStars.Should().Be(603);
