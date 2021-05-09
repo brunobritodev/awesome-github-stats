@@ -27,7 +27,6 @@ namespace Microsoft.Extensions.DependencyInjection
                     }
             }
 
-            var secn = configuration.GetSection("RankPoints");
             services.Configure<RankPoints>(options => configuration.GetSection("RankPoints").Bind(options));
             services.Configure<RankDegree>(options => configuration.GetSection("RankDegree").Bind(options));
             services.AddScoped<IGithubService, GithubService>();
