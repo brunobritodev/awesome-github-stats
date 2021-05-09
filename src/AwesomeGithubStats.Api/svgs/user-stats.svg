@@ -2,7 +2,7 @@
   <style>
     .header {
       font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
-      fill: #2f80ed;
+      fill: #{{TitleColor}};
       animation: fadeInAnimation 0.8s ease-in-out forwards;
     }
 
