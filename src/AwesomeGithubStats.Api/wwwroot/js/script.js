@@ -35,7 +35,7 @@ let preview = {
         const imageURL = `${window.location.origin}?${query}`;
         const user = document.getElementById("user").text;
         const demoImageURL = `user-stats/${user}?${query}`;
-        const repoLink = "https://git.io/streak-stats";
+        const repoLink = "https://github.com/brunohbrito/awesome-github-stats";
         const md = `[![GitHub Streak](${imageURL})](${repoLink})`;
         // update image preview
         document.querySelector(".output img").src = demoImageURL;
