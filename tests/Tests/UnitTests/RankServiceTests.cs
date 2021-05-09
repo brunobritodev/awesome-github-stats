@@ -28,7 +28,7 @@ namespace Tests.UnitTests
                 }
             );
 
-            _rankService = new RankService(rankPoints.Object, rankDegree.Object);
+            _rankService = new RankService(_rankPoints.Object, rankDegree.Object);
         }
 
         [Fact]
@@ -57,7 +57,23 @@ namespace Tests.UnitTests
         [Fact]
         public void Should_Calculate_Rank_SPlus()
         {
-            _rankPoints.Setup(s => s.Value).Returns(new RankPoints());
+            _rankPoints.Setup(s => s.Value).Returns(new RankPoints()
+            {
+                Commits = 1,
+                ContributedToNotOwnerRepositories = 10,
+                ContributedToOwnRepositories = 1,
+                CreatedRepositories = 1,
+                DirectStars = 3.5,
+                Followers = 1,
+                IndirectStars = 1,
+                Issues = 1,
+                PullRequests = 1,
+                PullRequestsToAnotherRepositories = 5,
+                CommitsToMyRepositories = 1,
+                CommitsToAnotherRepositories = 10,
+                ContributedTo = 1,
+            });
+
             var rank = _rankService.CalculateRank(new UserStats()
             {
                 Login = "sindresorhus",
