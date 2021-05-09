@@ -10,15 +10,21 @@ namespace AwesomeGithubStats.Core.Services
     public class GithubService : IGithubService
     {
         private readonly IGithubUserStore _githubUserStore;
+        private readonly ICacheService _memoryCache;
 
-        public GithubService(IGithubUserStore githubUserStore)
+        public GithubService(IGithubUserStore githubUserStore, ICacheService memoryCache)
         {
             _githubUserStore = githubUserStore;
+            _memoryCache = memoryCache;
         }
 
         public async Task<UserStats> GetUserStats(string username)
         {
-            var user = await _githubUserStore.GetUserInformation(username);
+            var stats = _memoryCache.Get<UserData>(username);
+            if (stats != null)
+                return stats
+
+                var user = await _githubUserStore.GetUserInformation(username);
             if (user == null)
                 return new UserStats();
             var tasks = new List<Task<ContributionsCollection>>();
