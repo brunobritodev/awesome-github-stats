@@ -32,7 +32,7 @@ let preview = {
             .map((key) => encode(key) + "=" + encode(params[key]))
             .join("&");
         // generate links and markdown
-        let user = document.getElementById("user").text;
+        let user = document.getElementById("user").value;
         user = user == null ? "brunohbrito" : user;
         const imageURL = `${window.location.origin}/user-stats/${user}?${query}`;
         const demoImageURL = `user-stats/${user}?${query}`;
