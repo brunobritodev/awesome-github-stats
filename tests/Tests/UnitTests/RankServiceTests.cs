@@ -78,14 +78,12 @@ namespace Tests.UnitTests
                 ContributedToNotOwnerRepositories = 13,
                 ContributedToOwnRepositories = 36,
                 CreatedRepositories = 53,
-                DirectStars = 424912,
-                Followers = 42719,
-                IndirectStars = 0,
-                Issues = 4146,
-                Login = "sindresorhus",
-                Name = "Sindre Sorhus",
-                PullRequests = 1400,
-                PullRequestsToAnotherRepositories = 849,
+                DirectStars = 1366,
+                Followers = 375,
+                IndirectStars = 48472,
+                Issues = 57,
+                PullRequests = 210,
+                PullRequestsToAnotherRepositories = 20,
 
             });
             rank.Level.Should().Be("S+");
