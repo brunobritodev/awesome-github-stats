@@ -43,6 +43,7 @@ namespace AwesomeGithubStats.Core.Services
 
             var translations = await GetTranslations(options.Locale ?? "en");
             var styles = await GetStyle(options.Theme ?? "default");
+            styles.Apply(options);
 
             return svg.Svg(rank, styles, translations);
         }

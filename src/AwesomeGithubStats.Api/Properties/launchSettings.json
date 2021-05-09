@@ -11,7 +11,7 @@
     "awesome_github_stats": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "user-stats/brunohbrito",
+      "launchUrl": "index.html",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
