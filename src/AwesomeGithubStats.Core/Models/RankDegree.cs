@@ -6,5 +6,9 @@ namespace AwesomeGithubStats.Core.Models
     {
         public double MaxPoints { get; set; } = 20000;
 
+        public bool InRange(double value)
+        {
+
+        }
     }
 }
