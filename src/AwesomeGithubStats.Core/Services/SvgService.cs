@@ -57,14 +57,14 @@ namespace AwesomeGithubStats.Core.Services
 
             var styles = _cacheService.Get<IEnumerable<CardStyles>>(CacheKeys.StyleKey);
             if (styles != null)
-                return styles.Theme(theme);
+                return styles.Theme(theme) with { };
 
             var jsonContent = await File.ReadAllTextAsync(ThemeFile);
             styles = JsonSerializer.Deserialize<IEnumerable<CardStyles>>(jsonContent);
 
             _cacheService.Set(CacheKeys.StyleKey, styles, TimeSpan.FromDays(30));
 
-            return styles.Theme(theme);
+            return styles.Theme(theme) with { };
         }
         private async Task<CardTranslations> GetTranslations(string language)
         {
