@@ -9,7 +9,6 @@ namespace AwesomeGithubStats.Core.Models
 
         public KeyValuePair<string, int> InRange(double value)
         {
-
             foreach (var range in this.OrderByDescending(o => o.Value))
             {
                 if (value >= range.Value)
