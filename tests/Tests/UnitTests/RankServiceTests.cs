@@ -60,7 +60,7 @@ namespace Tests.UnitTests
                 Issues = 0,
                 PullRequests = 0,
                 PullRequestsToAnotherRepositories = 0,
-                CommitsToAnotherRepositories = 0
+                CommitsToAnotherRepositories = 0,
                 // Total: 1844.15
             });
             rank.Level.Should().Be("💪");

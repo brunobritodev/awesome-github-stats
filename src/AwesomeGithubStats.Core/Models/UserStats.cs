@@ -18,12 +18,13 @@ namespace AwesomeGithubStats.Core.Models
                     uniqueRepos.Add(repository);
             }
 
+            Name = user.Name;
+            Login = user.Login;
+
             // Remove from uniqueRepo the user repos
             MyContributionsToAnotherRepositories = uniqueRepos.Where(othersRepo => !othersRepo.Repository.NameWithOwner.Contains(user.Login)).ToList();
             MyContributions = uniqueRepos.Where(s => s.Repository.NameWithOwner.Contains(user.Login)).ToList();
 
-            Name = user.Name;
-            Login = user.Login;
 
             Commits = result.Sum(s => s.TotalCommitContributions + s.RestrictedContributionsCount);
 
