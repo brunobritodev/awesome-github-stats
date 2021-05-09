@@ -20,8 +20,7 @@ namespace AwesomeGithubStats.Models
             var inMemoryCopy = new MemoryStream();
             var fs = await File.ReadAllTextAsync(_file);
 
-            fs.Replace("{{Name}}", _rank.UserStats.Name);
-            return fs;
+            return fs.Replace("{{Name}}", _rank.UserStats.Name);
         }
     }
 }
