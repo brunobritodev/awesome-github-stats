@@ -60,7 +60,8 @@ namespace Tests.UnitTests
                 Issues = 0,
                 PullRequests = 0,
                 PullRequestsToAnotherRepositories = 0,
-                // Total: 1836.95
+                CommitsToAnotherRepositories = 0
+                // Total: 1844.15
             });
             rank.Level.Should().Be("💪");
             rank.Score.Should().Be(100);
@@ -106,7 +107,7 @@ namespace Tests.UnitTests
                 Issues = 57,
                 PullRequests = 210,
                 PullRequestsToAnotherRepositories = 20,
-
+                CommitsToAnotherRepositories = 51
             });
             rank.Level.Should().Be("S+");
             rank.Score.Should().Be(100);
