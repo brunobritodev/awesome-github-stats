@@ -1,5 +1,6 @@
 ﻿using AwesomeGithubStats.Core.Models;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,10 +24,8 @@ namespace AwesomeGithubStats.Models
         private void CalculateProgressBar()
         {
             var slices = _rankDegree.Count;
-            foreach (var degre in _rankDegree)
-            {
-
-            }
+            var slicesToTheEnd = _rankDegree.Count(c => c.Value > _rank.Score);
+            var sliceMinSize = (100.0 / slices) * (slices - slicesToTheEnd);
         }
 
         public async Task<Stream> Svg()
