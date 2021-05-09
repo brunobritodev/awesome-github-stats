@@ -8,7 +8,7 @@
         public double CreatedRepositories { get; set; } = 1;
         public double DirectStars { get; set; } = 3.5;
         public double Followers { get; set; } = 1;
-        public double IndirectStars { get; set; } = 1;
+        public double IndirectStars { get; set; } = 0.5;
         public double Issues { get; set; } = 1;
         public double PullRequests { get; set; } = 1;
         public double PullRequestsToAnotherRepositories { get; set; } = 5;
