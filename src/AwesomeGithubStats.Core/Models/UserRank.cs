@@ -24,7 +24,7 @@
 
             var degree = _rankDegree.InRange(weightedScore);
             Score = weightedScore;
-            Level = degree.Key;
+            Level = degree.Rank;
         }
 
         public string Level { get; set; }

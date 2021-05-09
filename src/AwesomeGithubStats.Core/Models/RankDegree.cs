@@ -3,19 +3,19 @@ using System.Linq;
 
 namespace AwesomeGithubStats.Core.Models
 {
-    public class RankDegree : Dictionary<string, int>
+    public class RankDegree : List<Degree>
     {
 
 
-        public KeyValuePair<string, int> InRange(double value)
+        public Degree InRange(double value)
         {
-            foreach (var range in this.OrderByDescending(o => o.Value))
+            foreach (var range in this.OrderByDescending(o => o.Points))
             {
-                if (value >= range.Value)
+                if (value >= range.Points)
                     return range;
             }
 
-            return this.OrderByDescending(o => o.Value).Last();
+            return this.OrderByDescending(o => o.Points).Last();
         }
     }
 
@@ -23,6 +23,9 @@ namespace AwesomeGithubStats.Core.Models
     {
         public string Rank { get; set; }
         public int Points { get; set; }
+        /// <summary>
+        /// If false it doesn't affect the progress bar
+        /// </summary>
         public bool CountSliceProgressBar { get; set; }
     }
 }
