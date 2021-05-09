@@ -2,15 +2,15 @@
 {
     public class RankPoints
     {
-        public double PullRequests { get; set; }
-        public double Commits { get; set; }
-        public double PullRequestsToAnotherRepositories { get; set; }
-        public double Issues { get; set; }
-        public double CreatedRepositories { get; set; }
-        public double DirectStars { get; set; }
-        public double IndirectStars { get; set; }
-        public double ContributedTo { get; set; }
-        public double ContributedToOwnRepositories { get; set; }
+        public double PullRequests { get; set; } = 0.2;
+        public double Commits { get; set; } = 1;
+        public double PullRequestsToAnotherRepositories { get; set; } = 2;
+        public double Issues { get; set; } = 1;
+        public double CreatedRepositories { get; set; } = 0.5;
+        public double DirectStars { get; set; } = 1.0;
+        public double IndirectStars { get; set; } = 0.55;
+        public double ContributedTo { get; set; } = 0.5;
+        public double ContributedToOwnRepositories { get; set; } = 0.2;
         public double ContributedToNotOwnerRepositories { get; set; }
         public double Followers { get; set; }
 
