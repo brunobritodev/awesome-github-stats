@@ -15,20 +15,7 @@ namespace Tests.UnitTests
         {
             var rankPoints = new Mock<IOptions<RankPoints>>();
             var rankDegree = new Mock<IOptions<RankDegree>>();
-            rankPoints.Setup(s => s.Value).Returns(new RankPoints()
-            {
-                Commits = 1,
-                ContributedToNotOwnerRepositories = 2.3,
-                ContributedToOwnRepositories = 0.5,
-                CreatedRepositories = 0.3,
-                DirectStars = 1.0,
-                Followers = 0.45,
-                IndirectStars = 0.55,
-                Issues = 1,
-                PullRequests = 0.2,
-                PullRequestsToAnotherRepositories = 2,
-                ContributedTo = 0.3
-            });
+            rankPoints.Setup(s => s.Value).Returns(new RankPoints());
             rankDegree.Setup(s => s.Value).Returns(new RankDegree()
                 {
                     {"S+", 99},
