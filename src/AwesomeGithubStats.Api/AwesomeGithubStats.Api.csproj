@@ -16,4 +16,13 @@
     <ProjectReference Include="..\AwesomeGithubStats.Core\AwesomeGithubStats.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="svgs\circle.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="svgs\user-stats.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
