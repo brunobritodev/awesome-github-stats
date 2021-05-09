@@ -51,7 +51,8 @@ namespace AwesomeGithubStats.Models
                 .Replace("{{TitleColor}}", styles.TitleColor)
                 .Replace("{{IconColor}}", styles.IconColor)
                 .Replace("{{ShowIcons}}", styles.ShowIcons ? "block" : "none")
-                .Replace("{{Stars}}", rank.UserStats.TotalStars());
+                .Replace("{{Stars}}", rank.UserStats.TotalStars())
+                .Replace("{{Commits}}", rank.UserStats.TotalStars());
 
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));

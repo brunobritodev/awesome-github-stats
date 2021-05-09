@@ -149,5 +149,10 @@ namespace AwesomeGithubStats.Core.Models
             }
             return num.ToString("#,0");
         }
+
+        public string TotalCommits()
+        {
+            return FormatNumber(Commits);
+        }
     }
 }
