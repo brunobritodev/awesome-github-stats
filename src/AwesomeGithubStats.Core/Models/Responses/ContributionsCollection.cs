@@ -11,7 +11,7 @@ namespace AwesomeGithubStats.Core.Models.Responses
         public int TotalCommitContributions { get; set; }
         public int TotalRepositoryContributions { get; set; }
         public int RestrictedContributionsCount { get; set; }
-        public IEnumerable<PullRequestContributionsByRepository> PullRequestContributionsByRepository { get; set; }
-        public IEnumerable<CommitcontributionsByRepository> CommitContributionsByRepository { get; set; }
+        public IEnumerable<RepositoryContribution> PullRequestContributionsByRepository { get; set; }
+        public IEnumerable<RepositoryContribution> CommitContributionsByRepository { get; set; }
     }
 }
