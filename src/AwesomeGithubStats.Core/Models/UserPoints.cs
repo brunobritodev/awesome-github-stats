@@ -21,6 +21,8 @@
             return PullRequests +
                    CommitsToMyRepositories +
                    PullRequestsToAnotherRepositories +
+                   CommitsToAnotherRepositories +
+                   Commits +
                    Issues +
                    CreatedRepositories +
                    DirectStars +
