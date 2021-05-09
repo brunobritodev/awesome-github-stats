@@ -112,7 +112,8 @@ namespace Tests.UnitTests
                 Issues = 57,
                 PullRequests = 210,
                 PullRequestsToAnotherRepositories = 20,
-                CommitsToAnotherRepositories = 51
+                CommitsToAnotherRepositories = 51,
+                CommitsToMyRepositories = 365
             });
             rank.Level.Should().Be("S");
             rank.Score.Should().BeGreaterOrEqualTo(58937);
@@ -124,7 +125,7 @@ namespace Tests.UnitTests
         {
             var rank = _rankService.CalculateRank(new UserStats()
             {
-                Commits = 4674,
+                Commits = 2262,
                 ContributedTo = 49,
                 ContributedToNotOwnerRepositories = 13,
                 ContributedToOwnRepositories = 36,
@@ -135,7 +136,9 @@ namespace Tests.UnitTests
                 Issues = 57,
                 PullRequests = 210,
                 PullRequestsToAnotherRepositories = 20,
-                CommitsToAnotherRepositories = 51
+                CommitsToAnotherRepositories = 1181,
+                CommitsToMyRepositories = 1081,
+
             });
             rank.Level.Should().Be("S");
             rank.Score.Should().BeGreaterOrEqualTo(58937);
