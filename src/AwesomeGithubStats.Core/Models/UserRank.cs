@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace AwesomeGithubStats.Core.Models
 {
@@ -20,18 +19,11 @@ namespace AwesomeGithubStats.Core.Models
         private void CalculateRank()
         {
             var totalPoints = RankPoints.Total();
-            var totalDegree = _rankDegree.Total();
-            var userScore = UserStats.GetScore(RankPoints) / 100;
-            var cdf = 100 - (Normalcdf(userScore, totalDegree, totalPoints) * 100);
-            foreach (var degree in _rankDegree.OrderByDescending(b => b.Value))
-            {
-                if (cdf >= degree.Value)
-                {
-                    Score = cdf;
-                    Level = degree.Key;
-                    break;
-                }
-            }
+            var userScore = UserStats.GetScore(RankPoints) / totalPoints;
+
+            var degree = _rankDegree.InRange(userScore);
+            Score = userScore;
+            Level = degree.Key;
         }
 
         public string Level { get; set; }

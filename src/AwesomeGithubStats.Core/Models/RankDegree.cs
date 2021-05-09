@@ -9,12 +9,15 @@ namespace AwesomeGithubStats.Core.Models
 
         public KeyValuePair<string, int> InRange(double value)
         {
+
             foreach (var range in this.OrderByDescending(o => o.Value))
             {
                 var percent = range.Value * MaxPoints / 100;
                 if (value >= percent)
                     return range;
             }
+
+            return this.OrderByDescending(o => o.Value).Last();
         }
     }
 }
