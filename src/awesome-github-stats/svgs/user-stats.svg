@@ -82,7 +82,7 @@
 
   <g data-testid="card-title" transform="translate(25, 35)">
     <g transform="translate(0, 0)">
-      <text x="0" y="0" class="header" data-testid="header">dogpro's GitHub Stats</text>
+      <text x="0" y="0" class="header" data-testid="header">{{Name}} GitHub Stats</text>
     </g>
   </g>
 
@@ -94,7 +94,7 @@
       <circle class="rank-circle" cx="-10" cy="8" r="40"/>
       <g class="rank-text">
         <text x="0" y="0" alignment-baseline="central" dominant-baseline="central" text-anchor="middle">
-          A+
+          S++++
         </text>
       </g>
     </g>
