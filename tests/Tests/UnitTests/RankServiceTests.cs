@@ -138,7 +138,7 @@ namespace Tests.UnitTests
                 PullRequestsToAnotherRepositories = 10,
             });
             rank.Level.Should().Be("A+");
-            rank.Score.Should().BeGreaterOrEqualTo(58937);
+            rank.Score.Should().BeGreaterOrEqualTo(29997);
         }
     }
 }
