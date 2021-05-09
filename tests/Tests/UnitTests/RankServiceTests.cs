@@ -21,7 +21,7 @@ namespace Tests.UnitTests
                 {
                     {"S++", 300000},
                     {"S+", 63000},
-                    {"S", 28000},
+                    {"S", 32000},
                     {"A++", 21000},
                     {"A+", 14000},
                     {"A", 7000},
@@ -165,7 +165,7 @@ namespace Tests.UnitTests
                 PullRequests = 19,
                 PullRequestsToAnotherRepositories = 10,
             });
-            rank.Level.Should().Be("A+");
+            rank.Level.Should().Be("A++");
             rank.Score.Should().BeGreaterOrEqualTo(29997);
         }
     }
