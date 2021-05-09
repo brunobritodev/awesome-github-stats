@@ -48,10 +48,10 @@ namespace AwesomeGithubStats.Models
                 .Replace("{{Name}}", _rank.UserStats.Name)
                 .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
                 .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(0):F}")
-                .Replace("{{TextColor}}", _rank.UserStats.Name)
-                .Replace("{{TitleColor}}", _rank.UserStats.Name)
-                .Replace("{{IconColor}}", _rank.UserStats.Name)
-                .Replace("{{Name}}", _rank.UserStats.Name);
+                .Replace("{{TextColor}}", styles.TextColor)
+                .Replace("{{TitleColor}}", styles.TitleColor)
+                .Replace("{{IconColor}}", styles.IconColor)
+                .Replace("{{ShowIcons}}", styles.ShowIcons ? "block" : "none");
 
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
