@@ -20,7 +20,6 @@ namespace AwesomeGithubStats.Core.Models
         {
             var weightedScore = UserStats.GetScore(RankPoints);
 
-            weightedScore *= 10.0;
             var degree = _rankDegree.InRange(weightedScore);
             Score = weightedScore;
             Level = degree.Key;
