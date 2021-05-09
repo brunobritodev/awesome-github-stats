@@ -1,5 +1,6 @@
 ﻿using AwesomeGithubStats.Core.Models;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AwesomeGithubStats.Models
@@ -20,7 +21,7 @@ namespace AwesomeGithubStats.Models
             var inMemoryCopy = new MemoryStream();
             var fs = await File.ReadAllTextAsync(_file);
 
-            return fs.Replace("{{Name}}", _rank.UserStats.Name);
+            return new MemoryStream(Encoding.UTF8.GetBytes(fs.Replace("{{Name}}", _rank.UserStats.Name)));
         }
     }
 }
