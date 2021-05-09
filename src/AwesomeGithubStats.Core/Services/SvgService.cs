@@ -27,7 +27,7 @@ namespace AwesomeGithubStats.Core.Services
             _contentRoot = environment.ContentRootPath;
             _cacheService = cacheService;
             SvgFolder = Path.Combine(_contentRoot, @"\svgs");
-            TranslationFolder = Path.Combine(_contentRoot, @"\translations");
+            TranslationFolder = Path.Combine(_contentRoot, @"\content", "translations.json");
         }
 
 
@@ -46,7 +46,7 @@ namespace AwesomeGithubStats.Core.Services
         {
             var file = Path.Combine(TranslationFolder, $"{language.ToLower()}.json");
             if (!File.Exists(file))
-                file = Path.Combine(TranslationFolder, "en.json"); ;
+                return new CardTranslations();
 
             var translations = _cacheService.Get<CardTranslations>(CacheKeys.TranslationKey(language));
             if (translations != null)

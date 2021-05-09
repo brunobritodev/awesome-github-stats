@@ -2,10 +2,10 @@
 {
     public class CardTranslations
     {
-        public string StarsLabel { get; set; }
-        public string PullRequestLabel { get; set; }
-        public string IssuesLabel { get; set; }
-        public string CommitsLabel { get; set; }
-        public string ContributionsLabel { get; set; }
+        public string StarsLabel { get; set; } = "Total Stars";
+        public string PullRequestLabel { get; set; } = "Total PRs";
+        public string IssuesLabel { get; set; } = "Issues Created";
+        public string CommitsLabel { get; set; } = "Commits made";
+        public string ContributionsLabel { get; set; } = "Contributed to";
     }
 }
