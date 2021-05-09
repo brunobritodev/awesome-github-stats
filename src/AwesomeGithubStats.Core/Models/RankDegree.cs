@@ -7,7 +7,7 @@ namespace AwesomeGithubStats.Core.Models
     {
         /// <summary>
         /// This score is based in user sindresorhus. An astonishing developer with many, many contributions.
-        /// His weighted score is 
+        /// His weighted score is 70.000.
         /// </summary>
         public double MaxPoints { get; set; } = 70000;
 
