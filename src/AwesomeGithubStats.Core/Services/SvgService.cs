@@ -51,17 +51,17 @@ namespace AwesomeGithubStats.Core.Services
 
         private async Task<CardStyles> GetStyle(string theme)
         {
-            if (!File.Exists(TranslationFile))
+            if (!File.Exists(ThemeFile))
                 return new CardStyles();
 
-            var styles = _cacheService.Get<IEnumerable<CardStyles>>(CacheKeys.TranslationKey);
+            var styles = _cacheService.Get<IEnumerable<CardStyles>>(CacheKeys.StyleKey);
             if (styles != null)
                 return styles.Theme(theme);
 
-            var jsonContent = await File.ReadAllTextAsync(TranslationFile);
+            var jsonContent = await File.ReadAllTextAsync(ThemeFile);
             styles = JsonSerializer.Deserialize<IEnumerable<CardStyles>>(jsonContent);
 
-            _cacheService.Set(CacheKeys.TranslationKey, styles, TimeSpan.FromDays(30));
+            _cacheService.Set(CacheKeys.StyleKey, styles, TimeSpan.FromDays(30));
 
             return styles.Theme(theme);
         }
