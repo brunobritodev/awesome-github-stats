@@ -32,7 +32,7 @@ namespace Tests.UnitTests
             stats.ContributedTo.Should().Be(26);
             stats.CreatedRepositories.Should().Be(10);
             stats.DirectStars.Should().Be(1136);
-            stats.IndirectStars.Should().Be(603);
+            stats.IndirectStars.Should().Be(5315);
             stats.Issues.Should().Be(45);
         }
     }

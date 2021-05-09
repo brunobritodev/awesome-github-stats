@@ -43,6 +43,27 @@ namespace Tests.UnitTests
 
             _rankService = new RankService(rankPoints.Object, rankDegree.Object);
         }
+        [Fact]
+        public void Should_Calculate_Rank_C()
+        {
+            var rank = _rankService.CalculateRank(new UserStats()
+            {
+                Commits = 187,
+                ContributedTo = 24,
+                ContributedToNotOwnerRepositories = 0,
+                ContributedToOwnRepositories = 24,
+                CreatedRepositories = 26,
+                DirectStars = 520, // 
+                Followers = 2467,
+                IndirectStars = 0,
+                Issues = 0,
+                PullRequests = 0,
+                PullRequestsToAnotherRepositories = 0,
+
+            });
+            rank.Level.Should().Be("💪");
+            rank.Score.Should().Be(100);
+        }
 
         [Fact]
         public void Should_Calculate_Rank_SPlus()
@@ -90,26 +111,5 @@ namespace Tests.UnitTests
             rank.Score.Should().Be(100);
         }
 
-        [Fact]
-        public void Should_Calculate_Rank_C()
-        {
-            var rank = _rankService.CalculateRank(new UserStats()
-            {
-                Commits = 187,
-                ContributedTo = 24,
-                ContributedToNotOwnerRepositories = 0,
-                ContributedToOwnRepositories = 24,
-                CreatedRepositories = 26,
-                DirectStars = 520,
-                Followers = 2467,
-                IndirectStars = 0,
-                Issues = 0,
-                PullRequests = 0,
-                PullRequestsToAnotherRepositories = 0,
-
-            });
-            rank.Level.Should().Be("💪");
-            rank.Score.Should().Be(100);
-        }
     }
 }
