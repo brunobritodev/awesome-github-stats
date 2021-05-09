@@ -18,7 +18,7 @@
 
         public double Total(string login)
         {
-            if (login.Equals("sindresorhus"))
+            if (!string.IsNullOrEmpty(login) && login.Equals("sindresorhus"))
             {
                 // Average weighted
                 return PullRequests +
