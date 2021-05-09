@@ -36,20 +36,19 @@ namespace Tests.UnitTests
         {
             var rank = _rankService.CalculateRank(new UserStats()
             {
-                Commits = 187, // 187
-                ContributedTo = 24, // 0
+                Commits = 187,
+                ContributedTo = 24,
                 ContributedToNotOwnerRepositories = 0,
-                ContributedToOwnRepositories = 24, // 12
-                CreatedRepositories = 26, // 7.8
-                DirectStars = 520, // 520
-                Followers = 2467, // 1,110.15
+                ContributedToOwnRepositories = 24,
+                CreatedRepositories = 26,
+                DirectStars = 520,
+                Followers = 2467,
                 IndirectStars = 0,
                 Issues = 0,
                 PullRequests = 0,
                 PullRequestsToAnotherRepositories = 0,
                 CommitsToAnotherRepositories = 5,
                 CommitsToMyRepositories = 182,
-                // Total: 1844.15
             });
             rank.Level.Should().Be("💪");
             rank.Score.Should().Be(100);
