@@ -1,11 +1,11 @@
-﻿using System.IO;
-using System.Text;
-using System.Threading.Tasks;
-using AwesomeGithubStats.Core.Interfaces;
+﻿using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AwesomeGithubStats.Api.Controllers
 {
@@ -43,6 +43,19 @@ namespace AwesomeGithubStats.Api.Controllers
             return File(content, "image/svg+xml; charset=utf-8");
         }
 
+        /// <summary>
+        /// Do not use this endpoint. It exists to prevent preview page bugs
+        /// </summary>
+        [HttpGet("{username}/preview")]
+        public async Task<IActionResult> Preview(string username, [FromQuery] UserStatsOptions options)
+        {
+            var userStats = await _githubService.GetUserStats(username);
+            var rank = _rankService.CalculateRank(userStats);
+            var content = await _svgService.GetUserStatsImage(rank, options);
+
+
+            return File(content, "image/svg+xml; charset=utf-8");
+        }
         [HttpGet("{username}/stats")]
         public async Task<IActionResult> GetStats(string username)
         {

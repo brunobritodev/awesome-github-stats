@@ -35,7 +35,7 @@ let preview = {
         let user = document.getElementById("user").value;
         user = user == null ? "brunohbrito" : user;
         const imageURL = `${window.location.origin}/user-stats/${user}?${query}`;
-        const demoImageURL = `user-stats/${user}?${query}`;
+        const demoImageURL = `user-stats/${user}/preview?${query}`;
         const repoLink = "https://github.com/brunohbrito/awesome-github-stats";
         const md = `[![My Awesome Stats](${imageURL})](${repoLink})`;
         // update image preview
