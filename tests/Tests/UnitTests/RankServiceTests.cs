@@ -119,7 +119,7 @@ namespace Tests.UnitTests
         }
 
         [Fact]
-        public void Should_Calculate_Rank_()
+        public void Should_Calculate_Rank_APlus()
         {
             var rank = _rankService.CalculateRank(new UserStats()
             {
@@ -137,7 +137,7 @@ namespace Tests.UnitTests
                 PullRequests = 19,
                 PullRequestsToAnotherRepositories = 10,
             });
-            rank.Level.Should().Be("S");
+            rank.Level.Should().Be("A+");
             rank.Score.Should().BeGreaterOrEqualTo(58937);
         }
     }
