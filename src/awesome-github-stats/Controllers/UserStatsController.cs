@@ -36,6 +36,7 @@ namespace AwesomeGithubStats.Controllers
         [HttpGet, ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
         public async Task<IActionResult> Get(string username)
         {
+            var svg = new UserStatsSvg(Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
             var rank = _rankService.CalculateRank(new UserStats()
             {
                 Login = "brunohbrito",
@@ -54,9 +55,9 @@ namespace AwesomeGithubStats.Controllers
                 CommitsToAnotherRepositories = 51,
                 CommitsToMyRepositories = 365
             });
+            var content = await svg.Svg(rank, new Styles());
 
-            var svg = new UserStatsSvg(rank, Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
-            return File(await svg.Svg(new Styles()), "image/svg+xml; charset=utf-8");
+            return File(content, "image/svg+xml; charset=utf-8");
         }
     }
 }

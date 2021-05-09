@@ -9,27 +9,25 @@ namespace AwesomeGithubStats.Models
 {
     public class UserStatsSvg
     {
-        private readonly UserRank _rank;
         private readonly string _file;
         private readonly RankDegree _rankDegree;
 
-        public UserStatsSvg(UserRank rank, string file, RankDegree rankDegree)
+        public UserStatsSvg(string file, RankDegree rankDegree)
         {
-            _rank = rank;
             _file = file;
             _rankDegree = rankDegree;
         }
 
-        private void CalculateProgressBar()
+        private void CalculateProgressBar(UserRank rank)
         {
 
             var slices = _rankDegree.Count;
-            var slicesToTheEnd = _rankDegree.Count(c => c.Value > _rank.Score);
+            var slicesToTheEnd = _rankDegree.Count(c => c.Value > rank.Score);
             var sliceMinSize = (100.0 / slices) * (slices - slicesToTheEnd);
-            var nextRank = _rankDegree.OrderBy(o => o.Value).First(f => f.Value > _rank.Score);
+            var nextRank = _rankDegree.OrderBy(o => o.Value).First(f => f.Value > rank.Score);
 
-            var rankSize = nextRank.Value - _rankDegree[_rank.Level];
-            var pointsInActualRank = _rank.Score - _rankDegree[_rank.Level];
+            var rankSize = nextRank.Value - _rankDegree[rank.Level];
+            var pointsInActualRank = rank.Score - _rankDegree[rank.Level];
 
             var percentualInActualRank = pointsInActualRank / rankSize;
             var sliceSize = 100.0 / slices;
@@ -40,12 +38,12 @@ namespace AwesomeGithubStats.Models
 
         public double ProgressBar { get; set; }
 
-        public async Task<Stream> Svg(Styles styles)
+        public async Task<Stream> Svg(UserRank rank, Styles styles)
         {
-            CalculateProgressBar();
+            CalculateProgressBar(rank);
             var fs = await File.ReadAllTextAsync(_file);
             var svgFinal = fs
-                .Replace("{{Name}}", _rank.UserStats.Name)
+                .Replace("{{Name}}", rank.UserStats.Name)
                 .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
                 .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(ProgressBar):F}")
                 .Replace("{{TextColor}}", styles.TextColor)
