@@ -32,9 +32,9 @@ let preview = {
             .map((key) => encode(key) + "=" + encode(params[key]))
             .join("&");
         // generate links and markdown
-        const imageURL = `${window.location.origin}?${query}`;
         let user = document.getElementById("user").text;
         user = user == null ? "brunohbrito" : user;
+        const imageURL = `${window.location.origin}/user-stats/${user}?${query}`;
         const demoImageURL = `user-stats/${user}?${query}`;
         const repoLink = "https://github.com/brunohbrito/awesome-github-stats";
         const md = `[![My Awesome Stats](${imageURL})](${repoLink})`;
