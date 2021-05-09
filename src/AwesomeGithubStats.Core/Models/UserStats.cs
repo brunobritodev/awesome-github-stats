@@ -19,7 +19,7 @@ namespace AwesomeGithubStats.Core.Models
             }
 
             // Remove from uniqueRepo the user repos
-            RepositoriesNotOwnedByMe = uniqueRepos.Where(othersRepo => !othersRepo.Repository.NameWithOwner.Contains(user.Login)).ToList();
+            MyContributionsToAnotherRepositories = uniqueRepos.Where(othersRepo => !othersRepo.Repository.NameWithOwner.Contains(user.Login)).ToList();
             MyContributions = uniqueRepos.Where(s => s.Repository.NameWithOwner.Contains(user.Login)).ToList();
 
             Name = user.Name;
@@ -35,12 +35,12 @@ namespace AwesomeGithubStats.Core.Models
 
             PullRequestsToAnotherRepositories = result.SelectMany(s => s.PullRequestContributionsByRepository).Where(w => !w.Repository.NameWithOwner.Contains(user.Login)).Sum(s => s.Contributions.TotalCount);
             CommitsToAnotherRepositories =
-            IndirectStars = RepositoriesNotOwnedByMe.Sum(s => s.Repository.StargazerCount);
+            IndirectStars = MyContributionsToAnotherRepositories.Sum(s => s.Repository.StargazerCount);
             Issues = user.Issues.TotalCount;
             CommitsToAnotherRepositories = Commits - CommitsToMyRepositories;
 
-            ContributedTo = MyContributions.Count() + RepositoriesNotOwnedByMe.Count();
-            ContributedToNotOwnerRepositories = RepositoriesNotOwnedByMe.Count();
+            ContributedTo = MyContributions.Count() + MyContributionsToAnotherRepositories.Count();
+            ContributedToNotOwnerRepositories = MyContributionsToAnotherRepositories.Count();
             ContributedToOwnRepositories = MyContributions.Count();
             Followers = user.Followers.TotalCount;
         }
@@ -68,7 +68,7 @@ namespace AwesomeGithubStats.Core.Models
         /// <summary>
         /// Repositories that user contributedFor but isn't owned by him/her
         /// </summary>
-        public IEnumerable<RepositoryContribution> RepositoriesNotOwnedByMe { get; set; }
+        public IEnumerable<RepositoryContribution> MyContributionsToAnotherRepositories { get; set; }
         /// <summary>
         /// How many pull requests was made
         /// </summary>
