@@ -1,6 +1,7 @@
 using AwesomeGithubStats.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
@@ -9,9 +10,11 @@ namespace AwesomeGithubStats
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
 
-        public Startup(IWebHostEnvironment environment)
+        public Startup(IWebHostEnvironment environment, IConfiguration configuration)
         {
+            _configuration = configuration;
             IsDevelopment = environment.IsDevelopment();
         }
 
@@ -37,6 +40,7 @@ namespace AwesomeGithubStats
                     .AddApiExplorer();
             }
 
+            services.ConfigureGithubServices(_configuration);
             services.AddHealthChecks();
 
         }
@@ -48,7 +52,7 @@ namespace AwesomeGithubStats
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TesteWebAPi_Remover v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Awesome Github Stats v1"));
             }
 
             app.UseRouting();
