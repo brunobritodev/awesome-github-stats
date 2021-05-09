@@ -32,7 +32,7 @@ jobs:
         run: dotnet test --no-build --verbosity normal
 
       - name: dotnet publish
-        run: dotnet publish --no-build ./AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj -c Release -o ./out/ags
+        run: dotnet publish -e "PATS__0=${{ secrets.GITHUB_TOKEN }}" --no-build ./AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj -c Release -o ./out/ags
 
       - name: Azure Login
         uses: azure/login@v1.1

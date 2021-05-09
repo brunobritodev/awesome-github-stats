@@ -12,7 +12,8 @@ namespace Tests.Configuration
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddUserSecrets<Warmup>();
+                .AddUserSecrets<Warmup>()
+                .AddEnvironmentVariables();
 
             var configuration = builder.Build();
             //Mock IHttpContextAccessor
