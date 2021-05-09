@@ -27,7 +27,7 @@ namespace Tests.UnitTests
                 Issues = 1,
                 PullRequests = 0.2,
                 PullRequestsToAnotherRepositories = 1.2,
-                ContributedTo = 1
+                ContributedTo = 0.3
             });
             rankDegree.Setup(s => s.Value).Returns(new RankDegree()
                 {
