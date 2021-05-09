@@ -141,7 +141,7 @@ namespace Tests.UnitTests
                 CommitsToMyRepositories = 1081,
 
             });
-            rank.Level.Should().Be("S");
+            rank.Level.Should().Be("S+");
             rank.Score.Should().BeGreaterOrEqualTo(58937);
         }
 
