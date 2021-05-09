@@ -25,7 +25,7 @@ namespace AwesomeGithubStats.Core.Store
                 TimeSpan.FromSeconds(1)
             }, (exception, timeSpan) =>
             {
-                Log.Error($"Erro ao buscar dados: {exception}");
+                Log.Error($"Error trying to get data: {exception}");
             });
         public GithubUserStore(IHttpClientFactory clientFactory)
         {
@@ -41,7 +41,7 @@ namespace AwesomeGithubStats.Core.Store
             };
             var response = await _policy.ExecuteAndCaptureAsync(() => _client.PostAsJsonAsync("graphql", request, GithubOptions.DefaultJson));
 
-            if (response.Outcome != OutcomeType.Successful) return null;
+            if (response.Outcome != OutcomeType.Successful || !response.Result.IsSuccessStatusCode) return null;
 
             var userInfo = await JsonSerializer.DeserializeAsync<DefaultResponse<UserData>>(await response.Result.Content.ReadAsStreamAsync(), GithubOptions.DefaultJson);
 
@@ -59,7 +59,7 @@ namespace AwesomeGithubStats.Core.Store
             };
             var response = await _policy.ExecuteAndCaptureAsync(() => _client.PostAsJsonAsync("graphql", request, GithubOptions.DefaultJson));
 
-            if (response.Outcome != OutcomeType.Successful) return null;
+            if (response.Outcome != OutcomeType.Successful || !response.Result.IsSuccessStatusCode) return null;
 
 
             var userInfo = await JsonSerializer.DeserializeAsync<DefaultResponse<UserData>>(await response.Result.Content.ReadAsStreamAsync(), GithubOptions.DefaultJson);

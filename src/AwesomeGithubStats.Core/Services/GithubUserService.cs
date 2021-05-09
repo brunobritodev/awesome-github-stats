@@ -18,12 +18,24 @@ namespace AwesomeGithubStats.Core.Services
             _memoryCache = memoryCache;
         }
 
+        /// <summary>
+        /// Get user stats. First try to get from cache, then go to Github
+        /// </summary>
         public async Task<UserStats> GetUserStats(string username)
         {
             var stats = _memoryCache.Get<UserStats>(username);
             if (stats != null)
                 return stats;
 
+            stats = await GetStatsFromGithub(username);
+
+            _memoryCache.Set(username, stats);
+
+            return stats;
+        }
+
+        private async Task<UserStats> GetStatsFromGithub(string username)
+        {
             var user = await _githubUserStore.GetUserInformation(username);
             if (user == null)
                 return new UserStats();
@@ -35,11 +47,8 @@ namespace AwesomeGithubStats.Core.Services
             }
 
             var result = await Task.WhenAll(tasks).ConfigureAwait(false);
-            var userStats = new UserStats(result.Where(w => w != null).ToList(), user);
+            return new UserStats(result.Where(w => w != null).ToList(), user);
 
-            _memoryCache.Set(username, userStats);
-
-            return userStats;
         }
     }
 }
