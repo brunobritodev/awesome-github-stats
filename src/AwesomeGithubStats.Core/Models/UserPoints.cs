@@ -16,6 +16,7 @@
         public double ContributedToNotOwnerRepositories { get; set; } = 10;
         public double Followers { get; set; } = 1;
 
+        public double MaxPoints { get; set } = 20000;
         public double Total()
         {
             return PullRequests +
