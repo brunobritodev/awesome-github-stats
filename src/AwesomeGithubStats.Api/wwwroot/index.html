@@ -25,7 +25,7 @@
     <script type="text/javascript" src="./js/jscolor.min.js" defer></script>
 </head>
 
-<body <?php echo $_COOKIE["darkmode"] == "on" ? 'data-theme="dark"' : ""; ?>>
+<body>
     <h1>🔥 GitHub Readme Streak Stats</h1>
 
     <div class="github">
@@ -100,7 +100,7 @@
     </div>
 
     <a href="javascript:toggleTheme()" class="darkmode" title="toggle dark mode">
-        <i class="<?php echo $_COOKIE["darkmode"] == "on" ? 'gg-sun' : "gg-moon"; ?>"></i>
+        <i id="btnDarkMode" class="<?php echo $_COOKIE["darkmode"] == "on" ? 'gg-sun' : "gg-moon"; ?>"></i>
     </a>
 </body>
 
