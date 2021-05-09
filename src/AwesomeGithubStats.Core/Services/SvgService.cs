@@ -1,6 +1,7 @@
 ﻿using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
 using AwesomeGithubStats.Core.Models.Svgs;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Options;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,12 +13,12 @@ namespace AwesomeGithubStats.Core.Services
     {
         private readonly string _contentRoot;
         private readonly ICacheService _cacheService;
-        private RankDegree _degree;
+        private readonly RankDegree _degree;
 
-        public SvgService(string contentRoot, ICacheService cacheService, IOptions<RankDegree> rankDegree)
+        public SvgService(IWebHostEnvironment environment, ICacheService cacheService, IOptions<RankDegree> rankDegree)
         {
             _degree = rankDegree.Value;
-            _contentRoot = contentRoot;
+            _contentRoot = environment.ContentRootPath;
             _cacheService = cacheService;
         }
 

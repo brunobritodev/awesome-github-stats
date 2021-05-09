@@ -1,13 +1,11 @@
 ﻿using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
-using AwesomeGithubStats.Models;
+using AwesomeGithubStats.Core.Models.Svgs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using System.IO;
 using System.Threading.Tasks;
-using AwesomeGithubStats.Core.Models.Svgs;
 
 namespace AwesomeGithubStats.Controllers
 {
@@ -18,30 +16,29 @@ namespace AwesomeGithubStats.Controllers
         private readonly ILogger<UserStatsController> _logger;
         private readonly IGithubService _githubService;
         private readonly IRankService _rankService;
+        private readonly ISvgService _svgService;
         private readonly IWebHostEnvironment _environment;
-        private RankDegree _degree;
 
         public UserStatsController(ILogger<UserStatsController> logger,
             IGithubService githubService,
             IRankService rankService,
-            IWebHostEnvironment environment,
-            IOptions<RankDegree> rankDegree)
+            ISvgService svgService,
+            IWebHostEnvironment environment)
         {
-            _degree = rankDegree.Value;
             _logger = logger;
             _githubService = githubService;
             _rankService = rankService;
+            _svgService = svgService;
             _environment = environment;
         }
 
         [HttpGet("{username}"), ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
         public async Task<IActionResult> Get(string username)
         {
-            var svg = new UserStatsSvg(_environment.ContentRootPath, _degree);
             var userStats = await _githubService.GetUserStats(username);
-
             var rank = _rankService.CalculateRank(userStats);
-            var content = await svg.Svg(rank, new Styles());
+            var content = await _svgService.GetUserStatsImage(rank);
+
 
             return File(content, "image/svg+xml; charset=utf-8");
         }
@@ -67,7 +64,7 @@ namespace AwesomeGithubStats.Controllers
                 CommitsToAnotherRepositories = 51,
                 CommitsToMyRepositories = 365
             });
-            var content = await svg.Svg(rank, new Styles());
+            var content = await _svgService.GetUserStatsImage(rank);
 
             return File(content, "image/svg+xml; charset=utf-8");
         }
