@@ -38,7 +38,7 @@
     stroke-linecap: round;
     opacity: 0.8;
     transform-origin: -10px 8px;
-    transform: rotate(-90deg);
+    transform: rotate(-60deg);
     animation: rankAnimation 1s forwards ease-in-out;
     }
 
@@ -90,8 +90,8 @@
   <g data-testid="main-card-body" transform="translate(0, 55)">
 
     <g data-testid="rank-circle" transform="translate(350, 47.5)">
-      <circle class="rank-circle-rim" cx="-10" cy="8" r="40"/>
-      <circle class="rank-circle" cx="-10" cy="8" r="40" />
+      <circle class="rank-circle-rim" cx="-10" cy="8" r="50"/>
+      <circle class="rank-circle" cx="-10" cy="8" r="50" />
       <g class="rank-text">
         <text x="0" y="0" alignment-baseline="central" dominant-baseline="central" text-anchor="middle">
           S++!
