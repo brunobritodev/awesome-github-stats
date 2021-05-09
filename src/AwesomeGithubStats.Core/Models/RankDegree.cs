@@ -7,6 +7,7 @@ namespace AwesomeGithubStats.Core.Models
     {
         /// <summary>
         /// This score is based in user sindresorhus. An astonishing developer with many, many contributions.
+        /// His score is 70.000. But it's impossible to someone get 90% of that. So, I got 10% and everyone who is 90% of him will get S+
         /// </summary>
         public double MaxPoints { get; set; } = 7000;
 
