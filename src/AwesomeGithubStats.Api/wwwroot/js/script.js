@@ -38,6 +38,8 @@ let preview = {
         const demoImageURL = `user-stats/${user}/preview?${query}`;
         const repoLink = "https://github.com/brunohbrito/awesome-github-stats";
         const md = `[![My Awesome Stats](${imageURL})](${repoLink})`;
+        const rank = `${window.location.origin}/user-stats/${user}/rank`;
+        const stats = `${window.location.origin}/user-stats/${user}/stats`;
         // update image preview
         document.querySelector(".output img").src = demoImageURL;
         // update markdown
