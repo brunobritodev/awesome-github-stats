@@ -16,11 +16,11 @@ namespace AwesomeGithubStats.Models
 
         public Stream Svg()
         {
-            MemoryStream inMemoryCopy = new MemoryStream();
-            using FileStream fs = File.OpenRead(_file);
+            var inMemoryCopy = new MemoryStream();
+            using var fs = File.OpenRead(_file);
             fs.CopyTo(inMemoryCopy);
 
-            return fs;
+            return inMemoryCopy;
         }
     }
 }
