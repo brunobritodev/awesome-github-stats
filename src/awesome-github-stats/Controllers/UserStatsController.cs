@@ -47,7 +47,7 @@ namespace AwesomeGithubStats.Controllers
                 CommitsToMyRepositories = 365
             });
 
-            var svg = new UserStatsSvg(rank, Path.Combine(_environment.ContentRootPath, "/svgs/", "user-stats.svg"));
+            var svg = new UserStatsSvg(rank, Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"));
             return File(svg.Svg(), "image/svg+xml; charset=utf-8");
         }
     }

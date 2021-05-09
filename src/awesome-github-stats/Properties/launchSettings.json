@@ -11,7 +11,7 @@
     "awesome_github_stats": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "user-stats",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
