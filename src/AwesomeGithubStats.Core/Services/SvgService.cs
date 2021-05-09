@@ -37,12 +37,15 @@ namespace AwesomeGithubStats.Core.Services
 
         private async Task<string> GetTranslationsFile(string language)
         {
+            var file = Path.Combine(_contentRoot, @"translations\", $"{language.ToLower()}.json");
+            if (!File.Exists(file))
+                file = Path.Combine(_contentRoot, @"translations\", "en.json"); ;
+
             var svgContent = _cacheService.Get<string>($"FILE:TRANSLATIONS:{language}");
             if (!string.IsNullOrEmpty(svgContent))
                 return svgContent;
 
-            var file = Path.Combine(_contentRoot, @"translations\", language.ToLower());
-            svgContent = await File.ReadAllTextAsync();
+            svgContent = await File.ReadAllTextAsync(file);
 
             _cacheService.Set($"FILE:TRANSLATIONS:{language}", svgContent, TimeSpan.FromDays(30));
 
