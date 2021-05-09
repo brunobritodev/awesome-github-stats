@@ -132,7 +132,7 @@ namespace AwesomeGithubStats.Core.Models
                    (ContributedToNotOwnerRepositories * rankPoints.ContributedToNotOwnerRepositories) +
                    (Followers * rankPoints.Followers);
 
-            return sumProducts / rankPoints.Total();
+            return sumProducts;
         }
     }
 }

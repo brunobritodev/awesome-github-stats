@@ -18,8 +18,7 @@ namespace AwesomeGithubStats.Core.Models
 
         private void CalculateRank()
         {
-            var totalPoints = RankPoints.Total();
-            var weightedScore = UserStats.GetScore(RankPoints) / totalPoints;
+            var weightedScore = UserStats.GetScore(RankPoints);
 
             var degree = _rankDegree.InRange(weightedScore);
             Score = weightedScore;
