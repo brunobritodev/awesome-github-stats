@@ -45,7 +45,7 @@ namespace AwesomeGithubStats.Controllers
 
         public async Task<IActionResult> Get()
         {
-            var svg = new UserStatsSvg(Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
+            var svg = new UserStatsCard(Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
             var rank = _rankService.CalculateRank(new UserStats()
             {
                 Login = "brunohbrito",

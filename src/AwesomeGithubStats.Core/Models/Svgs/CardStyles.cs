@@ -1,6 +1,6 @@
 ﻿namespace AwesomeGithubStats.Core.Models.Svgs
 {
-    public class Styles
+    public class CardStyles
     {
         public string TextColor { get; set; } = "#333";
         public string TitleColor { get; set; } = "#2f80ed";
