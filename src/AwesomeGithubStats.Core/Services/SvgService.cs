@@ -4,6 +4,7 @@ using AwesomeGithubStats.Core.Models.Svgs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Options;
 using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
 using TimeSpan = System.TimeSpan;
 
@@ -35,21 +36,22 @@ namespace AwesomeGithubStats.Core.Services
             return svg.Svg(rank, new CardStyles());
         }
 
-        private async Task<string> GetTranslationsFile(string language)
+        private async Task<CardTranslations> GetTranslationsFile(string language)
         {
             var file = Path.Combine(_contentRoot, @"translations\", $"{language.ToLower()}.json");
             if (!File.Exists(file))
                 file = Path.Combine(_contentRoot, @"translations\", "en.json"); ;
 
-            var svgContent = _cacheService.Get<string>($"FILE:TRANSLATIONS:{language}");
-            if (!string.IsNullOrEmpty(svgContent))
-                return svgContent;
+            var translations = _cacheService.Get<CardTranslations>($"FILE:TRANSLATIONS:{language}");
+            if (translations != null)
+                return translations;
 
-            svgContent = await File.ReadAllTextAsync(file);
+            var jsonContent = await File.ReadAllTextAsync(file);
+            translations = JsonSerializer.Deserialize<CardTranslations>(jsonContent);
 
-            _cacheService.Set($"FILE:TRANSLATIONS:{language}", svgContent, TimeSpan.FromDays(30));
+            _cacheService.Set($"FILE:TRANSLATIONS:{language}", translations, TimeSpan.FromDays(30));
 
-            return svgContent;
+            return translations;
         }
         private async Task<string> GetSvgFile(string file)
         {
