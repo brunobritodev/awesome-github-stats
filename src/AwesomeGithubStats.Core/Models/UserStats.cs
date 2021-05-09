@@ -135,10 +135,7 @@ namespace AwesomeGithubStats.Core.Models
             return sumProducts; // / rankPoints.Total(Login);
         }
 
-        public string TotalStars()
-        {
-            return FormatNumber(DirectStars + IndirectStars);
-        }
+
         static string FormatNumber(int num)
         {
             if (num >= 100000)
@@ -150,9 +147,10 @@ namespace AwesomeGithubStats.Core.Models
             return num.ToString("#,0");
         }
 
-        public string TotalCommits()
-        {
-            return FormatNumber(Commits);
-        }
+        public string TotalCommits() => FormatNumber(Commits);
+        public string TotalStars() => FormatNumber(DirectStars + IndirectStars);
+        public string TotalPullRequests() => FormatNumber(PullRequests);
+        public string TotalIssues() => FormatNumber(Issues);
+        public string ContributedFor() => FormatNumber(ContributedTo);
     }
 }
