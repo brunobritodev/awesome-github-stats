@@ -65,10 +65,9 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 .Replace("{{TextColor}}", cardStyles.TextColor)
                 .Replace("{{TitleColor}}", cardStyles.TitleColor)
                 .Replace("{{IconColor}}", cardStyles.IconColor)
+                .Replace("{{BackgroundColor}}", cardStyles.BackgroundColor)
+                .Replace("{{BorderColor}}", cardStyles.BorderColor)
                 .Replace("{{ShowIcons}}", cardStyles.ShowIcons ? "block" : "none");
-
-
-
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
         }

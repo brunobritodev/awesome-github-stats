@@ -29,9 +29,9 @@ namespace AwesomeGithubStats.Core.Services
             _degree = rankDegree.Value;
             _contentRoot = environment.ContentRootPath;
             _cacheService = cacheService;
-            SvgFolder = Path.Combine(_contentRoot, @"\svgs");
-            TranslationFile = Path.Combine(_contentRoot, @"\content", "translations.json");
-            ThemeFile = Path.Combine(_contentRoot, @"\content", "styles.json");
+            SvgFolder = Path.Combine(_contentRoot, @"svgs");
+            TranslationFile = Path.Combine(_contentRoot, @"content", "translations.json");
+            ThemeFile = Path.Combine(_contentRoot, @"content", "styles.json");
         }
 
 

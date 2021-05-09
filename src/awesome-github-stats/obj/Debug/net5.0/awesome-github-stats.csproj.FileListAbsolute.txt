@@ -84,3 +84,5 @@ D:\workspace\awesome-github-stats\src\awesome-github-stats\obj\Debug\net5.0\ref\
 D:\workspace\awesome-github-stats\src\awesome-github-stats\obj\Debug\net5.0\awesome-github-stats.pdb
 D:\workspace\awesome-github-stats\src\awesome-github-stats\obj\Debug\net5.0\awesome-github-stats.genruntimeconfig.cache
 D:\workspace\awesome-github-stats\src\awesome-github-stats\bin\Debug\net5.0\Humanizer.dll
+D:\workspace\awesome-github-stats\src\awesome-github-stats\bin\Debug\net5.0\content\styles.json
+D:\workspace\awesome-github-stats\src\awesome-github-stats\bin\Debug\net5.0\content\translations.json
