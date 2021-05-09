@@ -55,7 +55,8 @@ namespace AwesomeGithubStats.Models
                 .Replace("{{Commits}}", rank.UserStats.TotalCommits())
                 .Replace("{{PRS}}", rank.UserStats.TotalPullRequests())
                 .Replace("{{Issuers}}", rank.UserStats.TotalIssues())
-                .Replace("{{Contributions}}", rank.UserStats.TotalContributedFor());
+                .Replace("{{Contributions}}", rank.UserStats.TotalContributedFor())
+                .Replace("{{Level}}", rank.Level);
 
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));

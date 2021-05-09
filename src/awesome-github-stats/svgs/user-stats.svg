@@ -98,7 +98,7 @@
       <circle class="rank-circle" cx="-10" cy="8" r="50" />
       <g class="rank-text">
         <text x="-4" y="0" alignment-baseline="central" dominant-baseline="central" text-anchor="middle">
-          S++!
+          {{Level}}
         </text>
       </g>
     </g>
