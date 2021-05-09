@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AwesomeGithubStats.Core.Models.Svgs;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AwesomeGithubStats.Core.Util
 {
@@ -28,6 +30,8 @@ namespace AwesomeGithubStats.Core.Util
         {
             return !string.IsNullOrWhiteSpace(value);
         }
+
+        public static CardTranslations Language(this IEnumerable<CardTranslations> translations, string language) => translations.FirstOrDefault(f => f.Locale.ToLower().Equals(language.ToLower()));
 
     }
 }

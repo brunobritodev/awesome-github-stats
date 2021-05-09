@@ -7,5 +7,6 @@
         public string IssuesLabel { get; set; } = "Issues Created";
         public string CommitsLabel { get; set; } = "Commits made";
         public string ContributionsLabel { get; set; } = "Contributed to";
+        public string Locale { get; set; } = "en";
     }
 }
