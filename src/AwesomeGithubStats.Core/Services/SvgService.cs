@@ -59,7 +59,7 @@ namespace AwesomeGithubStats.Core.Services
         }
         private async Task<string> GetSvgFile(string file)
         {
-            var svgContent = _cacheService.Get<string>($"FILE:SVG:{file}");
+            var svgContent = _cacheService.Get<string>(CacheKeys.SvgKey(file));
             if (!string.IsNullOrEmpty(svgContent))
                 return svgContent;
 
