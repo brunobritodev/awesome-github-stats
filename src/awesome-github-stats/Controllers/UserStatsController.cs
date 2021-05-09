@@ -1,7 +1,10 @@
 ﻿using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
+using AwesomeGithubStats.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.IO;
 
 namespace AwesomeGithubStats.Controllers
 {
@@ -12,15 +15,17 @@ namespace AwesomeGithubStats.Controllers
         private readonly ILogger<UserStatsController> _logger;
         private readonly IGithubService _githubService;
         private readonly IRankService _rankService;
+        private readonly IWebHostEnvironment _environment;
 
-        public UserStatsController(ILogger<UserStatsController> logger, IGithubService githubService, IRankService rankService)
+        public UserStatsController(ILogger<UserStatsController> logger, IGithubService githubService, IRankService rankService, IWebHostEnvironment environment)
         {
             _logger = logger;
             _githubService = githubService;
             _rankService = rankService;
+            _environment = environment;
         }
 
-        [HttpGet]
+        [HttpGet, ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
         public IActionResult Get(string username)
         {
             var rank = _rankService.CalculateRank(new UserStats()
@@ -41,7 +46,9 @@ namespace AwesomeGithubStats.Controllers
                 CommitsToAnotherRepositories = 51,
                 CommitsToMyRepositories = 365
             });
-            return Ok("hello world");
+
+            var svg = new UserStatsSvg(rank, Path.Combine(_environment.ContentRootPath, "/svgs/", "user-stats.svg"));
+            return File(svg.Svg(), "image/svg+xml; charset=utf-8");
         }
     }
 }

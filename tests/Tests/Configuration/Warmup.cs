@@ -18,6 +18,7 @@ namespace Tests.Configuration
             //Mock IHttpContextAccessor
             var services = new ServiceCollection();
 
+
             services.AddScoped<IConfiguration>(s => configuration);
             services.ConfigureGithubServices(configuration);
             Services = services.BuildServiceProvider();
