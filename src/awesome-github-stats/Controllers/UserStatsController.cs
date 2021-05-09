@@ -37,24 +37,9 @@ namespace AwesomeGithubStats.Controllers
         public async Task<IActionResult> Get(string username)
         {
             var svg = new UserStatsSvg(Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
-            var rank = _rankService.CalculateRank(new UserStats()
-            {
-                Login = "brunohbrito",
-                Name = "Bruno Brito",
-                Commits = 4674,
-                ContributedTo = 49,
-                ContributedToNotOwnerRepositories = 13,
-                ContributedToOwnRepositories = 36,
-                CreatedRepositories = 53,
-                DirectStars = 1366,
-                Followers = 375,
-                IndirectStars = 48472,
-                Issues = 57,
-                PullRequests = 210,
-                PullRequestsToAnotherRepositories = 20,
-                CommitsToAnotherRepositories = 51,
-                CommitsToMyRepositories = 365
-            });
+            var userStats = await _githubService.GetUserStats(username);
+
+            var rank = _rankService.CalculateRank(userStats);
             var content = await svg.Svg(rank, new Styles());
 
             return File(content, "image/svg+xml; charset=utf-8");
