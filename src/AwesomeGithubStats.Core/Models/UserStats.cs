@@ -20,7 +20,7 @@ namespace AwesomeGithubStats.Core.Models
 
             // Remove from uniqueRepo the user repos
             RepositoriesNotOwnedByMe = uniqueRepos.Where(othersRepo => !othersRepo.Repository.NameWithOwner.Contains(user.Login)).ToList();
-            MyContributions = uniqueRepos.Where(s => s.NameWithOwner.Contains(user.Login)).ToList();
+            MyContributions = uniqueRepos.Where(s => s.Repository.NameWithOwner.Contains(user.Login)).ToList();
 
             Name = user.Name;
             Login = user.Login;
@@ -29,13 +29,15 @@ namespace AwesomeGithubStats.Core.Models
 
             PullRequests = user.PullRequests.TotalCount;
             CreatedRepositories = result.Sum(s => s.TotalRepositoryContributions);
-            CommitsToMyRepositories = MyContributions.SelectMany(s => s.CommitContributionsByRepository).Where(w => w.Repository.NameWithOwner.Contains(user.Login)).Sum(s => s.Contributions.TotalCount);
-            DirectStars = MyContributions.Sum(s => s.StargazerCount);
+            CommitsToMyRepositories = MyContributions.Sum(s => s.Contributions.TotalCount);
+            DirectStars = MyContributions.Sum(s => s.Repository.StargazerCount);
+
 
             PullRequestsToAnotherRepositories = result.SelectMany(s => s.PullRequestContributionsByRepository).Where(w => !w.Repository.NameWithOwner.Contains(user.Login)).Sum(s => s.Contributions.TotalCount);
             CommitsToAnotherRepositories =
-            IndirectStars = RepositoriesNotOwnedByMe.Sum(s => s.StargazerCount);
+            IndirectStars = RepositoriesNotOwnedByMe.Sum(s => s.Repository.StargazerCount);
             Issues = user.Issues.TotalCount;
+            CommitsToAnotherRepositories = Commits - CommitsToMyRepositories;
 
             ContributedTo = MyContributions.Count() + RepositoriesNotOwnedByMe.Count();
             ContributedToNotOwnerRepositories = RepositoriesNotOwnedByMe.Count();
