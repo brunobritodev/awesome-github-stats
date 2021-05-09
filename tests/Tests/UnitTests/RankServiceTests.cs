@@ -60,6 +60,8 @@ namespace Tests.UnitTests
         {
             var rank = _rankService.CalculateRank(new UserStats()
             {
+                Login = "sindresorhus",
+                Name = "Sindre Sorhus",
                 Commits = 25353,
                 ContributedTo = 296,
                 ContributedToNotOwnerRepositories = 157,
@@ -69,8 +71,6 @@ namespace Tests.UnitTests
                 Followers = 42719,
                 IndirectStars = 0,
                 Issues = 4146,
-                Login = "sindresorhus",
-                Name = "Sindre Sorhus",
                 PullRequests = 1400,
                 PullRequestsToAnotherRepositories = 849,
                 CommitsToAnotherRepositories = 22526,
