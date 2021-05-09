@@ -1,11 +1,10 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.Tracing;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace AwesomeGithubStats.Configuration
+namespace AwesomeGithubStats.Api.Configuration
 {
-    using System.Diagnostics.Tracing;
-
     [EventSource(Name = "AwesomeGithubStats.EventCounter.Minimal")]
     public sealed class MinimalEventCounterSource : EventSource
     {

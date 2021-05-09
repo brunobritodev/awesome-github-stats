@@ -4059,9 +4059,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\workspace\\awesome-github-stats\\src\\awesome-github-stats\\awesome-github-stats.csproj",
-      "projectName": "awesome-github-stats",
-      "projectPath": "D:\\workspace\\awesome-github-stats\\src\\awesome-github-stats\\awesome-github-stats.csproj",
+      "projectUniqueName": "D:\\workspace\\awesome-github-stats\\src\\awesome-github-stats\\AwesomeGithubStats.Api.csproj",
+      "projectName": "AwesomeGithubStats.Api",
+      "projectPath": "D:\\workspace\\awesome-github-stats\\src\\awesome-github-stats\\AwesomeGithubStats.Api.csproj",
       "packagesPath": "C:\\Users\\Bruno Brito\\.nuget\\packages\\",
       "outputPath": "D:\\workspace\\awesome-github-stats\\src\\awesome-github-stats\\obj\\",
       "projectStyle": "PackageReference",

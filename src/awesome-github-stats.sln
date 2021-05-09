@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "awesome-github-stats", "awesome-github-stats\awesome-github-stats.csproj", "{672D316D-290E-4499-BE87-C2639A5C265B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwesomeGithubStats.Api", "awesome-github-stats\AwesomeGithubStats.Api.csproj", "{672D316D-290E-4499-BE87-C2639A5C265B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{58DD7EBF-A6AF-45A6-B8F8-F19A679226EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "..\tests\Tests\Tests.csproj", "{C4A910E3-661C-42DD-88E1-957A807EE2C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "..\tests\Tests\Tests.csproj", "{C4A910E3-661C-42DD-88E1-957A807EE2C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeGithubStats.Core", "AwesomeGithubStats.Core\AwesomeGithubStats.Core.csproj", "{6C923F29-76C0-47F0-8B6C-4242B6873A8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AwesomeGithubStats.Core", "AwesomeGithubStats.Core\AwesomeGithubStats.Core.csproj", "{6C923F29-76C0-47F0-8B6C-4242B6873A8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
