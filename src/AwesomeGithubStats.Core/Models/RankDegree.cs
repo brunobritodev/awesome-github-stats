@@ -16,8 +16,7 @@ namespace AwesomeGithubStats.Core.Models
 
             foreach (var range in this.OrderByDescending(o => o.Value))
             {
-                var percent = range.Value * MaxPoints / 100;
-                if (value >= percent)
+                if (value >= range.Value)
                     return range;
             }
 
