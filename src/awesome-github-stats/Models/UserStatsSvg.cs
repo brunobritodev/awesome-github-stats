@@ -46,7 +46,8 @@ namespace AwesomeGithubStats.Models
             var fs = await File.ReadAllTextAsync(_file);
             var svgFinal = fs
                 .Replace("{{Name}}", _rank.UserStats.Name)
-                .Replace("{{ProgressBarStart}}", CalculateCircleProgress(0));
+                .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
+                .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(0):F}");
 
 
             return new MemoryStream(Encoding.UTF8.GetBytes(svgFinal));
