@@ -7,5 +7,6 @@
         public string IconColor { get; set; } = "#4c71f2";
         public bool ShowIcons { get; set; } = true;
         public string Theme { get; set; } = "default";
+        public string BackgroundColor { get; set; } = "#fffefe";
     }
 }

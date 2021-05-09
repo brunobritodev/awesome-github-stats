@@ -49,10 +49,6 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 .Replace("{{Name}}", rank.UserStats.Name.Truncate(30))
                 .Replace("{{ProgressBarStart}}", $"{ CalculateCircleProgress(0):F}")
                 .Replace("{{ProgressBarEnd}}", $"{ CalculateCircleProgress(ProgressBar):F}")
-                .Replace("{{TextColor}}", cardStyles.TextColor)
-                .Replace("{{TitleColor}}", cardStyles.TitleColor)
-                .Replace("{{IconColor}}", cardStyles.IconColor)
-                .Replace("{{ShowIcons}}", cardStyles.ShowIcons ? "block" : "none")
                 .Replace("{{Stars}}", rank.UserStats.TotalStars())
                 .Replace("{{Commits}}", rank.UserStats.TotalCommits())
                 .Replace("{{PRS}}", rank.UserStats.TotalPullRequests())
@@ -64,7 +60,12 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 .Replace("{{PullRequestLabel}}", cardTranslations.PullRequestLabel)
                 .Replace("{{IssuesLabel}}", cardTranslations.IssuesLabel)
                 .Replace("{{CommitsLabel}}", cardTranslations.CommitsLabel)
-                .Replace("{{ContributionsLabel}}", cardTranslations.ContributionsLabel);
+                .Replace("{{ContributionsLabel}}", cardTranslations.ContributionsLabel)
+                // Theme
+                .Replace("{{TextColor}}", cardStyles.TextColor)
+                .Replace("{{TitleColor}}", cardStyles.TitleColor)
+                .Replace("{{IconColor}}", cardStyles.IconColor)
+                .Replace("{{ShowIcons}}", cardStyles.ShowIcons ? "block" : "none");
 
 
 
