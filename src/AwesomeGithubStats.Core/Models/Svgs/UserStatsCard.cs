@@ -1,6 +1,5 @@
 ﻿using Humanizer;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -21,19 +20,18 @@ namespace AwesomeGithubStats.Core.Models.Svgs
         private void CalculateProgressBar(UserRank rank)
         {
 
-            var slices = RankDegree.Count;
-            var slicesToTheEnd = RankDegree.Count(c => c.Points > rank.Score);
+            var slices = RankDegree.TotalSlices();
+            var slicesToTheEnd = RankDegree.CountSlicesAfter(rank.Score);
             var sliceMinSize = (100.0 / slices) * (slices - slicesToTheEnd);
             var nextRank = RankDegree.OrderBy(o => o.Points).FirstOrDefault(f => f.Points > rank.Score);
-            if (nextRank.Rank == null)
+            if (nextRank == null)
             {
                 ProgressBar = 100;
+                ShowCircleProgressBar = false;
                 return;
 
             }
 
-            var teste = new Dictionary<string, int>();
-            
             var rankSize = nextRank.Points - RankDegree[rank.Level];
             var pointsInActualRank = rank.Score - RankDegree[rank.Level];
 
@@ -42,8 +40,13 @@ namespace AwesomeGithubStats.Core.Models.Svgs
             var slicePartToAdd = sliceSize * percentualInActualRank;
 
             ProgressBar = sliceMinSize + slicePartToAdd;
+            if (ProgressBar > 100)
+                ProgressBar = 100;
+            if (ProgressBar < 0)
+                ProgressBar = 0;
         }
 
+        public bool ShowCircleProgressBar { get; set; }
         public double ProgressBar { get; set; }
 
         public Stream Svg(UserRank rank, CardStyles cardStyles, CardTranslations cardTranslations)
