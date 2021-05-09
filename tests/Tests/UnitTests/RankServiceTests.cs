@@ -51,7 +51,7 @@ namespace Tests.UnitTests
                 CommitsToMyRepositories = 182,
             });
             rank.Level.Should().Be("💪");
-            rank.Score.Should().Be(100);
+            rank.Score.Should().Be(3674.5);
         }
 
         [Fact]
