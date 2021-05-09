@@ -19,6 +19,7 @@ namespace AwesomeGithubStats.Core.Services
         private readonly RankDegree _degree;
         private string SvgFolder { get; set; }
         private string TranslationFile { get; set; }
+        private string ThemeFile { get; set; }
 
         public SvgService(
             IWebHostEnvironment environment,
@@ -30,6 +31,7 @@ namespace AwesomeGithubStats.Core.Services
             _cacheService = cacheService;
             SvgFolder = Path.Combine(_contentRoot, @"\svgs");
             TranslationFile = Path.Combine(_contentRoot, @"\content", "translations.json");
+            ThemeFile = Path.Combine(_contentRoot, @"\content", "styles.json");
         }
 
 
@@ -40,7 +42,7 @@ namespace AwesomeGithubStats.Core.Services
             var svg = new UserStatsCard(file, _degree);
 
             var translations = options.HasTranslations() ? await GetTranslations(options.Locale) : await GetTranslations("en");
-
+            var styles = await GetStyle(options.Theme ?? "default");
             return svg.Svg(rank, new CardStyles(), translations);
         }
 
@@ -49,18 +51,18 @@ namespace AwesomeGithubStats.Core.Services
         private async Task<CardStyles> GetStyle(string theme)
         {
             if (!File.Exists(TranslationFile))
-                return new CardTranslations();
+                return new CardStyles();
 
-            var translations = _cacheService.Get<IEnumerable<CardTranslations>>(CacheKeys.TranslationKey);
-            if (translations != null)
-                return translations.Language(language);
+            var styles = _cacheService.Get<IEnumerable<CardStyles>>(CacheKeys.TranslationKey);
+            if (styles != null)
+                return styles.Theme(theme);
 
             var jsonContent = await File.ReadAllTextAsync(TranslationFile);
-            translations = JsonSerializer.Deserialize<IEnumerable<CardTranslations>>(jsonContent);
+            styles = JsonSerializer.Deserialize<IEnumerable<CardStyles>>(jsonContent);
 
-            _cacheService.Set(CacheKeys.TranslationKey, translations, TimeSpan.FromDays(30));
+            _cacheService.Set(CacheKeys.TranslationKey, styles, TimeSpan.FromDays(30));
 
-            return translations.Language(language);
+            return styles.Theme(theme);
         }
         private async Task<CardTranslations> GetTranslations(string language)
         {

@@ -1,15 +1,9 @@
-﻿using AwesomeGithubStats.Core.Util;
-
-namespace AwesomeGithubStats.Core.Models
+﻿namespace AwesomeGithubStats.Core.Models
 {
     public class UserStatsOptions
     {
-        public string Locale { get; set; }
-        public bool HasTranslations()
-        {
-            return Locale.IsPresent();
-        }
-
+        public string Locale { get; set; } = "en";
+        public string Theme { get; set; } = "default";
     }
 
 }
