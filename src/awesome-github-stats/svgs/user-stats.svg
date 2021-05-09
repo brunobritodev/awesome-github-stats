@@ -89,7 +89,7 @@
 
   <g data-testid="main-card-body" transform="translate(0, 55)">
 
-    <g data-testid="rank-circle" transform="translate(400, 47.5)">
+    <g data-testid="rank-circle" transform="translate(350, 47.5)">
       <circle class="rank-circle-rim" cx="-10" cy="8" r="40"/>
       <circle class="rank-circle" cx="-10" cy="8" r="40"/>
       <g class="rank-text">
