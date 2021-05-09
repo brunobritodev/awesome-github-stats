@@ -101,11 +101,10 @@
                     <option>ocean-dark</option>
                     <option>city-lights</option>
                     <option>github-dark</option>
-
                 </select>
 
-                <label for="hide_border">Hide Border</label>
-                <select class="param" id="hide_border" name="hide_border" placeholder="false">
+                <label for="showIcons">Show Icons</label>
+                <select class="param" id="showIcons" name="showIcons" placeholder="false">
                     <option>false</option>
                     <option>true</option>
                 </select>
@@ -115,9 +114,10 @@
                     <div class="content parameters">
                         <label for="theme">Add Property</label>
                         <select id="properties" name="properties" placeholder="background">
-<?php foreach ($THEMES["default"] as $option => $color): ?>
-                            <option><?php echo $option; ?></option>
-<?php endforeach;?>
+                            <option>Background</option>
+                            <option>Text</option>
+                            <option>Title</option>
+                            <option>Border</option>
                         </select>
                         <button class="plus btn" onclick="return preview.addProperty();">+</button>
                     </div>

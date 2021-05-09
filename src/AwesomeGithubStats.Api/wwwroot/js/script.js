@@ -2,7 +2,7 @@ let preview = {
   // default values
   defaults: {
     theme: "default",
-    hide_border: "false",
+    showIcons: "true",
   },
   // update the preview
   update: function () {
