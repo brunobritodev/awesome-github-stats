@@ -1,6 +1,5 @@
 ﻿using AwesomeGithubStats.Core.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 
@@ -9,11 +8,11 @@ namespace AwesomeGithubStats.Core.Util
     public class MemoryCacheService : ICacheService
     {
         public static MemoryCacheEntryOptions DefaultOptions => new() { SlidingExpiration = TimeSpan.FromHours(1) };
-        private readonly IMemoryCache _memoryCache;
+        private readonly ICacheService _memoryCache;
         private readonly ILogger<MemoryCacheService> _logger;
 
         public MemoryCacheService(
-            IMemoryCache memoryCache,
+            ICacheService memoryCache,
             ILogger<MemoryCacheService> logger)
         {
             _memoryCache = memoryCache;
