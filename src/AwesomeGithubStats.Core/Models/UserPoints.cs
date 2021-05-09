@@ -4,14 +4,14 @@
     {
         public double PullRequests { get; set; } = 0.2;
         public double Commits { get; set; } = 1;
-        public double PullRequestsToAnotherRepositories { get; set; } = 2.3;
+        public double PullRequestsToAnotherRepositories { get; set; } = 1.2;
         public double Issues { get; set; } = 1;
         public double CreatedRepositories { get; set; } = 0.3;
         public double DirectStars { get; set; } = 1.0;
         public double IndirectStars { get; set; } = 0.55;
         public double ContributedTo { get; set; } = 0.5;
         public double ContributedToOwnRepositories { get; set; } = 0.5;
-        public double ContributedToNotOwnerRepositories { get; set; } = 2.0;
+        public double ContributedToNotOwnerRepositories { get; set; } = 2.3;
         public double Followers { get; set; } = 0.45;
 
         public double Total()
