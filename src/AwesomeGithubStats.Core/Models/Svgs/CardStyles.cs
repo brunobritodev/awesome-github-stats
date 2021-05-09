@@ -12,12 +12,12 @@
 
         public void Apply(UserStatsOptions options)
         {
-            TextColor = options.TextColor ?? TextColor;
-            TitleColor = options.TitleColor ?? TitleColor;
-            IconColor = options.IconColor ?? IconColor;
+            TextColor = options.Text ?? TextColor;
+            TitleColor = options.Title ?? TitleColor;
+            IconColor = options.Icon ?? IconColor;
             ShowIcons = options.ShowIcons ?? ShowIcons;
-            BackgroundColor = options.BackgroundColor ?? BackgroundColor;
-            BorderColor = options.BorderColor ?? BorderColor;
+            BackgroundColor = options.Background ?? BackgroundColor;
+            BorderColor = options.Border ?? BorderColor;
         }
     }
 }

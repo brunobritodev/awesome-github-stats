@@ -4,12 +4,12 @@
     {
         public string Locale { get; set; } = "en";
         public string Theme { get; set; } = "default";
-        public string TextColor { get; set; }
-        public string TitleColor { get; set; }
-        public string IconColor { get; set; }
+        public string Text { get; set; }
+        public string Title { get; set; }
+        public string Icon { get; set; }
         public bool? ShowIcons { get; set; }
-        public string BackgroundColor { get; set; }
-        public string BorderColor { get; set; }
+        public string Background { get; set; }
+        public string Border { get; set; }
     }
 
 }
