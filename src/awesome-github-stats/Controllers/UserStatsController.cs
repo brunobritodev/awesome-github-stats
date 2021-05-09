@@ -33,7 +33,7 @@ namespace AwesomeGithubStats.Controllers
             _environment = environment;
         }
 
-        [HttpGet, ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
+        [HttpGet("{username}"), ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
         public async Task<IActionResult> Get(string username)
         {
             var svg = new UserStatsSvg(Path.Combine(_environment.ContentRootPath, @"svgs\", "user-stats.svg"), _degree);
