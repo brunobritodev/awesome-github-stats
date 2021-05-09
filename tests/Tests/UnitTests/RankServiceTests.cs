@@ -93,7 +93,7 @@ namespace Tests.UnitTests
                 CommitsToMyRepositories = 2827
             });
             rank.Level.Should().Be("S+");
-            rank.Score.Should().Be(69884.746666666673);
+            rank.Score.Should().BeGreaterOrEqualTo(69884);
         }
 
         [Fact]
@@ -115,7 +115,7 @@ namespace Tests.UnitTests
                 CommitsToAnotherRepositories = 51
             });
             rank.Level.Should().Be("S");
-            rank.Score.Should().Be(100);
+            rank.Score.Should().BeGreaterOrEqualTo(58937);
         }
 
     }

@@ -21,7 +21,6 @@ namespace Tests.IntegrationTests
         [InlineData("brunohbrito")]
         [InlineData("sindresorhus")]
         [InlineData("kamranahmedse")]
-        [InlineData("MichelliBrito")]
         [InlineData("ralmsdeveloper")]
         [InlineData("anuraghazra")]
         public async Task Should_Get_User_Information(string username)
