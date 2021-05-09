@@ -40,6 +40,11 @@ let preview = {
         const md = `[![My Awesome Stats](${imageURL})](${repoLink})`;
         const rank = `${window.location.origin}/user-stats/${user}/rank`;
         const stats = `${window.location.origin}/user-stats/${user}/stats`;
+
+        // update rank link
+        document.getElementById("rankLink").value = rank;
+        // update stats link
+        document.getElementById("statsLink").value = stats;
         // update image preview
         document.querySelector(".output img").src = demoImageURL;
         // update markdown
