@@ -9,7 +9,7 @@ jobs:
   deploy-azure:
     runs-on: ubuntu-latest
     env:
-      PATS__0: ${{ secrets.PAT }}
+      PATS__0: ${{ secrets.GITHUB_TOKEN }}
     defaults:
       run:
         working-directory: src
