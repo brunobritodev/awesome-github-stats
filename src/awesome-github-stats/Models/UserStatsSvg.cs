@@ -20,6 +20,7 @@ namespace AwesomeGithubStats.Models
             using var fs = File.OpenRead(_file);
             fs.CopyTo(inMemoryCopy);
 
+            inMemoryCopy.Seek(0, SeekOrigin.Begin);
             return inMemoryCopy;
         }
     }
