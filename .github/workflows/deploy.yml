@@ -9,7 +9,7 @@ jobs:
   deploy-azure:
     runs-on: ubuntu-latest
     env:
-      PAT__0: ${{ secrets.PAT }}
+      PATS__0: ${{ secrets.PAT }}
     defaults:
       run:
         working-directory: src
