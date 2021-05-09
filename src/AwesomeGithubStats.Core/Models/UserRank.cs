@@ -14,6 +14,10 @@
             CalculateRank();
         }
 
+        /// <summary>
+        /// This score is based in user sindresorhus. An astonishing developer with many, many contributions.
+        /// His weighted score is 70.000.
+        /// </summary>
         private void CalculateRank()
         {
             var weightedScore = UserStats.GetScore(RankPoints);
