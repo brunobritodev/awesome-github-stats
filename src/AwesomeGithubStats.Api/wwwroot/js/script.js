@@ -34,13 +34,21 @@ let preview = {
         // generate links and markdown
         let user = document.getElementById("user").value;
         user = user == "" ? "brunohbrito" : user;
-        const imageURL = `${window.location.origin}/user-stats/${user}?${query}`;
-        const demoImageURL = `${window.location.origin}/user-stats/${user}/preview?${query}`;
+        if (query != "")
+            query = "?" + query;
+        const imageURL = `${window.location.origin}/user-stats/${user}${query}`;
+        const demoImageURL = `${window.location.origin}/user-stats/${user}/preview${query}`;
         const repoLink = "https://github.com/brunohbrito/awesome-github-stats";
         const md = `[![My Awesome Stats](${imageURL})](${repoLink})`;
         const rank = `${window.location.origin}/user-stats/${user}/rank`;
         const stats = `${window.location.origin}/user-stats/${user}/stats`;
 
+        const html = `
+  <a href="${window.location.origin}/index.html?${query}">
+    <img  alt="${user}'s GitHub Stats" src="${imageURL}" />
+  </a>`;
+        // update html code
+        document.querySelector(".html pre").innerText = html;
         // update rank link
         document.getElementById("rankLink").href = rank;
         // update stats link
@@ -50,8 +58,9 @@ let preview = {
         // update markdown
         document.querySelector(".md code").innerText = md;
         // disable copy button if username is invalid
-        const copyButton = document.querySelector(".copy-button");
-        copyButton.disabled = !!document.querySelectorAll("#user:invalid").length;
+        document.querySelectorAll(".copy-button").forEach(copyButton => {
+            copyButton.disabled = !!document.querySelectorAll("#user:invalid").length;
+        });
     },
     addProperty: function (property, value = "#DD2727FF") {
         const selectElement = document.querySelector("#properties");
@@ -131,7 +140,7 @@ let preview = {
 };
 
 let clipboard = {
-    copy: function (el) {
+    copyMd: function (el) {
         // create input box to copy from
         const input = document.createElement("input");
         input.value = document.querySelector(".md code").innerText;
@@ -146,6 +155,21 @@ let clipboard = {
         // set tooltip text
         el.title = "Copied!";
     },
+    copyHtml: function (el) {
+        // create input box to copy from
+        const input = document.createElement("input");
+        input.value = document.querySelector(".html pre").innerText;
+        document.body.appendChild(input);
+        // select all
+        input.select();
+        input.setSelectionRange(0, 99999);
+        // copy
+        document.execCommand("copy");
+        // remove input box
+        input.parentElement.removeChild(input);
+        // set tooltip text
+        el.title = "Copied!";
+    }
 };
 
 let tooltip = {

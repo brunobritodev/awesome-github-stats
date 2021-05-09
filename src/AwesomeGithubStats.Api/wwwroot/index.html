@@ -138,10 +138,19 @@
                 <code></code>
             </div>
 
-            <button class="copy-button btn tooltip" onclick="clipboard.copy(this);" onmouseout="tooltip.reset(this);" disabled>
+            <button class="copy-button btn tooltip" onclick="clipboard.copyMd(this);" onmouseout="tooltip.reset(this);" disabled>
                 Copy To Clipboard
             </button>
-            
+
+            <h2>HTML</h2>
+            <div class="html">
+                <pre></pre>
+            </div>
+
+            <button class="copy-button btn tooltip" onclick="clipboard.copyHtml(this);" onmouseout="tooltip.reset(this);" disabled>
+                Copy To Clipboard
+            </button>
+
             <h2>Usefull links</h2>
             <p>
                 Check your stats which api use to calculate your rank:

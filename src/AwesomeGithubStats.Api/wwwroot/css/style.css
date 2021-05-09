@@ -254,6 +254,13 @@ input:focus:invalid {
     word-break: break-all;
 }
 
+.output .html {
+    background: var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    word-break: break-all;
+}
+
 .output .btn {
     margin-top: 16px;
 }
@@ -305,3 +312,8 @@ input:focus:invalid {
     .btn.tooltip:disabled:before {
         content: "You must first input a valid username.";
     }
+
+pre {
+    white-space: pre-wrap;
+    word-break: keep-all
+}

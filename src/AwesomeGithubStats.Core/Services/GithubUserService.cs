@@ -1,6 +1,7 @@
 ﻿using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
 using AwesomeGithubStats.Core.Models.Responses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,8 +30,8 @@ namespace AwesomeGithubStats.Core.Services
 
             stats = await GetStatsFromGithub(username);
 
-            _memoryCache.Set(username, stats);
-            
+            _memoryCache.Set(username, stats, TimeSpan.FromDays(1));
+
             return stats;
         }
 
