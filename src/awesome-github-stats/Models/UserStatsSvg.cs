@@ -9,11 +9,24 @@ namespace AwesomeGithubStats.Models
     {
         private readonly UserRank _rank;
         private readonly string _file;
+        private readonly RankDegree _rankDegree;
 
-        public UserStatsSvg(UserRank rank, string file)
+        public UserStatsSvg(UserRank rank, string file, RankDegree rankDegree)
         {
             _rank = rank;
             _file = file;
+            _rankDegree = rankDegree;
+
+            CalculateProgressBar();
+        }
+
+        private void CalculateProgressBar()
+        {
+            var slices = _rankDegree.Count;
+            foreach (var degre in _rankDegree)
+            {
+
+            }
         }
 
         public async Task<Stream> Svg()
