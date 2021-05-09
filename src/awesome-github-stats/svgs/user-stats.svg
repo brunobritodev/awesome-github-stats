@@ -112,7 +112,7 @@
           </svg>
 
           <text class="stat bold" x="25" y="12.5">Total Stars:</text>
-          <text class="stat" x="160" y="12.5" data-testid="stars">1.4k</text>
+          <text class="stat" x="160" y="12.5" data-testid="stars">{{TotalStars}}</text>
         </g>
       </g>
       <g transform="translate(0, 25)">
