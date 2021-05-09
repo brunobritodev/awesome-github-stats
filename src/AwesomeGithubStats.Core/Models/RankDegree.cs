@@ -17,6 +17,8 @@ namespace AwesomeGithubStats.Core.Models
 
             return this.OrderByDescending(o => o.Points).Last();
         }
+
+        public int this[string level] => this.FirstOrDefault(f => f.Rank.Equals(level)).Points;
     }
 
     public class Degree
