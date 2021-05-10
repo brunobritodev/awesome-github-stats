@@ -10,6 +10,7 @@
         public bool? ShowIcons { get; set; }
         public string Background { get; set; }
         public string Border { get; set; }
+        public string Ring { get; set; }
     }
 
 }

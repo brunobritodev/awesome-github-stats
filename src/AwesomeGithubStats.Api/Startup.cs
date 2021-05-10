@@ -55,6 +55,7 @@ namespace AwesomeGithubStats.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Awesome Github Stats v1"));
             }
 
+            app.UseDefaultFiles(new DefaultFilesOptions() { DefaultFileNames = new[] { "index.html" } });
             app.UseStaticFiles();
             app.UseRouting();
 

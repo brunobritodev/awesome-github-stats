@@ -30,14 +30,14 @@
     }
 
     .rank-circle-rim {
-      stroke: #{{TitleColor}};
+      stroke: #{{RingColor}};
       fill: none;
       stroke-width: 6;
       opacity: 0.2;
     }
 
     .rank-circle {
-      stroke: #{{TitleColor}};
+      stroke: #{{RingColor}};
       stroke-dasharray: 320;
       fill: none;
       stroke-width: 6;
