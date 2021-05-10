@@ -19,12 +19,12 @@
   - [Example](#example)
 - [ℹ️ How these stats are calculated](#ℹ️-how-these-stats-are-calculated)
 - [🤗 Contributing](#-contributing)
-- [Motivations](#motivations)
+- [🤔 Motivations](#-motivations)
   - [Installing Requirements](#installing-requirements)
     - [Requirements](#requirements)
   - [Authorization](#authorization)
   - [Running the tests](#running-the-tests)
-- [Special thanks](#special-thanks)
+- [💕 Special thanks](#-special-thanks)
 - [🙋‍♂️ Support](#️-support)
 
 ## 🚀 Quick setup
@@ -126,7 +126,7 @@ Contributions are welcome! Feel free to open an issue or submit a pull request i
 
 Make sure your request is meaningful and you have tested the app locally before submitting a pull request.
 
-## Motivations
+## 🤔 Motivations
 
 Actually another repositories with the same goal doesn't count stats with accuracy. The main goal is to have a strong data first, then a beatiful svg.
 
@@ -160,7 +160,7 @@ Before you can run tests, you have to add your PAT in `appsettings.json` at `tes
 dotnet test
 ```
 
-## Special thanks
+## 💕 Special thanks
 
 Special thanks for [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats) who build a Demo site. This version is almost the same code from there.
 
