@@ -3,9 +3,10 @@
 </p>
 
 <p align="center">
-  Display an accurate data from your contributions
+  Get an accurate data from your contributions and transform into a card to show at your GitHub profile README:
   <br/>
-  into a card to show at your GitHub profile README
+  <br/>
+  
   <a href="https://awesome-github-stats.azurewebsites.net/index.html">    
   <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  </a>
 </p>
