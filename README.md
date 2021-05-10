@@ -112,6 +112,8 @@ If stats not showing look at [Learn more about what is considered a contribution
 
 > Note: You may need to wait up to 24 hours for new contributions to show up ([Learn how contributions are counted](https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile))
 
+> Note: To prevent too many requests at GitHub we have an agressive cache strategy. You have to wait 24 hours to our server fetch your data again.
+
 To check your stats go to:
 * Stats: https://awesome-github-stats.azurewebsites.net/user-stats/brunhbrito/stats
 * Rank: https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito/rank
