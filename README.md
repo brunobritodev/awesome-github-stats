@@ -2,7 +2,8 @@
   <img src="https://raw.githubusercontent.com/brunohbrito/awesome-github-stats/master/docs/banner.png"/>
 </p>
 <p align="center">
-  Get an accurate data from your contributions and transform into a card to show at your GitHub profile README:
+  Get an accurate data from your contributions and transform into a card to show at your GitHub profile README
+  <br>
   <a href="https://awesome-github-stats.azurewebsites.net/" target="_blank">View Demo</a>
 <hr>  
 </p>
