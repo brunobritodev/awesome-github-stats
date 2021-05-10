@@ -6,6 +6,8 @@
   Display an accurate data from your contributions
   <br/>
   into a card to show at your GitHub profile README
+  <a href="https://awesome-github-stats.azurewebsites.net/index.html">    
+  <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  </a>
 </p>
 
 - [🚀 Quick setup](#-quick-setup)
@@ -32,11 +34,6 @@
 ```md
 [![My Awesome Stats](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito)](https://git.io/awesome-stats-card)
 ```
-
-<p style="text-align: center">
-  <a href="https://awesome-github-stats.azurewebsites.net/index.html??theme=tokyonight">    
-  <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  </a>
-</p>
 
 ## 💻 Demo Site
 
