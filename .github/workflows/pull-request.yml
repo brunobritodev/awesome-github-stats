@@ -7,6 +7,8 @@ on:
 jobs:
   dotnet-testing-pr:
     runs-on: ubuntu-latest
+    env:
+      PATS__0: ${{ secrets.GITHUB_TOKEN }}
     defaults:
       run:
         working-directory: src

@@ -1,31 +1,35 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/brunohbrito/awesome-github-stats/master/docs/banner.png"/>
 </p>
-
 <p align="center">
   Get an accurate data from your contributions and transform into a card to show at your GitHub profile README:
-  <br/>
-  <br/>
-  
-  <a href="https://awesome-github-stats.azurewebsites.net/index.html">    
-  <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  </a>
+<hr>  
+</p>
+<p align="center">
+  <a align="center" href="https://awesome-github-stats.azurewebsites.net/index.html">    
+  <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  
+  </a>
 </p>
 
-- [🚀 Quick setup](#-quick-setup)
-- [💻 Demo Site](#-demo-site)
-- [💁🏻 SVGs wanted.](#-svgs-wanted)
-- [🎨 Themes](#-themes)
-- [🔧 Options](#-options)
-  - [Example](#example)
-- [ℹ️ How these stats are calculated](#ℹ️-how-these-stats-are-calculated)
-- [🤗 Contributing](#-contributing)
-- [🤔 Motivations](#-motivations)
-  - [Installing Requirements](#installing-requirements)
-    - [Requirements](#requirements)
-  - [Authorization](#authorization)
-  - [Running the tests](#running-the-tests)
-- [💕 Special thanks](#-special-thanks)
-- [🙋‍♂️ Support](#️-support)
+
+# Content
+
+- [Content](#content)
+  - [🚀 Quick setup](#-quick-setup)
+  - [💻 Demo Site](#-demo-site)
+  - [💁🏻 SVGs wanted.](#-svgs-wanted)
+  - [🎨 Themes](#-themes)
+  - [🔧 Options](#-options)
+    - [Example](#example)
+  - [ℹ️ How these stats are calculated](#ℹ️-how-these-stats-are-calculated)
+  - [🤗 Contributing](#-contributing)
+  - [🤔 Motivations](#-motivations)
+    - [Installing Requirements](#installing-requirements)
+      - [Requirements](#requirements)
+    - [Authorization](#authorization)
+    - [Running the tests](#running-the-tests)
+  - [💕 Special thanks](#-special-thanks)
+  - [🙋‍♂️ Support](#️-support)
 
 ## 🚀 Quick setup
 
