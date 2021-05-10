@@ -29,5 +29,6 @@
 
         public string Level { get; set; }
         public double Score { get; set; }
+
     }
 }

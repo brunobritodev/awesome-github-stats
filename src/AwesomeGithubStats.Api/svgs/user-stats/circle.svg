@@ -1,0 +1,85 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" fill="none">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Nixie+One|Raleway:200');
+
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    background: #3E423A;
+    font-family: 'Nixie One', cursive;
+    }
+
+    .display-container {
+    margin: auto;
+    display: flex;
+    }
+
+    .note-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 25px;
+    }
+
+    .circle {
+    position: relative;
+    }
+
+    .circle__svg {
+    transform: rotate(-90deg);
+    }
+
+    .circle__progress {
+    fill: none;
+    stroke-width: 3;
+    stroke-opacity: 0.3;
+    stroke-linecap: round;
+    }
+
+    .circle__progress--fill {
+    --initialStroke: 0;
+    --transitionDuration: 0;
+    stroke-opacity: 1;
+    stroke-dasharray: var(--initialStroke);
+    stroke-dashoffset: var(--initialStroke);
+    transition: stroke-dashoffset var(--transitionDuration) ease;
+    }
+
+    .note-display:nth-child(1) .circle__progress { stroke: #AAFF00; }
+    .note-display:nth-child(2) .circle__progress { stroke: #FF00AA; }
+    .note-display:nth-child(3) .circle__progress { stroke: #AA00FF; }
+    .note-display:nth-child(4) .circle__progress { stroke: #00AAFF; }
+
+    .percent {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    line-height: 28px;
+    transform: translate(-50%, -50%);
+    }
+
+    .percent__int { font-size: 28px; }
+    .percent__dec { font-size: 12px; }
+
+    .label {
+    font-family: 'Raleway', serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    }
+  </style>
+  <svg width="84" height="84" class="circle__svg">
+    <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--path"></circle>
+    <circle cx="41" cy="41" r="38" class="circle__progress circle__progress--fill"></circle>
+  </svg>
+</svg>
