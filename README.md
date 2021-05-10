@@ -3,10 +3,11 @@
 </p>
 <p align="center">
   Get an accurate data from your contributions and transform into a card to show at your GitHub profile README:
+  <a href="https://awesome-github-stats.azurewebsites.net/" target="_blank">View Demo</a>
 <hr>  
 </p>
 <p align="center">
-  <a align="center" href="https://awesome-github-stats.azurewebsites.net/index.html">    
+  <a align="center" href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
   <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  
   </a>
 </p>
