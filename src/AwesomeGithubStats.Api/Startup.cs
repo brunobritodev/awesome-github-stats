@@ -35,9 +35,9 @@ namespace AwesomeGithubStats.Api
             }
             else
             {
-                services
-                    .AddMvcCore()
-                    .AddApiExplorer();
+                services.AddMvcCore();
+                services.AddResponseCompression();
+                services.AddResponseCaching();
             }
 
             services.ConfigureGithubServices(_configuration);
@@ -55,6 +55,8 @@ namespace AwesomeGithubStats.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Awesome Github Stats v1"));
             }
 
+            app.UseResponseCaching();
+            app.UseResponseCompression();
             app.UseDefaultFiles(new DefaultFilesOptions() { DefaultFileNames = new[] { "index.html" } });
             app.UseStaticFiles();
             app.UseRouting();
