@@ -386,12 +386,12 @@
     "BackgroundColor": "1D252C"
   },
   {
-    "Theme": "github-dark",
-    "TitleColor": "58A6FF",
-    "RingColor": "58A6FF",
-    "IconColor": "1F6FEB",
-    "TextColor": "C3D1D9",
-    "BackgroundColor": "0D1117"
+    "Theme": "flag-brazil",
+    "TitleColor": "002776FF",
+    "RingColor": "FEDF00FF",
+    "IconColor": "002776FF",
+    "TextColor": "009B3AFF",
+    "BackgroundColor": "fffefe"
   }
 
 ]
