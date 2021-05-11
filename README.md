@@ -12,13 +12,13 @@
     <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  
   </a>
   <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
-    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=github&cardType=octocat" />
+    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/ralmsdeveloper?theme=github&cardType=octocat" />
   </a>
   <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
-    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=dracula&cardType=level-alternate" />
+    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/eduardopires?theme=dracula&cardType=level-alternate" />
   </a>
   <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
-    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=github-dark&cardType=github" />
+    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/carloscds?theme=github-dark&cardType=github" />
   </a>
 </p>
 
@@ -66,14 +66,14 @@ If you are a Jedi Master building SVG, help-me adding new SVG's templates. Then 
 
 ## 🖌️ Card Types
 
-There are few Card types to show your stats.
+There are few Card types to show your stats. Change `cardType` parameter.
 
 |       Card        |                                                      Preview                                                       |
 | :---------------: | :----------------------------------------------------------------------------------------------------------------: |
-| `level (default)` |                  ![level](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito)                   |
+| `level (default)` |                  ![level](https://awesome-github-stats.azurewebsites.net/user-stats/carloscds)                  |
 | `level-alternate` | ![level-alternate](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?cardType=level-alternate) |
-|     `github`      |          ![github](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?cardType=github)          |
-|     `octocat`     |         ![octocat](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?cardType=octocat)         |
+|     `github`      |         ![github](https://awesome-github-stats.azurewebsites.net/user-stats/DenverCoder1?cardType=github)          |
+|     `octocat`     |        ![octocat](https://awesome-github-stats.azurewebsites.net/user-stats/eduardopires?cardType=octocat)         |
 
 ## 🎨 Themes
 
