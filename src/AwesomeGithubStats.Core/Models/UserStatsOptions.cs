@@ -11,6 +11,7 @@
         public string Background { get; set; }
         public string Border { get; set; }
         public string Ring { get; set; }
+        public string CardType { get; set; } = "default";
     }
 
 }

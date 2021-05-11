@@ -29,7 +29,7 @@ namespace AwesomeGithubStats.Core.Services
             _degree = rankDegree.Value;
             _contentRoot = environment.ContentRootPath;
             _cacheService = cacheService;
-            SvgFolder = Path.Combine(_contentRoot, @"svgs");
+            SvgFolder = Path.Combine(_contentRoot, @"svgs", "user-stats");
             TranslationFile = Path.Combine(_contentRoot, @"content", "translations.json");
             ThemeFile = Path.Combine(_contentRoot, @"content", "styles.json");
         }
@@ -38,14 +38,15 @@ namespace AwesomeGithubStats.Core.Services
 
         public async Task<Stream> GetUserStatsImage(UserRank rank, UserStatsOptions options)
         {
-            var file = await GetSvgFile("user-stats.svg");
-            var svg = new UserStatsCard(file, _degree);
+            var svg = new UserStatsCard(_degree, options);
+            var file = await GetSvgFile(svg.GetCardName());
+
 
             var translations = await GetTranslations(options.Locale ?? "en");
             var styles = await GetStyle(options.Theme ?? "default");
             styles.Apply(options);
 
-            return svg.Svg(rank, styles, translations);
+            return svg.Svg(file, rank, styles, translations);
         }
 
 
@@ -88,7 +89,7 @@ namespace AwesomeGithubStats.Core.Services
             if (!string.IsNullOrEmpty(svgContent))
                 return svgContent;
 
-            svgContent = await File.ReadAllTextAsync(Path.Combine(SvgFolder, "user-stats.svg"));
+            svgContent = await File.ReadAllTextAsync(Path.Combine(SvgFolder, file));
 
             _cacheService.Set(CacheKeys.SvgKey(file), svgContent, TimeSpan.FromDays(30));
 

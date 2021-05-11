@@ -8,9 +8,11 @@
 <hr>  
 </p>
 <p align="center">
-  <a align="center" href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
+  <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
   <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  
+  
   </a>
+  <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=github&cardType=octocat" />
 </p>
 
 

@@ -9,12 +9,21 @@
     "BorderColor": "e4e2e2"
   },
   {
-    "Theme": "default-repocard",
-    "TitleColor": "2f80ed",
-    "RingColor": "2f80ed",
-    "IconColor": "586069",
-    "TextColor": "333",
-    "BackgroundColor": "fffefe"
+    "Theme": "github-dark",
+    "TitleColor": "539bf5",
+    "RingColor": "8b949e",
+    "IconColor": "539bf5",
+    "TextColor": "adbac7",
+    "BackgroundColor": "1e2228",
+    "BorderColor": "2e343b"
+  },
+  {
+    "Theme": "github",
+    "TitleColor": "0366d6",
+    "RingColor": "000000",
+    "IconColor": "0366d6",
+    "TextColor": "586069",
+    "BackgroundColor": "fff"
   },
   {
     "Theme": "dark",

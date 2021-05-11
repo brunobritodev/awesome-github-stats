@@ -47,12 +47,21 @@
             <form class="parameters">
                 <label for="user">Username<span title="required">*</span></label>
                 <input type="text" id="user" name="user" placeholder="brunohbrito" required
-                        pattern="^[A-Za-z\d-]{0,39}[A-Za-z\d]$" title="Up to 40 letters or hyphens but not ending with hyphen">
+                       pattern="^[A-Za-z\d-]{0,39}[A-Za-z\d]$" title="Up to 40 letters or hyphens but not ending with hyphen">
+
+                <label for="cardType">Card</label>
+                <select class="param" id="cardType" name="cardType" placeholder="level">
+                    <option>level</option>
+                    <option>level-alternate</option>
+                    <option>github</option>
+                    <option>octocat</option>
+                </select>
 
                 <label for="theme">Theme</label>
                 <select class="param" id="theme" name="theme" placeholder="default">
                     <option>default</option>
-                    <option>default-repocard</option>
+                    <option>github-dark</option>
+                    <option>github</option>
                     <option>dark</option>
                     <option>radical</option>
                     <option>merko</option>
