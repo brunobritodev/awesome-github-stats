@@ -77,12 +77,12 @@
 
     
     .rank-text {
-      font-family: 'Russo One', sans-serif;
+        font-family: 'Russo One', sans-serif;
 	    stroke-width: 2;
 	    stroke: #{{TextColor}};
-      font-size: 48px;
-      fill: #{{TextColor}};
-      animation: stroke 5s alternate;
+        font-size: 48px;
+        fill: #{{TextColor}};
+        animation: stroke 5s alternate;
     }
     @keyframes stroke {
         0% {
