@@ -1,4 +1,5 @@
-﻿using Humanizer;
+﻿using AwesomeGithubStats.Core.Models.Options;
+using Humanizer;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -63,7 +64,7 @@ namespace AwesomeGithubStats.Core.Models.Svgs
         {
             CalculateProgressBar(rank);
             var svgFinal = file
-                .Replace("{{Name}}", rank.UserStats.Name.Truncate(20))
+                .Replace("{{Name}}", rank.UserStats.Name.Truncate(25))
                 .Replace("{{Stars}}", rank.UserStats.TotalStars())
                 .Replace("{{Commits}}", rank.UserStats.TotalCommits())
                 .Replace("{{PRS}}", rank.UserStats.TotalPullRequests())

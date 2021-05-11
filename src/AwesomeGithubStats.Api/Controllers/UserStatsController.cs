@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Threading.Tasks;
+using AwesomeGithubStats.Core.Models.Options;
 
 namespace AwesomeGithubStats.Api.Controllers
 {

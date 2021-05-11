@@ -1,4 +1,4 @@
-﻿namespace AwesomeGithubStats.Core.Models.Svgs
+﻿namespace AwesomeGithubStats.Core.Models.Options
 {
     public class CardTranslations
     {
