@@ -87,7 +87,7 @@ namespace AwesomeGithubStats.Api.Controllers
             {
                 new(){Rank = "S++",Points = 300000},
                 new(){Rank = "S+",Points =  63000},
-                new(){Rank = "S",Points =  32000},
+                new(){Rank = "S",Points =  28000},
                 new(){Rank = "A++",Points =  21000},
                 new(){Rank = "A+",Points =  14000},
                 new(){Rank = "A",Points =  7000},
@@ -109,9 +109,11 @@ namespace AwesomeGithubStats.Api.Controllers
                 PullRequestsToAnotherRepositories = 20,
                 CommitsToAnotherRepositories = 51,
                 CommitsToMyRepositories = 365
-            });
 
-            return File(usercard.Svg(coent, rank, new CardStyles(), new CardTranslations()), "image/svg+xml; charset=utf-8");
+            });
+            var style = new CardStyles();
+            style.Apply(options);
+            return File(usercard.Svg(coent, rank, style, new CardTranslations()), "image/svg+xml; charset=utf-8");
         }
     }
 }

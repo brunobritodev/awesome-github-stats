@@ -20,7 +20,7 @@
     <None Update="svgs\user-stats\circle.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="svgs\user-stats\level-alternate.svg">
+    <None Update="svgs\user-stats\level-alt-card.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="svgs\user-stats\level-card.svg">

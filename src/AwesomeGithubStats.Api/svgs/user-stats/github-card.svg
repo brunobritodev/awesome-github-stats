@@ -1,27 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="200" viewBox="0 0 495 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
   <style>
-    * {
-      font-family: 'Segoe UI', Ubuntu, Sans-Serif;
-    }
-    
     .header {
-      font-family: 'Roboto Slab',serif;
-      font-size: 30px;
-      font-weight: 700;
-      line-height: .75;
-      fill: #{{TitleColor}};
-      animation: fadeInAnimation 0.8s ease-in-out forwards;
+        font-family: 'Roboto Slab',serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: .75;
+        fill: #{{TitleColor}};
+        animation: fadeInAnimation 0.8s ease-in-out forwards;
     }
+
+
     .text {
-      font-size: 14px;
-      fill: #{{TextColor}};
+        font: 800 14px 'Roboto Slab',serif;
+        fill: #{{TextColor}};
     }
+
+    .rank-text {
+        fill: #{{TextColor}};
+        animation: stroke 5s ease-in-out alternate;
+    }
+
     .label {
       font-weight: bold;
     }
+
     .icon {
       fill: #{{IconColor}};
       display: {{ShowIcons}};
+    }
+
+    .progressbar-opacity {
+      fill: #{{RingColor}};
+      opacity: 0.2;
+    }
+
+    .progressbar {
+      fill: #{{RingColor}};
     }
 
     .stagger {
@@ -29,10 +43,6 @@
       animation: fadeInAnimation 0.3s ease-in-out forwards;
     }
     
-    .ring {
-      fill: #{{RingColor}}
-    }
-
     @keyframes fadeInAnimation {
       from {
         opacity: 0;
@@ -41,88 +51,107 @@
         opacity: 1;
       }
     }
-    
-    /* Animations */
-    @keyframes scaleInAnimation {
-      from {
-        transform: translate(-5px, 5px) scale(0);
-      }
-      to {
-        transform: translate(-5px, 5px) scale(1);
-      }
+
+    @keyframes stroke {
+        0% {
+            fill: rgba(72, 138, 20, 0);
+            stroke: #{{TextColor}};
+            stroke-dashoffset: 25%;
+            stroke-dasharray: 0 50%;
+            stroke-width: 0.5;
+        }
+
+        70% {
+            fill: rgba(72, 138, 20, 0);
+            stroke: #{{TextColor}};
+        }
+
+        80% {
+            fill: rgba(72, 138, 20, 0);
+            stroke: #{{TextColor}};
+            stroke-width: 0.5;
+        }
+
+        100% {
+            fill: #{{TextColor}};
+            stroke: #{{TextColor}};
+            stroke-dashoffset: -25%;
+            stroke-dasharray: 50% 0;
+            stroke-width: 0;
+        }
     }
 
-
   </style>
-  <rect x="1.5" y="1.5" rx="5" ry="5" height="99%" width="450" stroke="#{{BorderColor}}" fill="#{{BackgroundColor}}" stroke-width="1" stroke-opacity="1"></rect>
-  <g data-testid="card-title" transform="translate(25, 40)">
+  <rect x="0.5" y="0.5" rx="4.5" height="99%" width="99%" stroke="#{{BorderColor}}" fill="#{{BackgroundColor}}" stroke-width="1" stroke-opacity="1"/>
+  <g data-testid="card-title" transform="translate(25, 35)">
     <g transform="translate(0, 0)">
       <text x="0" y="0" class="header">{{Name}}</text>
     </g>
   </g>
-  
-  <g transform="translate(0,60)">
-      <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0">
-        <g transform="translate(0, 0)">
-          <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"/>
-            </svg>
+  <g transform="translate(0,55)">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0">
+      <g transform="translate(0, 0)">
+        <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{StarsLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="stars">{{Stars}}</text>
-          </g>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"/>
+          </svg>
+
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{StarsLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="stars">{{Stars}}</text>
         </g>
-        <g transform="translate(0, 25)">
-          <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
+      </g>
+      <g transform="translate(0, 27)">
+        <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/>
-            </svg>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/>
+          </svg>
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{CommitsLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="commits">{{Commits}}</text>
-          </g>
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{CommitsLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="commits">{{Commits}}</text>
         </g>
-        <g transform="translate(0, 50)">
-          <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
+      </g>
+      <g transform="translate(0, 54)">
+        <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
-            </svg>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
+          </svg>
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{PullRequestLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="prs">{{PRS}}</text>
-          </g>
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{PullRequestLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="prs">{{PRS}}</text>
         </g>
-        <g transform="translate(0, 75)">
-          <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
+      </g>
+      <g transform="translate(0, 81)">
+        <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"/>
-            </svg>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"/>
+          </svg>
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{IssuesLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="issues">{{Issuers}}</text>
-          </g>
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{IssuesLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="issues">{{Issuers}}</text>
         </g>
-        <g transform="translate(0, 100)">
-          <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
+      </g>
+      <g transform="translate(0, 108)">
+        <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
-            </svg>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
+          </svg>
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{ContributionsLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="contribs">{{Contributions}}</text>
-          </g>
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{ContributionsLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="contribs">{{Contributions}}</text>
         </g>
-      </svg>
-    <g transform="translate(320,10)">
-      <g transform="scale(6)" style="animation-delay: 1050ms" class="ring stagger">
+      </g>
+    </svg>
+    <g transform="translate(280,0)">
+      <g transform="scale(7.6)" class="rank-text">
         <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
       </g>
     </g>
   </g>
 </svg>
+    

@@ -1,5 +1,4 @@
 ﻿using Humanizer;
-using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -10,10 +9,14 @@ namespace AwesomeGithubStats.Core.Models.Svgs
     public class UserStatsCard
     {
         private readonly UserStatsOptions _options;
-
-        private const string CircleProgressBar = @"
-<circle class=""rank-circle-rim"" cx=""-10"" cy=""8"" r=""50""/>
-<circle class=""rank-circle"" cx=""-10"" cy=""8"" r=""50"" />
+        private const int Radius = 60;
+        /// <summary>
+        /// It should be the same of SVG
+        /// </summary>
+        private const double ProgressBarWidth = 175;
+        private readonly string CircleProgressBar = $@"
+<circle class=""rank-circle-rim"" cx=""-10"" cy=""8"" r=""{Radius}""/>
+<circle class=""rank-circle"" cx=""-10"" cy=""8"" r=""{Radius}"" />
 ";
 
         public RankDegree RankDegree { get; }
@@ -60,14 +63,13 @@ namespace AwesomeGithubStats.Core.Models.Svgs
         {
             CalculateProgressBar(rank);
             var svgFinal = file
-                .Replace("{{Name}}", rank.UserStats.Name.Truncate(30))
+                .Replace("{{Name}}", rank.UserStats.Name.Truncate(20))
                 .Replace("{{Stars}}", rank.UserStats.TotalStars())
                 .Replace("{{Commits}}", rank.UserStats.TotalCommits())
                 .Replace("{{PRS}}", rank.UserStats.TotalPullRequests())
                 .Replace("{{Issuers}}", rank.UserStats.TotalIssues())
                 .Replace("{{Contributions}}", rank.UserStats.TotalContributedFor())
                 .Replace("{{Level}}", rank.Level)
-                .Replace("{{ProgressBarStart}}", $"{CalculateCircleProgress(0):F}")
                 .Replace("{{ProgressBarEnd}}", $"{CalculateCircleProgress(ProgressBar):F}")
                 // Translations
                 .Replace("{{StarsLabel}}", cardTranslations.StarsLabel)
@@ -100,20 +102,15 @@ namespace AwesomeGithubStats.Core.Models.Svgs
 
         private double CalculateRectangleProgress(double value)
         {
-            var width = 110D;
-            var percentage = value * width / 100D;
-            return percentage;
+            var width = ProgressBarWidth;
+            var size = value * width / 100D;
+            return size;
         }
         private double CalculateCircleProgress(double value)
         {
-            var radius = 50;
-            var c = Math.PI * (radius * 2);
-
-            if (value < 0) value = 0;
-            if (value > 100) value = 100;
-
-            var percentage = ((100 - value) / 100) * c;
-            return percentage;
+            var degrees = 360D;
+            var size = value * degrees / 100D;
+            return size;
         }
 
         public string GetCardName()
@@ -122,6 +119,7 @@ namespace AwesomeGithubStats.Core.Models.Svgs
             {
                 "default" => "level-card.svg",
                 "level" => "level-card.svg",
+                "level-alternate" => "level-alt-card.svg",
                 "octocat" => "octocat-card.svg",
                 "github" => "github-card.svg",
                 _ => "level-card.svg"

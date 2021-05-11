@@ -1,92 +1,89 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="495" height="200" viewBox="0 0 495 200" fill="none">
- <style>
+﻿﻿<svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200" fill="none">
+  <style>
     .header {
-        font-family: 'Roboto Slab', serif;
-        font-size: 30px;
-        font-weight: 700;
-        line-height: .75;
-        fill: #{{TitleColor}};
-        animation: fadeInAnimation 0.8s ease-in-out forwards;
+      font-family: 'Roboto Slab',serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: .75;
+      fill: #{{TitleColor}};
+      animation: fadeInAnimation 0.8s ease-in-out forwards;
     }
 
     .stat {
-        font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
-        fill: #{{TextColor}};
+      font: 800 14px 'Roboto Slab',serif;
+      fill: #{{TextColor}};
     }
 
     .stagger {
-        opacity: 0;
-        animation: fadeInAnimation 0.3s ease-in-out forwards;
+      opacity: 0;
+      animation: fadeInAnimation 0.3s ease-in-out forwards;
     }
 
-    .rank-text {
-        font-family: 'Russo One', sans-serif;
-        animation: stroke 5s ease-in-out alternate;
-	      stroke-width: 2;
-	      stroke: #{{TextColor}};
-        font-size: 24px;
-    }
-
-    .bold {
-        font-weight: 700
+    .bold { 
+      font-weight: 700 
     }
 
     .icon {
-        fill: IconColor;
-        display: ShowIcons;
+      fill: #{{IconColor}};
+      display: {{ShowIcons}};
     }
 
     .rank-circle-rim {
-        stroke: #{{RingColor}};
-        fill: none;
-        stroke-width: 6;
-        opacity: 0.2;
+      stroke: #{{RingColor}};
+      fill: none;
+      stroke-width: 6;
+      opacity: 0.2;
     }
 
     .rank-circle {
-        font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif;
         stroke: #{{RingColor}};
-        stroke-dasharray: 320;
+        stroke-dasharray: 0,20000;
         fill: none;
         stroke-width: 6;
+        opacity: 0;
         stroke-linecap: round;
-        opacity: 0.8;
         transform-origin: -10px 8px;
         transform: rotate(-90deg);
-        animation: rankAnimation 3s forwards ease-in-out;
+        animation: rankAnimation 3s ease-in-out 2s forwards, fadeInAnimation 0.3s ease-in-out 2s forwards;
     }
 
     @keyframes rankAnimation {
-        from {
-            stroke-dashoffset: #{{ProgressBarStart}};
-        }
-
-        to {
-            stroke-dashoffset: #{{ProgressBarEnd}};
-        }
+      from {
+        stroke-dasharray: 0,2000;
+        
+      }
+      to {
+        stroke-dasharray: {{ProgressBarEnd}},2000;
+      }
     }
 
     /* Animations */
     @keyframes scaleInAnimation {
-        from {
-            transform: translate(-5px, 5px) scale(0);
-        }
-
-        to {
-            transform: translate(-5px, 5px) scale(1);
-        }
+      from {
+        transform: translate(-5px, 5px) scale(0);
+      }
+      to {
+        transform: translate(-5px, 5px) scale(1);
+      }
     }
-
     @keyframes fadeInAnimation {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
+    
+    .rank-text {
+      font-family: 'Russo One', sans-serif;
+	    stroke-width: 2;
+	    stroke: #{{TextColor}};
+      font-size: 48px;
+      fill: #{{TextColor}};
+      animation: stroke 5s alternate;
+    }
     @keyframes stroke {
         0% {
             fill: rgba(72, 138, 20, 0);
@@ -109,20 +106,21 @@
 
         100% {
             fill: #{{TextColor}};
-            stroke: rgba(54, 95, 160, 0);
+            stroke: #{{TextColor}};
             stroke-dashoffset: -25%;
             stroke-dasharray: 50% 0;
             stroke-width: 0;
         }
     }
-</style>
 
-  <rect data-testid="card-bg" x="0.5" y="0.5" rx="4.5" height="99%" stroke="#{{BorderColor}}" fill="#{{BackgroundColor}}" width="450"  stroke-opacity="1"/>
+  </style>
+
+  <rect data-testid="card-bg" x="0.5" y="0.5" rx="4.5" height="99%" stroke="#{{BorderColor}}" width="99%" fill="#{{BackgroundColor}}" stroke-opacity="1"/>
 
 
   <g data-testid="card-title" transform="translate(25, 35)">
     <g transform="translate(0, 0)">
-      <text x="0" y="0" class="header" data-testid="header">{{Name}} GitHub Stats</text>
+      <text class="header" data-testid="header">{{Name}}</text>
     </g>
   </g>
 
@@ -132,8 +130,8 @@
     <g data-testid="rank-circle" transform="translate(350, 47.5)">
       {{ProgressBar}}
       <g class="rank-text">
-        <text x="-4" y="0" alignment-baseline="central" dominant-baseline="central" text-anchor="middle">
-          S+
+        <text x="-10" y="7" dy=".35em" text-anchor="middle">
+          {{Level}}
         </text>
       </g>
     </g>
@@ -150,7 +148,7 @@
           <text class="stat" x="160" y="12.5" data-testid="stars">{{Stars}}</text>
         </g>
       </g>
-      <g transform="translate(0, 25)">
+      <g transform="translate(0, 27)">
         <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
 
           <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
@@ -161,7 +159,7 @@
           <text class="stat" x="160" y="12.5" data-testid="commits">{{Commits}}</text>
         </g>
       </g>
-      <g transform="translate(0, 50)">
+      <g transform="translate(0, 54)">
         <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
 
           <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
@@ -172,7 +170,7 @@
           <text class="stat" x="160" y="12.5" data-testid="prs">{{PRS}}</text>
         </g>
       </g>
-      <g transform="translate(0, 75)">
+      <g transform="translate(0, 81)">
         <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
 
           <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
@@ -183,7 +181,7 @@
           <text class="stat" x="160" y="12.5" data-testid="issues">{{Issuers}}</text>
         </g>
       </g>
-      <g transform="translate(0, 100)">
+      <g transform="translate(0, 108)">
         <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
 
           <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">

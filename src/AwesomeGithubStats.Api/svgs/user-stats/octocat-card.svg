@@ -1,36 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
   <style>
-    * {
-      font-family: 'Segoe UI', Ubuntu, Sans-Serif;
-    }
-    
     .header {
-      font-family: 'Roboto Slab',serif;
-      font-size: 30px;
-      font-weight: 700;
-      line-height: .75;
-      fill: #{{TitleColor}};
-      animation: fadeInAnimation 0.8s ease-in-out forwards;
+        font-family: 'Roboto Slab',serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: .75;
+        fill: #{{TitleColor}};
+        animation: fadeInAnimation 0.8s ease-in-out forwards;
     }
+
+
     .text {
-      font-size: 14px;
-      fill: #{{TextColor}};
+        font: 800 14px 'Roboto Slab',serif;
+        fill: #{{TextColor}};
     }
-    .rank-text {
-      font-family: 'Russo One', sans-serif;
-      animation: stroke 5s ease-in-out alternate;
-	    stroke-width: 2;
-	    stroke: #{{TextColor}};
-      font-size: 24px;
-    }
+
     .label {
       font-weight: bold;
     }
+
     .icon {
       fill: #{{IconColor}};
       display: {{ShowIcons}};
     }
-
     
     .progressbar-opacity {
       fill: #{{RingColor}};
@@ -40,7 +32,6 @@
     .progressbar {
       fill: #{{RingColor}};
     }
-
 
     .stagger {
       opacity: 0;
@@ -55,125 +46,108 @@
         opacity: 1;
       }
     }
-    
-    <!--@keyframes stroke {
-	    0%   {
-		    fill: #{{TextColor}}; 
-        stroke: #{{TextColor}};
-		    stroke-dashoffset: 25%; 
-        stroke-dasharray: 0 50%; 
-        stroke-width: 2;
-	    }
-	    70%  {
-        fill: #{{TextColor}}; 
-        stroke: #{{TextColor}}; 
-      }
-	    80%  {
-        fill: #{{TextColor}}; 
-        stroke: #{{TextColor}}; 
-        stroke-width: 3; 
-      }
-	    100% {
-		    fill: #{{TextColor}}; 
-        stroke: ##{{TextColor}}; 
-		    stroke-dashoffset: -25%; 
-        stroke-dasharray: 50% 0; 
-        stroke-width: 0;
-	    }
-    }-->
-    @keyframes stroke {
-    0%   {
-    fill: rgba(72,138,20,0); stroke: #{{TextColor}};
-    stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
-    }
-    70%  {fill: rgba(72,138,20,0); stroke: #{{TextColor}}; }
-    80%  {fill: rgba(72,138,20,0); stroke: #{{TextColor}}; stroke-width: 3; }
-    100% {
-    fill: #{{TextColor}}; stroke: rgba(54,95,160,0);
-    stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
-    }
-    }
-
   </style>
-  <rect x="1.5" y="1.5" rx="5" ry="5" height="99%" width="99%" stroke="#{{BorderColor}}" fill="#{{BackgroundColor}}" stroke-width="1" stroke-opacity="1"></rect>
-  <g data-testid="card-title" transform="translate(25, 40)">
+  <rect x="0.5" y="0.5" rx="4.5" height="99%" width="99%" stroke="#{{BorderColor}}" fill="#{{BackgroundColor}}" stroke-width="1" stroke-opacity="1"/>
+  <g data-testid="card-title" transform="translate(25, 35)">
     <g transform="translate(0, 0)">
       <text x="0" y="0" class="header">{{Name}}</text>
     </g>
   </g>
-  
-  <g transform="translate(0,60)">
-      <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0">
-        <g transform="translate(0, 0)">
-          <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"/>
-            </svg>
+  <g transform="translate(0,55)">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0">
+      <g transform="translate(0, 0)">
+        <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{StarsLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="stars">{{Stars}}</text>
-          </g>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"/>
+          </svg>
+
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{StarsLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="stars">{{Stars}}</text>
         </g>
-        <g transform="translate(0, 25)">
-          <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
+      </g>
+      <g transform="translate(0, 27)">
+        <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/>
-            </svg>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/>
+          </svg>
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{CommitsLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="commits">{{Commits}}</text>
-          </g>
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{CommitsLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="commits">{{Commits}}</text>
         </g>
-        <g transform="translate(0, 50)">
-          <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
+      </g>
+      <g transform="translate(0, 54)">
+        <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
-            </svg>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
+          </svg>
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{PullRequestLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="prs">{{PRS}}</text>
-          </g>
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{PullRequestLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="prs">{{PRS}}</text>
         </g>
-        <g transform="translate(0, 75)">
-          <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
+      </g>
+      <g transform="translate(0, 81)">
+        <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"/>
-            </svg>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"/>
+          </svg>
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{IssuesLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="issues">{{Issuers}}</text>
-          </g>
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{IssuesLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="issues">{{Issuers}}</text>
         </g>
-        <g transform="translate(0, 100)">
-          <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
+      </g>
+      <g transform="translate(0, 108)">
+        <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
 
-            <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-              <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
-            </svg>
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
+          </svg>
 
-            <text class="text label" x="{{TextPosition}}" y="12.5">{{ContributionsLabel}}:</text>
-            <text class="text" x="160" y="12.5" data-testid="contribs">{{Contributions}}</text>
-          </g>
+          <text class="text label" x="{{TextPosition}}" y="12.5">{{ContributionsLabel}}:</text>
+          <text class="text" x="160" y="12.5" data-testid="contribs">{{Contributions}}</text>
         </g>
-      </svg>
-    <g transform="translate(300,0)">
-      <g transform="scale(6)" style="animation-delay: 1050ms" class="stagger">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.99em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 259.3"><path fill="#9EDCF2" d="M200.9 199.8c0 13.9-32.2 25.1-71.9 25.1s-71.9-11.3-71.9-25.1c0-13.9 32.2-25.1 71.9-25.1s71.9 11.2 71.9 25.1zm0 0"/><defs><path id="IconifyId-179572319be-ad6740-8" d="M98.1 244.8c1.6 7.5 5.5 11.9 9.4 14.5h41.1c5-3.4 10.1-9.8 10.1-21.8v-31s.6-7.7 7.7-10.2c0 0 4.1-2.9-.3-4.5c0 0-19.5-1.6-19.5 14.4v23.6s.8 8.7-3.8 12.3v-29.2s.3-9.3 5.1-12.8c0 0 3.2-5.7-3.8-4.2c0 0-13.4 1.9-14 17.6l-.3 30h-3.2l-.3-30c-.6-15.6-14-17.6-14-17.6c-7-1.6-3.8 4.2-3.8 4.2c4.8 3.5 5.1 12.8 5.1 12.8v29.5c-4.6-3.3-3.8-12.6-3.8-12.6v-23.6c0-16-19.5-14.4-19.5-14.4c-4.5 1.6-.3 4.5-.3 4.5c7 2.6 7.7 10.2 7.7 10.2v21.7l.4 16.6z"/></defs><clipPath id="IconifyId-179572319be-ad6740-9"><use xlink:href="#IconifyId-179572319be-ad6740-8" overflow="visible"/></clipPath><path clip-path="url(#IconifyId-179572319be-ad6740-9)" fill="#7DBCE7" d="M200.9 199.8c0 13.9-32.2 25.1-71.9 25.1s-71.9-11.3-71.9-25.1c0-13.9 32.2-25.1 71.9-25.1s71.9 11.2 71.9 25.1zm0 0"/><path fill="#9EDCF2" d="M46.9 125.9l-2.1 7.2s-.5 2.6 1.9 3.1c2.6-.1 2.4-2.5 2.2-3.2l-2-7.1zm0 0"/><path fill="#010101" d="M255.8 95.6l.2-.9c-21.1-4.2-42.7-4.3-55.8-3.7c2.1-7.7 2.8-16.7 2.8-26.6c0-14.3-5.4-25.7-14-34.3c1.5-4.9 3.5-15.8-2-29.7c0 0-9.8-3.1-32.1 11.8c-8.7-2.2-18-3.3-27.3-3.3c-10.2 0-20.5 1.3-30.2 3.9C74.4-2.9 64.3.3 64.3.3c-6.6 16.5-2.5 28.8-1.3 31.8c-7.8 8.4-12.5 19.1-12.5 32.2c0 9.9 1.1 18.8 3.9 26.5c-13.2-.5-34-.3-54.4 3.8l.2.9c20.4-4.1 41.4-4.2 54.5-3.7c.6 1.6 1.3 3.2 2 4.7c-13 .4-35.1 2.1-56.3 8.1l.3.9c21.4-6 43.7-7.6 56.6-8c7.8 14.4 23 23.8 50.2 26.7c-3.9 2.6-7.8 7-9.4 14.5c-5.3 2.5-21.9 8.7-31.9-8.5c0 0-5.6-10.2-16.3-11c0 0-10.4-.2-.7 6.5c0 0 6.9 3.3 11.7 15.6c0 0 6.3 21 36.4 14.2V177s-.6 7.7-7.7 10.2c0 0-4.2 2.9.3 4.5c0 0 19.5 1.6 19.5-14.4v-23.6s-.8-9.4 3.8-12.6v38.8s-.3 9.3-5.1 12.8c0 0-3.2 5.7 3.8 4.2c0 0 13.4-1.9 14-17.6l.3-39.3h3.2l.3 39.3c.6 15.6 14 17.6 14 17.6c7 1.6 3.8-4.2 3.8-4.2c-4.8-3.5-5.1-12.8-5.1-12.8v-38.5c4.6 3.6 3.8 12.3 3.8 12.3v23.6c0 16 19.5 14.4 19.5 14.4c4.5-1.6.3-4.5.3-4.5c-7-2.6-7.7-10.2-7.7-10.2v-31c0-12.1-5.1-18.5-10.1-21.8c29-2.9 42.9-12.2 49.3-26.8c12.7.3 35.6 1.9 57.4 8.1l.3-.9c-21.7-6.1-44.4-7.7-57.3-8.1c.6-1.5 1.1-3 1.6-4.6c13.4-.5 35.1-.5 56.3 3.7zm0 0"/><path fill="#F5CCB3" d="M174.6 63.7c6.2 5.7 9.9 12.5 9.9 19.8c0 34.4-25.6 35.3-57.2 35.3S70.1 114 70.1 83.5c0-7.3 3.6-14.1 9.8-19.7c10.3-9.4 27.7-4.4 47.4-4.4s37-5.1 47.3 4.3zm0 0"/><path fill="#FFF" d="M108.3 85.3c0 9.5-5.3 17.1-11.9 17.1c-6.6 0-11.9-7.7-11.9-17.1c0-9.5 5.3-17.1 11.9-17.1c6.6-.1 11.9 7.6 11.9 17.1zm0 0"/><path fill="#AF5C51" d="M104.5 85.5c0 6.3-3.6 11.4-7.9 11.4c-4.4 0-7.9-5.1-7.9-11.4c0-6.3 3.6-11.4 7.9-11.4c4.3 0 7.9 5.1 7.9 11.4zm0 0"/><path fill="#FFF" d="M172.2 85.3c0 9.5-5.3 17.1-11.9 17.1c-6.6 0-11.9-7.7-11.9-17.1c0-9.5 5.3-17.1 11.9-17.1c6.5-.1 11.9 7.6 11.9 17.1zm0 0"/><path fill="#AF5C51" d="M168.3 85.5c0 6.3-3.6 11.4-7.9 11.4c-4.4 0-7.9-5.1-7.9-11.4c0-6.3 3.6-11.4 7.9-11.4c4.4 0 7.9 5.1 7.9 11.4zm0 0"/><path fill="#AF5C51" d="M130.5 100.5c0 1.6-1.3 3-3 3c-1.6 0-3-1.3-3-3s1.3-3 3-3c1.6 0 3 1.3 3 3zm0 0"/><path fill="#AF5C51" d="M120.6 108c-.2-.5.1-1 .6-1.2c.5-.2 1 .1 1.2.6c.8 2.2 2.8 3.6 5.1 3.6s4.3-1.5 5.1-3.6c.2-.5.7-.8 1.2-.6c.5.2.8.7.6 1.2c-1 2.9-3.8 4.9-6.9 4.9c-3.1 0-5.9-2-6.9-4.9zm0 0"/><path fill="#C4E5D9" d="M54.5 121.6c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/><path fill="#C4E5D9" d="M60.3 124.8c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/><path fill="#C4E5D9" d="M63.8 129c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2-.1 2.1.6 2.1 1.4zm0 0"/><path fill="#C4E5D9" d="M67 133.8c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2-.1 2.1.6 2.1 1.4zm0 0"/><path fill="#C4E5D9" d="M70.5 138.2c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/><path fill="#C4E5D9" d="M75.3 142.1c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2-.1 2.1.6 2.1 1.4zm0 0"/><path fill="#C4E5D9" d="M82 144.6c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/><path fill="#C4E5D9" d="M88.7 144.6c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/><path fill="#C4E5D9" d="M95.5 143.5c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.1 0 2.1.6 2.1 1.4zm0 0"/><rect x="0" y="0" width="256" height="259.3" fill="rgba(0, 0, 0, 0)" /></svg>
+      </g>
+    </svg>
+    <g transform="translate(280,0)">
+      <g transform="scale(7.6)" style="animation-delay: 1050ms" class="stagger">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.99em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 259.3">
+          <path fill="#9EDCF2" d="M200.9 199.8c0 13.9-32.2 25.1-71.9 25.1s-71.9-11.3-71.9-25.1c0-13.9 32.2-25.1 71.9-25.1s71.9 11.2 71.9 25.1zm0 0"/>
+          <defs>
+            <path id="IconifyId-179572319be-ad6740-8" d="M98.1 244.8c1.6 7.5 5.5 11.9 9.4 14.5h41.1c5-3.4 10.1-9.8 10.1-21.8v-31s.6-7.7 7.7-10.2c0 0 4.1-2.9-.3-4.5c0 0-19.5-1.6-19.5 14.4v23.6s.8 8.7-3.8 12.3v-29.2s.3-9.3 5.1-12.8c0 0 3.2-5.7-3.8-4.2c0 0-13.4 1.9-14 17.6l-.3 30h-3.2l-.3-30c-.6-15.6-14-17.6-14-17.6c-7-1.6-3.8 4.2-3.8 4.2c4.8 3.5 5.1 12.8 5.1 12.8v29.5c-4.6-3.3-3.8-12.6-3.8-12.6v-23.6c0-16-19.5-14.4-19.5-14.4c-4.5 1.6-.3 4.5-.3 4.5c7 2.6 7.7 10.2 7.7 10.2v21.7l.4 16.6z"/>
+          </defs>
+          <clipPath id="IconifyId-179572319be-ad6740-9">
+            <use xlink:href="#IconifyId-179572319be-ad6740-8" overflow="visible"/>
+          </clipPath>
+          <path clip-path="url(#IconifyId-179572319be-ad6740-9)" fill="#7DBCE7" d="M200.9 199.8c0 13.9-32.2 25.1-71.9 25.1s-71.9-11.3-71.9-25.1c0-13.9 32.2-25.1 71.9-25.1s71.9 11.2 71.9 25.1zm0 0"/>
+          <path fill="#9EDCF2" d="M46.9 125.9l-2.1 7.2s-.5 2.6 1.9 3.1c2.6-.1 2.4-2.5 2.2-3.2l-2-7.1zm0 0"/>
+          <path fill="#010101"  stroke="#fff" stroke-width="1" stroke-opacity="1"  d="M255.8 95.6l.2-.9c-21.1-4.2-42.7-4.3-55.8-3.7c2.1-7.7 2.8-16.7 2.8-26.6c0-14.3-5.4-25.7-14-34.3c1.5-4.9 3.5-15.8-2-29.7c0 0-9.8-3.1-32.1 11.8c-8.7-2.2-18-3.3-27.3-3.3c-10.2 0-20.5 1.3-30.2 3.9C74.4-2.9 64.3.3 64.3.3c-6.6 16.5-2.5 28.8-1.3 31.8c-7.8 8.4-12.5 19.1-12.5 32.2c0 9.9 1.1 18.8 3.9 26.5c-13.2-.5-34-.3-54.4 3.8l.2.9c20.4-4.1 41.4-4.2 54.5-3.7c.6 1.6 1.3 3.2 2 4.7c-13 .4-35.1 2.1-56.3 8.1l.3.9c21.4-6 43.7-7.6 56.6-8c7.8 14.4 23 23.8 50.2 26.7c-3.9 2.6-7.8 7-9.4 14.5c-5.3 2.5-21.9 8.7-31.9-8.5c0 0-5.6-10.2-16.3-11c0 0-10.4-.2-.7 6.5c0 0 6.9 3.3 11.7 15.6c0 0 6.3 21 36.4 14.2V177s-.6 7.7-7.7 10.2c0 0-4.2 2.9.3 4.5c0 0 19.5 1.6 19.5-14.4v-23.6s-.8-9.4 3.8-12.6v38.8s-.3 9.3-5.1 12.8c0 0-3.2 5.7 3.8 4.2c0 0 13.4-1.9 14-17.6l.3-39.3h3.2l.3 39.3c.6 15.6 14 17.6 14 17.6c7 1.6 3.8-4.2 3.8-4.2c-4.8-3.5-5.1-12.8-5.1-12.8v-38.5c4.6 3.6 3.8 12.3 3.8 12.3v23.6c0 16 19.5 14.4 19.5 14.4c4.5-1.6.3-4.5.3-4.5c-7-2.6-7.7-10.2-7.7-10.2v-31c0-12.1-5.1-18.5-10.1-21.8c29-2.9 42.9-12.2 49.3-26.8c12.7.3 35.6 1.9 57.4 8.1l.3-.9c-21.7-6.1-44.4-7.7-57.3-8.1c.6-1.5 1.1-3 1.6-4.6c13.4-.5 35.1-.5 56.3 3.7zm0 0"/>
+          <path fill="#F5CCB3" d="M174.6 63.7c6.2 5.7 9.9 12.5 9.9 19.8c0 34.4-25.6 35.3-57.2 35.3S70.1 114 70.1 83.5c0-7.3 3.6-14.1 9.8-19.7c10.3-9.4 27.7-4.4 47.4-4.4s37-5.1 47.3 4.3zm0 0"/>
+          <path fill="#FFF" d="M108.3 85.3c0 9.5-5.3 17.1-11.9 17.1c-6.6 0-11.9-7.7-11.9-17.1c0-9.5 5.3-17.1 11.9-17.1c6.6-.1 11.9 7.6 11.9 17.1zm0 0"/>
+          <path fill="#AF5C51" d="M104.5 85.5c0 6.3-3.6 11.4-7.9 11.4c-4.4 0-7.9-5.1-7.9-11.4c0-6.3 3.6-11.4 7.9-11.4c4.3 0 7.9 5.1 7.9 11.4zm0 0"/>
+          <path fill="#FFF" d="M172.2 85.3c0 9.5-5.3 17.1-11.9 17.1c-6.6 0-11.9-7.7-11.9-17.1c0-9.5 5.3-17.1 11.9-17.1c6.5-.1 11.9 7.6 11.9 17.1zm0 0"/>
+          <path fill="#AF5C51" d="M168.3 85.5c0 6.3-3.6 11.4-7.9 11.4c-4.4 0-7.9-5.1-7.9-11.4c0-6.3 3.6-11.4 7.9-11.4c4.4 0 7.9 5.1 7.9 11.4zm0 0"/>
+          <path fill="#AF5C51" d="M130.5 100.5c0 1.6-1.3 3-3 3c-1.6 0-3-1.3-3-3s1.3-3 3-3c1.6 0 3 1.3 3 3zm0 0"/>
+          <path fill="#AF5C51" d="M120.6 108c-.2-.5.1-1 .6-1.2c.5-.2 1 .1 1.2.6c.8 2.2 2.8 3.6 5.1 3.6s4.3-1.5 5.1-3.6c.2-.5.7-.8 1.2-.6c.5.2.8.7.6 1.2c-1 2.9-3.8 4.9-6.9 4.9c-3.1 0-5.9-2-6.9-4.9zm0 0"/>
+          <path fill="#C4E5D9" d="M54.5 121.6c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/>
+          <path fill="#C4E5D9" d="M60.3 124.8c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/>
+          <path fill="#C4E5D9" d="M63.8 129c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2-.1 2.1.6 2.1 1.4zm0 0"/>
+          <path fill="#C4E5D9" d="M67 133.8c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2-.1 2.1.6 2.1 1.4zm0 0"/>
+          <path fill="#C4E5D9" d="M70.5 138.2c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/>
+          <path fill="#C4E5D9" d="M75.3 142.1c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2-.1 2.1.6 2.1 1.4zm0 0"/>
+          <path fill="#C4E5D9" d="M82 144.6c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/>
+          <path fill="#C4E5D9" d="M88.7 144.6c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.2 0 2.1.6 2.1 1.4zm0 0"/>
+          <path fill="#C4E5D9" d="M95.5 143.5c0 .8-.9 1.4-2.1 1.4c-1.1 0-2.1-.6-2.1-1.4c0-.8.9-1.4 2.1-1.4c1.1 0 2.1.6 2.1 1.4zm0 0"/>
+          <rect x="0" y="0" width="256" height="259.3" fill="rgba(0, 0, 0, 0)" />
+        </svg>
       </g>
 
-      <g class="rank-text" transform="translate(50,95)">
-        <text x="-4" y="0" dy=".35em" text-anchor="middle">
-          S
-        </text>
-        
-      </g>
-      <g transform="translate(-10,110)">
-        <rect x="0" y="0" width="110" rx="5" height="6"  class="progressbar-opacity" />
-        <rect x="0" y="0" width="0" rx="5" height="6" class="progressbar">
+      <g transform="translate(0,110), scale(0.7)">
+        <rect x="0" y="0" width="175" rx="5" height="13"  class="progressbar-opacity" />
+        <rect x="0" y="0" width="0" rx="5" height="13" class="progressbar">
           <animate attributeName="width" from="0" to="{{ProgressBarWidth}}" begin="1s" dur="2s" fill="freeze"></animate>
         </rect>
       </g>
