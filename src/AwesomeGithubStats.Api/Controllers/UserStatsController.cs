@@ -1,12 +1,12 @@
 ﻿using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
+using AwesomeGithubStats.Core.Models.Options;
 using AwesomeGithubStats.Core.Models.Svgs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Threading.Tasks;
-using AwesomeGithubStats.Core.Models.Options;
 
 namespace AwesomeGithubStats.Api.Controllers
 {
@@ -73,7 +73,7 @@ namespace AwesomeGithubStats.Api.Controllers
             return Ok(rank);
         }
 
-
+#if DEBUG
         [HttpGet("show/{card}")]
         public IActionResult Teste(string card, [FromQuery] UserStatsOptions options)
         {
@@ -116,5 +116,6 @@ namespace AwesomeGithubStats.Api.Controllers
             style.Apply(options);
             return File(usercard.Svg(coent, rank, style, new CardTranslations()), "image/svg+xml; charset=utf-8");
         }
+#endif
     }
 }
