@@ -9,10 +9,17 @@
 </p>
 <p align="center">
   <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
-  <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  
-  
+    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  
   </a>
-  <img  alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=github&cardType=octocat" />
+  <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
+    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/ralmsdeveloper?theme=github&cardType=octocat" />
+  </a>
+  <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
+    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/eduardopires?theme=dracula&cardType=level-alternate" />
+  </a>
+  <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
+    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/carloscds?theme=github-dark&cardType=github" />
+  </a>
 </p>
 
 
@@ -22,13 +29,14 @@
   - [🚀 Quick setup](#-quick-setup)
   - [💻 Demo Site](#-demo-site)
   - [💁🏻 SVGs wanted.](#-svgs-wanted)
+  - [🖌️ Card Types](#️-card-types)
   - [🎨 Themes](#-themes)
   - [🔧 Options](#-options)
     - [Example](#example)
   - [ℹ️ How these stats are calculated](#ℹ️-how-these-stats-are-calculated)
   - [🤗 Contributing](#-contributing)
   - [🤔 Motivations](#-motivations)
-    - [Installing Requirements](#installing-requirements)
+  - [🧰 Installing Requirements](#-installing-requirements)
       - [Requirements](#requirements)
     - [Authorization](#authorization)
     - [Running the tests](#running-the-tests)
@@ -55,6 +63,17 @@ Here you can customize your Card with a live preview: <https://awesome-github-st
 If you are a Jedi Master building SVG, help-me adding new SVG's templates. Then we try to add some data on it!
 
 ----
+
+## 🖌️ Card Types
+
+There are few Card types to show your stats. Change `cardType` parameter.
+
+|       Card        |                                                      Preview                                                       |
+| :---------------: | :----------------------------------------------------------------------------------------------------------------: |
+| `level (default)` |                  ![level](https://awesome-github-stats.azurewebsites.net/user-stats/carloscds)                  |
+| `level-alternate` | ![level-alternate](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?cardType=level-alternate) |
+|     `github`      |         ![github](https://awesome-github-stats.azurewebsites.net/user-stats/DenverCoder1?cardType=github)          |
+|     `octocat`     |        ![octocat](https://awesome-github-stats.azurewebsites.net/user-stats/eduardopires?cardType=octocat)         |
 
 ## 🎨 Themes
 
@@ -138,7 +157,7 @@ Make sure your request is meaningful and you have tested the app locally before 
 
 Actually another repositories with the same goal doesn't count stats with accuracy. The main goal is to have a strong data first, then a beatiful svg.
 
-### Installing Requirements
+## 🧰 Installing Requirements
 
 #### Requirements
 
