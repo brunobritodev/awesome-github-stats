@@ -114,7 +114,7 @@ namespace AwesomeGithubStats.Api.Controllers
             });
             var style = new CardStyles();
             style.Apply(options);
-            return File(usercard.Svg(coent, rank, style, new CardTranslations()), "image/svg+xml; charset=utf-8");
+            return File(usercard.Svg(coent, rank, style, new CardTranslations()), "image/svg+xml");
         }
 #endif
     }
