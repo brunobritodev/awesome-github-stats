@@ -17,9 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="svgs\user-stats\circle.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="svgs\user-stats\github-card.svg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
