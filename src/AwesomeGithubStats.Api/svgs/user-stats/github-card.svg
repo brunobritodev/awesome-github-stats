@@ -55,7 +55,7 @@
     @keyframes stroke {
         0% {
             fill: rgba(72, 138, 20, 0);
-            stroke: #{{TextColor}};
+            stroke: #{{RingColor}};
             stroke-dashoffset: 25%;
             stroke-dasharray: 0 50%;
             stroke-width: 0.5;
@@ -63,18 +63,18 @@
 
         70% {
             fill: rgba(72, 138, 20, 0);
-            stroke: #{{TextColor}};
+            stroke: #{{RingColor}};
         }
 
         80% {
             fill: rgba(72, 138, 20, 0);
-            stroke: #{{TextColor}};
+            stroke: #{{RingColor}};
             stroke-width: 0.5;
         }
 
         100% {
-            fill: #{{TextColor}};
-            stroke: #{{TextColor}};
+            fill: #{{RingColor}};
+            stroke: #{{RingColor}};
             stroke-dashoffset: -25%;
             stroke-dasharray: 50% 0;
             stroke-width: 0;
