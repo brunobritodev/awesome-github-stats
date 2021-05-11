@@ -33,7 +33,7 @@ namespace AwesomeGithubStats.Api.Controllers
             _environment = environment;
         }
 
-        [HttpGet("{username}"), ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600)]
+        [HttpGet("{username}"), ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600, VaryByQueryKeys = new[] { "*" })]
         public async Task<IActionResult> Get(string username, [FromQuery] UserStatsOptions options)
         {
             var userStats = await _githubService.GetUserStats(username);
