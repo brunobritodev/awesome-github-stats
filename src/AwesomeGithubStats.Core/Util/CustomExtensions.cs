@@ -9,7 +9,7 @@ namespace AwesomeGithubStats.Core.Util
 {
     static class CustomExtensions
     {
-        public static IEnumerable<TSource> DistinctBy<TSource, TKey>
+        public static IEnumerable<TSource> DistinctByProperty<TSource, TKey>
             (this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
         {
             HashSet<TKey> seenKeys = new HashSet<TKey>();
