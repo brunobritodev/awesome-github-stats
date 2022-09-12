@@ -20,7 +20,7 @@ namespace Tests.IntegrationTests
         [Fact]
         public async Task Should_Get_User_Years_Of_Contribution()
         {
-            var years = await _githubUserStore.GetUserInformation("brunohbrito");
+            var years = await _githubUserStore.GetUserInformation("brunobritodev");
 
             years.Should().NotBeNull();
             years.ContributionsCollection.ContributionYears.Should().NotBeEmpty();
@@ -29,7 +29,7 @@ namespace Tests.IntegrationTests
         [Fact]
         public async Task Should_Get_User_Specific_Year_Information()
         {
-            var years = await _githubUserStore.GetUserInformationByYear("brunohbrito", 2018);
+            var years = await _githubUserStore.GetUserInformationByYear("brunobritodev", 2018);
 
             years.Should().NotBeNull();
             years.RestrictedContributionsCount.Should().BeGreaterThan(0);

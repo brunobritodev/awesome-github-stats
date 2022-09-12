@@ -21,7 +21,7 @@ namespace Tests.IntegrationTests
         }
 
         [Theory]
-        [InlineData("brunohbrito")]
+        [InlineData("brunobritodev")]
         [InlineData("sindresorhus")]
         [InlineData("kamranahmedse")]
         [InlineData("ralmsdeveloper")]

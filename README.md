@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/brunohbrito/awesome-github-stats/master/docs/banner.png"/>
+  <img src="https://raw.githubusercontent.com/brunobritodev/awesome-github-stats/master/docs/banner.png"/>
 </p>
 <p align="center">
   Get an accurate data from your contributions and transform into a card to show at your GitHub profile README
@@ -9,7 +9,7 @@
 </p>
 <p align="center">
   <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
-    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight" />  
+    <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev?theme=tokyonight" />  
   </a>
   <a href="https://awesome-github-stats.azurewebsites.net" target="_blank">    
     <img width="400px" alt="Bruno Brito's GitHub Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/ralmsdeveloper?theme=github&cardType=octocat" />
@@ -46,17 +46,17 @@
 ## 🚀 Quick setup
 
 1. Copy-paste the markdown below into your GitHub profile README
-2. Replace the value after `brunohbrito` with your GitHub username
+2. Replace the value after `brunobritodev` with your GitHub username
 
 ```md
-[![My Awesome Stats](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito)](https://git.io/awesome-stats-card)
+[![My Awesome Stats](https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev)](https://git.io/awesome-stats-card)
 ```
 
 ## 💻 Demo Site
 
 Here you can customize your Card with a live preview: <https://awesome-github-stats.azurewebsites.net/>
 
-[![Demo Site](https://raw.githubusercontent.com/brunohbrito/awesome-github-stats/master/docs/awesomestats.gif "Demo Site")](https://awesome-github-stats.azurewebsites.net/)
+[![Demo Site](https://raw.githubusercontent.com/brunobritodev/awesome-github-stats/master/docs/awesomestats.gif "Demo Site")](https://awesome-github-stats.azurewebsites.net/)
 
 ## 💁🏻 SVGs wanted.
 
@@ -71,7 +71,7 @@ There are few Card types to show your stats. Change `cardType` parameter.
 |       Card        |                                                      Preview                                                       |
 | :---------------: | :----------------------------------------------------------------------------------------------------------------: |
 | `level (default)` |                  ![level](https://awesome-github-stats.azurewebsites.net/user-stats/carloscds)                  |
-| `level-alternate` | ![level-alternate](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?cardType=level-alternate) |
+| `level-alternate` | ![level-alternate](https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev?cardType=level-alternate) |
 |     `github`      |         ![github](https://awesome-github-stats.azurewebsites.net/user-stats/DenverCoder1?cardType=github)          |
 |     `octocat`     |        ![octocat](https://awesome-github-stats.azurewebsites.net/user-stats/eduardopires?cardType=octocat)         |
 
@@ -80,14 +80,14 @@ There are few Card types to show your stats. Change `cardType` parameter.
 To enable a theme, append `&theme=` followed by the theme name to the end of the source url:
 
 ```md
-[![GitHub Streak](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito&theme=dark)](https://git.io/awesome-stats-card)
+[![GitHub Streak](https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev&theme=dark)](https://git.io/awesome-stats-card)
 ```
 
 |    Theme     |                                                 Preview                                                 |
 | :----------: | :-----------------------------------------------------------------------------------------------------: |
 |  `default`   |          ![default](https://awesome-github-stats.azurewebsites.net/user-stats/ralmsdeveloper)           |
 |    `dark`    |       ![dark](https://awesome-github-stats.azurewebsites.net/user-stats/eduardopires?theme=dark)        |
-| `tokyonight` | ![highcontrast](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight) |
+| `tokyonight` | ![highcontrast](https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev?theme=tokyonight) |
 | More themes! |                   **🎨 [See a list of all available themes](./docs/themes/README.md)**                   |
 
 > If you have come up with a new theme you'd like to share with others, open an issue to add it!
@@ -113,7 +113,7 @@ If the `theme` parameter is specified, any color customizations specified will b
 ### Example
 
 ```md
-[![My Awesome Custom Stats](https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito?theme=tokyonight&Ring=DD2727&Border=13DD57&Text=DD2727)](https://git.io/awesome-stats-card)
+[![My Awesome Custom Stats](https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev?theme=tokyonight&Ring=DD2727&Border=13DD57&Text=DD2727)](https://git.io/awesome-stats-card)
 ```
 
 ## ℹ️ How these stats are calculated
@@ -143,7 +143,7 @@ If stats not showing look at [Learn more about what is considered a contribution
 
 To check your stats go to:
 * Stats: https://awesome-github-stats.azurewebsites.net/user-stats/brunhbrito/stats
-* Rank: https://awesome-github-stats.azurewebsites.net/user-stats/brunohbrito/rank
+* Rank: https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev/rank
 
 The magic🌟 begins from these endpoints! 
 

@@ -30,7 +30,7 @@ namespace Tests.UnitTests
             _githubUserStore.Setup(s => s.GetUserInformationByYear(It.IsAny<string>(), It.IsAny<int>())).ReturnsAsync(UserDataFaker.GetFixedContributionsFromYear);
             _githubUserStore.Setup(s => s.GetUserInformation(It.IsAny<string>())).ReturnsAsync(UserDataFaker.GetFixedUserInformation());
 
-            var stats = await _githubService.GetUserStats("brunohbrito");
+            var stats = await _githubService.GetUserStats("brunobritodev");
             stats.Name.Should().Be("Bruno Brito");
             stats.Commits.Should().Be(1457);
             stats.ContributedTo.Should().Be(26);

@@ -10,8 +10,8 @@ namespace AwesomeGithubStats.Core.Models
     {
         public UserStats(List<ContributionsCollection> result, User user)
         {
-            var uniqueRepos = result.SelectMany(m => m.CommitContributionsByRepository).DistinctBy(a => a.Repository.NameWithOwner).ToList();
-            var uniquePrs = result.SelectMany(s => s.PullRequestContributionsByRepository).DistinctBy(a => a.Repository.NameWithOwner).ToList();
+            var uniqueRepos = result.SelectMany(m => m.CommitContributionsByRepository).DistinctByProperty(a => a.Repository.NameWithOwner).ToList();
+            var uniquePrs = result.SelectMany(s => s.PullRequestContributionsByRepository).DistinctByProperty(a => a.Repository.NameWithOwner).ToList();
 
             foreach (var repository in uniquePrs)
             {

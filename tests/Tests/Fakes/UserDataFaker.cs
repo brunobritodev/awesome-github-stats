@@ -21,7 +21,7 @@ namespace Tests.Fakes
   ""data"": {
     ""user"": {
       ""name"": ""Bruno Brito"",
-      ""login"": ""brunohbrito"",
+      ""login"": ""brunobritodev"",
       ""contributionsCollection"": {
         ""contributionYears"": [
           2018
@@ -44,7 +44,7 @@ namespace Tests.Fakes
   ""data"": {
     ""user"": {
       ""name"": ""Bruno Brito"",
-      ""login"": ""brunohbrito"",
+      ""login"": ""brunobritodev"",
       ""pullRequests"": {
         ""totalCount"": 188
       },
@@ -105,7 +105,7 @@ namespace Tests.Fakes
               ""totalCount"": 230
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/unimed-painel-admin-interno"",
+              ""nameWithOwner"": ""brunobritodev/unimed-painel-admin-interno"",
               ""stargazerCount"": 0
             }
           },
@@ -114,7 +114,7 @@ namespace Tests.Fakes
               ""totalCount"": 230
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/JPProject.Core"",
+              ""nameWithOwner"": ""brunobritodev/JPProject.Core"",
               ""stargazerCount"": 42
             }
           },
@@ -123,7 +123,7 @@ namespace Tests.Fakes
               ""totalCount"": 230
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/JPProject.IdentityServer4.SSO"",
+              ""nameWithOwner"": ""brunobritodev/JPProject.IdentityServer4.SSO"",
               ""stargazerCount"": 321
             }
           },
@@ -132,7 +132,7 @@ namespace Tests.Fakes
               ""totalCount"": 230
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/JPProject.IdentityServer4.AdminUI"",
+              ""nameWithOwner"": ""brunobritodev/JPProject.IdentityServer4.AdminUI"",
               ""stargazerCount"": 735
             }
           },
@@ -150,7 +150,7 @@ namespace Tests.Fakes
               ""totalCount"": 15
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/NetCore-BlueprintApi"",
+              ""nameWithOwner"": ""brunobritodev/NetCore-BlueprintApi"",
               ""stargazerCount"": 0
             }
           },
@@ -168,7 +168,7 @@ namespace Tests.Fakes
               ""totalCount"": 15
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/DapperExamples"",
+              ""nameWithOwner"": ""brunobritodev/DapperExamples"",
               ""stargazerCount"": 6
             }
           },
@@ -177,7 +177,7 @@ namespace Tests.Fakes
               ""totalCount"": 14
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/IdentityServer4AngularOIDC"",
+              ""nameWithOwner"": ""brunobritodev/IdentityServer4AngularOIDC"",
               ""stargazerCount"": 15
             }
           },
@@ -186,7 +186,7 @@ namespace Tests.Fakes
               ""totalCount"": 12
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/estudiogalbero"",
+              ""nameWithOwner"": ""brunobritodev/estudiogalbero"",
               ""stargazerCount"": 0
             }
           },
@@ -204,7 +204,7 @@ namespace Tests.Fakes
               ""totalCount"": 12
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/PersonalWebSite"",
+              ""nameWithOwner"": ""brunobritodev/PersonalWebSite"",
               ""stargazerCount"": 0
             }
           },
@@ -249,7 +249,7 @@ namespace Tests.Fakes
               ""totalCount"": 7
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/Blazor-FirstStep"",
+              ""nameWithOwner"": ""brunobritodev/Blazor-FirstStep"",
               ""stargazerCount"": 2
             }
           },
@@ -258,7 +258,7 @@ namespace Tests.Fakes
               ""totalCount"": 6
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/CognitiveServicesExamples"",
+              ""nameWithOwner"": ""brunobritodev/CognitiveServicesExamples"",
               ""stargazerCount"": 2
             }
           },
@@ -267,7 +267,7 @@ namespace Tests.Fakes
               ""totalCount"": 6
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/BlazorInteropJS"",
+              ""nameWithOwner"": ""brunobritodev/BlazorInteropJS"",
               ""stargazerCount"": 0
             }
           },
@@ -276,7 +276,7 @@ namespace Tests.Fakes
               ""totalCount"": 4
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/AspNetCore-IdentityServer4-Example"",
+              ""nameWithOwner"": ""brunobritodev/AspNetCore-IdentityServer4-Example"",
               ""stargazerCount"": 13
             }
           },
@@ -285,7 +285,7 @@ namespace Tests.Fakes
               ""totalCount"": 4
             },
             ""repository"": {
-              ""nameWithOwner"": ""brunohbrito/CapturaCia"",
+              ""nameWithOwner"": ""brunobritodev/CapturaCia"",
               ""stargazerCount"": 0
             }
           },
