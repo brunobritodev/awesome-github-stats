@@ -30,9 +30,6 @@ jobs:
       - name: Build
         run: dotnet build --no-restore
 
-      - name: Test
-        run: dotnet test --no-build --verbosity normal
-
       - name: dotnet publish
         run: dotnet publish ./AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj -c Release -o ./out/ags
 
