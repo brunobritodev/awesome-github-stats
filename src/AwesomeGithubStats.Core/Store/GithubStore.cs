@@ -42,7 +42,7 @@ namespace AwesomeGithubStats.Core.Store
             var response = await _policy.ExecuteAndCaptureAsync(() => _client.PostAsJsonAsync("graphql", request, GithubOptions.DefaultJson));
 
             if (response.Outcome != OutcomeType.Successful || !response.Result.IsSuccessStatusCode) return null;
-
+            var content = await response.Result.Content.ReadAsStringAsync();
             var userInfo = await JsonSerializer.DeserializeAsync<DefaultResponse<UserData>>(await response.Result.Content.ReadAsStreamAsync(), GithubOptions.DefaultJson);
 
             return userInfo?.Data.User;

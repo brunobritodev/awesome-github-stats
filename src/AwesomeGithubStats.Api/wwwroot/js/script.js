@@ -33,7 +33,7 @@ let preview = {
             .join("&");
         // generate links and markdown
         let user = document.getElementById("user").value;
-        user = user == "" ? "brunohbrito" : user;
+        user = user == "" ? "brunobritodev" : user;
         if (query != "")
             query = "?" + query;
         const imageURL = `${window.location.origin}/user-stats/${user}${query}`;
