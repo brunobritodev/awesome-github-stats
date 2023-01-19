@@ -102,6 +102,7 @@ If the `theme` parameter is specified, any color customizations specified will b
 | :----------: | :--------------------------------------------------: | :---------------------------------------------------: |
 |   `theme`    |       The theme to apply (Default: `default`)        | `dark`, `radical`, etc. [🎨➜](./docs/themes/README.md) |
 | `show_icons` | Dont shown icons at left of labels (Default: `true`) |                   `true` or `false`                   |
+| `preferLogin`|  Use github login instead of name (Default: `false`) |                   `true` or `false`                   |
 | `background` |                   Background color                   |      **hex code** (without `#`) or **css color**      |
 |   `border`   |                     Border color                     |      **hex code** (without `#`) or **css color**      |
 |    `text`    |                  Color of the text                   |      **hex code** (without `#`) or **css color**      |
@@ -161,7 +162,7 @@ Actually another repositories with the same goal doesn't count stats with accura
 
 #### Requirements
 
-- [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0)
+- [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
 
 ### Authorization
 
@@ -200,4 +201,4 @@ And another special thank to [Sindre Sorhus](https://github.com/sindresorhus) to
 
 ---
 
-Made .NET 5 ❤️
+Made .NET 6 ❤️
