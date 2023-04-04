@@ -62,9 +62,13 @@ namespace AwesomeGithubStats.Core.Models.Svgs
 
         public Stream Svg(string file, UserRank rank, CardStyles cardStyles, CardTranslations cardTranslations)
         {
+            var displayName = (string.IsNullOrEmpty(rank.UserStats.Name) || (_options.PreferLogin ?? false)) 
+                ? rank.UserStats.Login.Truncate(25)
+                : rank.UserStats.Name.Truncate(25);
+
             CalculateProgressBar(rank);
             var svgFinal = file
-                .Replace("{{Name}}", rank.UserStats.Name.Truncate(25))
+                .Replace("{{Name}}", displayName)
                 .Replace("{{Stars}}", rank.UserStats.TotalStars())
                 .Replace("{{Commits}}", rank.UserStats.TotalCommits())
                 .Replace("{{PRS}}", rank.UserStats.TotalPullRequests())
