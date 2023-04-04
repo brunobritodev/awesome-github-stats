@@ -65,7 +65,7 @@ namespace AwesomeGithubStats.Api.Controllers
         }
 
 
-        [HttpGet("{username}/rank"), ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600, VaryByQueryKeys = new[] { "username" })]
+        [HttpGet("{username}/rank"), ResponseCache(Location = ResponseCacheLocation.Client, Duration = 600, VaryByQueryKeys = new[] { "username" })]
         public async Task<IActionResult> GetRank(string username)
         {
             var userStats = await _githubService.GetUserStats(username);
