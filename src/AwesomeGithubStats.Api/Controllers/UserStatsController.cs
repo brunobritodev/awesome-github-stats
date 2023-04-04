@@ -57,7 +57,7 @@ namespace AwesomeGithubStats.Api.Controllers
 
             return File(content, "image/svg+xml; charset=utf-8");
         }
-        [HttpGet("{username}/stats")]
+        [HttpGet("{username}/stats"), ResponseCache(Location = ResponseCacheLocation.Client, Duration = 600, VaryByQueryKeys = new[] { "username" })]
         public async Task<IActionResult> GetStats(string username)
         {
             var userStats = await _githubService.GetUserStats(username);
@@ -65,7 +65,7 @@ namespace AwesomeGithubStats.Api.Controllers
         }
 
 
-        [HttpGet("{username}/rank")]
+        [HttpGet("{username}/rank"), ResponseCache(Location = ResponseCacheLocation.Any, Duration = 600, VaryByQueryKeys = new[] { "username" })]
         public async Task<IActionResult> GetRank(string username)
         {
             var userStats = await _githubService.GetUserStats(username);
