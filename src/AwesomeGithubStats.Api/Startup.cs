@@ -50,7 +50,10 @@ namespace AwesomeGithubStats.Api
                 options.EnableForHttps = true;
                 options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "image/jpeg", "image/png", "application/font-woff2", "image/svg+xml", MediaTypeNames.Application.Json });
             });
-
+            services.AddCors(options => {
+                options.AddPolicy("AllowAnyOrigin",
+                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
             services.Configure<BrotliCompressionProviderOptions>(options =>
             {
                 options.Level = CompressionLevel.Optimal;
@@ -73,6 +76,7 @@ namespace AwesomeGithubStats.Api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Awesome Github Stats v1"));
             }
 
+            app.UseCors("AllowAnyOrigin");
             app.UseHttpsRedirection();
             app.UseDefaultFiles(new DefaultFilesOptions() { DefaultFileNames = new[] { "index.html" } });
             app.UseStaticFiles();
