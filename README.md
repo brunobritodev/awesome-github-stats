@@ -22,7 +22,6 @@
   </a>
 </p>
 
-
 # Content
 
 - [Content](#content)
@@ -37,7 +36,7 @@
   - [🤗 Contributing](#-contributing)
   - [🤔 Motivations](#-motivations)
   - [🧰 Installing Requirements](#-installing-requirements)
-      - [Requirements](#requirements)
+    - [Requirements](#requirements)
     - [Authorization](#authorization)
     - [Running the tests](#running-the-tests)
   - [💕 Special thanks](#-special-thanks)
@@ -77,7 +76,7 @@ There are few Card types to show your stats. Change `cardType` parameter.
 
 ## 🎨 Themes
 
-To enable a theme, append `&theme=` followed by the theme name to the end of the source url:
+To enable a theme, append `&theme=` followed by the theme name to the end of the source URL:
 
 ```md
 [![GitHub Streak](https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev&theme=dark)](https://git.io/awesome-stats-card)
@@ -94,7 +93,7 @@ To enable a theme, append `&theme=` followed by the theme name to the end of the
 
 ## 🔧 Options
 
-The `user` field is part of url `user-stats/<user>`, which is required. All other fields are optional.
+The `user` field is part of URL `user-stats/<user>`, which is required. All other fields are optional.
 
 If the `theme` parameter is specified, any color customizations specified will be applied on top of the theme, overriding the theme's values.
 
@@ -103,13 +102,12 @@ If the `theme` parameter is specified, any color customizations specified will b
 |   `theme`    |       The theme to apply (Default: `default`)        | `dark`, `radical`, etc. [🎨➜](./docs/themes/README.md) |
 | `show_icons` | Dont shown icons at left of labels (Default: `true`) |                   `true` or `false`                   |
 | `preferLogin`|  Use github login instead of name (Default: `false`) |                   `true` or `false`                   |
-| `background` |                   Background color                   |      **hex code** (without `#`) or **css color**      |
-|   `border`   |                     Border color                     |      **hex code** (without `#`) or **css color**      |
-|    `text`    |                  Color of the text                   |      **hex code** (without `#`) or **css color**      |
-|   `title`    |              Color of the title at top               |      **hex code** (without `#`) or **css color**      |
-|    `icon`    |                  Color of the icons                  |      **hex code** (without `#`) or **css color**      |
-|    `ring`    |          Color of the ring around the level          |      **hex code** (without `#`) or **css color**      |
-
+| `background` |                   Background color                   |      **hex code** (without `#`) or **CSS color**      |
+|   `border`   |                     Border color                     |      **hex code** (without `#`) or **CSS color**      |
+|    `text`    |                  Color of the text                   |      **hex code** (without `#`) or **CSS color**      |
+|   `title`    |              Color of the title at top               |      **hex code** (without `#`) or **CSS color**      |
+|    `icon`    |                  Color of the icons                  |      **hex code** (without `#`) or **CSS color**      |
+|    `ring`    |          Color of the ring around the level          |      **hex code** (without `#`) or **CSS color**      |
 
 ### Example
 
@@ -125,26 +123,26 @@ To include contributions in private repositories, turn on the setting for "Priva
 
 Contributions include:
 
-* Public commits
-* Private commits
-* Commits in your repositories
-* Commits made in another repositories
-* Pull requests to your repositories 
-* Pull requests to another repositories
-* Issues
-* Direct stars - Stars from your repositories
-* Indirect Stars - Stars from repo's you have made some contribution
-* Repositories you have created 
+- Public commits
+- Private commits
+- Commits in your repositories
+- Commits made in another repositories
+- Pull requests to your repositories
+- Pull requests to another repositories
+- Issues
+- Direct stars - Stars from your repositories
+- Indirect Stars - Stars from repo's you have made some contribution
+- Repositories you have created
 
-If stats not showing look at [Learn more about what is considered a contribution](https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile).
+If stats not showing, look at [Learn more about what is considered a contribution](https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile).
 
 > Note: You may need to wait up to 24 hours for new contributions to show up ([Learn how contributions are counted](https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile))
 
-> Note: To prevent too many requests at GitHub we have an agressive cache strategy. You have to wait 24 hours to our server fetch your data again.
+> Note: To prevent too many requests at GitHub we have an aggressive cache strategy. You have to wait 24 hours to our server fetch your data again.
 
 To check your stats go to:
-* Stats: https://awesome-github-stats.azurewebsites.net/user-stats/brunhbrito/stats
-* Rank: https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev/rank
+- Stats: https://awesome-github-stats.azurewebsites.net/user-stats/brunhbrito/stats
+- Rank: https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev/rank
 
 The magic🌟 begins from these endpoints! 
 
@@ -152,15 +150,15 @@ The magic🌟 begins from these endpoints!
 
 Contributions are welcome! Feel free to open an issue or submit a pull request if you have a way to improve this project.
 
-Make sure your request is meaningful and you have tested the app locally before submitting a pull request.
+Make sure your request is meaningful, and you have tested the app locally before submitting a pull request.
 
 ## 🤔 Motivations
 
-Actually another repositories with the same goal doesn't count stats with accuracy. The main goal is to have a strong data first, then a beatiful svg.
+Actually, another repositories with the same goal doesn't count stats with accuracy. The main goal is to have a strong data first, then a beautiful SVG.
 
 ## 🧰 Installing Requirements
 
-#### Requirements
+### Requirements
 
 - [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0)
 
@@ -195,10 +193,11 @@ Special thanks for [github-readme-streak-stats](https://github.com/DenverCoder1/
 And another special thank to [Sindre Sorhus](https://github.com/sindresorhus) to increase the difficult to find a magical number to create Levels. The levels are based in his contributions.
 
 ----
+
 ## 🙋‍♂️ Support
 
 💙 If you like this project, give it a ⭐ and share it with friends!
 
----
+----
 
 Made .NET 6 ❤️
