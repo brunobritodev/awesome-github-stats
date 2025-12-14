@@ -53,9 +53,25 @@ let preview = {
         document.getElementById("rankLink").href = rank;
         // update stats link
         document.getElementById("statsLink").href = stats;
+        
         // update image preview
-        document.querySelector(".output img").src = demoImageURL;
-        // update markdown
+        const previewContainer = document.getElementById("preview-container");
+        if(previewContainer) {
+             previewContainer.innerHTML = "Loading..."; // Optional loading text
+             
+             fetch(demoImageURL)
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(svgText => {
+                    previewContainer.innerHTML = svgText;
+                })
+                .catch(error => {
+                    console.error("Error fetching SVG:", error);
+                    previewContainer.innerHTML = "Error loading preview.";
+                });
+        }
         document.querySelector(".md code").innerText = md;
         // disable copy button if username is invalid
         document.querySelectorAll(".copy-button").forEach(copyButton => {
@@ -111,7 +127,6 @@ let preview = {
             input.value = defaultValue;
             
             // Apply the 'param' class so the update() function finds it
-            // Use type="text" for Border Radius to match the Username styling
             input.className = "param";
             input.type = "text"; 
 
@@ -228,6 +243,32 @@ document.addEventListener("click", () => preview.update(), false);
 window.addEventListener(
     "load",
     () => {
+        // We fetch the font list from Fontsource API
+        // to avoid Google Font API key
+        fetch('https://api.fontsource.org/v1/fonts')
+            .then(response => response.json())
+            .then(data => {
+                const select = document.getElementById('fontFamily');
+                if(!select) return;
+
+                data.forEach(font => {
+                    const option = document.createElement('option');
+                    option.value = font.family;
+                    option.text = font.family;
+                    select.appendChild(option);
+                });
+                
+                const urlParams = new URLSearchParams(window.location.search);
+                const fontParam = urlParams.get('fontFamily');
+                if (fontParam) {
+                    select.value = fontParam;
+                    preview.update(); 
+                }
+            })
+            .catch(err => {
+                console.error("Failed to fetch font list:", err);
+            });
+
         // set input boxes to match URL parameters
         new URLSearchParams(window.location.search).forEach((val, key) => {
             let paramInput = document.querySelector(`#${key}`);

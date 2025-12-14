@@ -47,6 +47,7 @@ body {
     font-family: "Open Sans", Roboto, Arial, sans-serif;
     padding-top: 10px;
     color: var(--text);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .github {
@@ -174,8 +175,8 @@ h2 {
     background-position-y: 5px;
 }
 
-[data-theme="dark"] .parameters select svg {
-    fill: white;
+[data-theme="dark"] .parameters select {
+    background-image: url("../assets/chevron-down-white.svg");
 }
 
 .parameters select option[disabled] {
@@ -228,7 +229,7 @@ input:focus:invalid {
     background: var(--background);
 }
 
-.output img {
+.output div {
     max-width: 100%;
     margin-left: 15px;
 }

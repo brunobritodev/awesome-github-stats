@@ -67,7 +67,19 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 : rank.UserStats.Name.Truncate(25);
 
             CalculateProgressBar(rank);
+
+            // Handle Custom Fonts from Google Fonts
+            var fontName = string.IsNullOrWhiteSpace(_options.FontFamily) ? "Roboto Slab" : _options.FontFamily;
+            var fontUrlName = fontName.Replace(" ", "+");
+            
+            // Construct the @import URL for Google Fonts
+            var fontCss = $"@import url('https://fonts.googleapis.com/css2?family={fontUrlName}:wght@400;500;600;700;800;900&display=swap');";
+            
+            var fontFamily = $"'{fontName}', serif";
+
             var svgFinal = file
+                .Replace("{{FontCSS}}", fontCss)
+                .Replace("{{FontFamily}}", fontFamily)
                 .Replace("{{Name}}", displayName)
                 .Replace("{{Stars}}", rank.UserStats.TotalStars())
                 .Replace("{{Commits}}", rank.UserStats.TotalCommits())

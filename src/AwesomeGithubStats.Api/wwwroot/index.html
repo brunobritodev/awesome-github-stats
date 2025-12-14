@@ -19,7 +19,8 @@
     <title>Awesome GitHub Stats Demo</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
-    <link href="https://css.gg/css?=|moon|sun" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/css.gg/icons/css/moon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/css.gg/icons/css/sun.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/toggle-dark.css">
     <script type="text/javascript" src="./js/script.js" defer></script>
@@ -82,7 +83,7 @@
                     <option>nightowl</option>
                     <option>buefy</option>
                     <option>blue-green</option>
-                    <option>algolia
+                    <option>algolia</option>
                     <option>great-gatsby</option>
                     <option>darcula</option>
                     <option>bear</option>
@@ -95,7 +96,7 @@
                     <option>graywhite</option>
                     <option>vision-friendly-dark</option>
                     <option>ayu-mirage</option>
-                    <option>midnight-purple
+                    <option>midnight-purple</option>
                     <option>calm</option>
                     <option>flag-india</option>
                     <option>omni</option>
@@ -110,6 +111,11 @@
                     <option>ocean-dark</option>
                     <option>city-lights</option>
                     <option>flag-brazil</option>
+                </select>
+
+                <label for="fontFamily">Font Family</label>
+                <select class="param" id="fontFamily" name="fontFamily">
+                    <option value="">Default (Roboto Slab)</option>
                 </select>
 
                 <label for="showIcons">Show Icons</label>
@@ -147,7 +153,7 @@
         <div class="output">
             <h2>Preview</h2>
             <a href="https://git.io/awesome-stats-card" target="_blank">
-                <img alt="GitHub Readme Streak Stats" src="https://awesome-github-stats.azurewebsites.net/user-stats/brunobritodev" />
+                <div id="preview-container"></div>
             </a>
             <p class="warning">
                 Note: Wait until the stats load. Sometimes we've to wait too long for the GitHub GraphQL API.
@@ -181,7 +187,7 @@
             </p>
         </div>
     </div>
-
+    
     <a href="javascript:toggleTheme()" class="darkmode" title="toggle dark mode">
         <i id="btnDarkMode" class=""></i>
     </a>

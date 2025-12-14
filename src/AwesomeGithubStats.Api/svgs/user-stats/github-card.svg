@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="450" height="200" viewBox="0 0 450 200">
     <style>
+
+    {{FontCSS}}
+
     .header {
-        font-family: 'Roboto Slab',serif;
+        font-family: {{FontFamily}};
         font-size: 30px;
         font-weight: 700;
         line-height: .75;
@@ -11,7 +14,7 @@
 
 
     .text {
-        font: 800 14px 'Roboto Slab',serif;
+        font: 800 14px {{FontFamily}};
         fill: #{{TextColor}};
     }
 
