@@ -92,6 +92,7 @@ namespace AwesomeGithubStats.Core.Models.Svgs
                 .Replace("{{ShowIcons}}", cardStyles.ShowIcons ? "block" : "none")
                 .Replace("{{TextPosition}}", cardStyles.ShowIcons ? "25" : "0")
                 .Replace("{{ProgressBarWidth}}", CalculateRectangleProgress(ProgressBar).ToString(CultureInfo.InvariantCulture))
+                .Replace("{{BorderRadius}}", cardStyles.BorderRadius.ToString(CultureInfo.InvariantCulture))
                 ;
 
 

@@ -47,7 +47,7 @@
       }
     }
     </style>
-    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="99%" stroke="#{{BorderColor}}" fill="#{{BackgroundColor}}" stroke-width="1" stroke-opacity="1" />
+    <rect x="0.5" y="0.5" rx="{{BorderRadius}}" height="99%" width="99%" stroke="#{{BorderColor}}" fill="#{{BackgroundColor}}" stroke-width="1" stroke-opacity="1" />
     <g data-testid="card-title" transform="translate(25, 35)">
         <g transform="translate(0, 0)">
             <text x="0" y="0" class="header">{{Name}}</text>

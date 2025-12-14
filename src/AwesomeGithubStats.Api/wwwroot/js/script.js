@@ -62,12 +62,25 @@ let preview = {
             copyButton.disabled = !!document.querySelectorAll("#user:invalid").length;
         });
     },
-    addProperty: function (property, value = "#DD2727FF") {
+    addProperty: function (property, value) {
         const selectElement = document.querySelector("#properties");
         // if no property passed, get the currently selected property
         if (!property) {
             property = selectElement.value;
         }
+
+        // Handle specific logic for Border Radius vs Colors
+        let isColor = property !== "Border Radius";
+        let inputId = property;
+        let defaultValue = value;
+
+        if (property === "Border Radius") {
+            inputId = "borderRadius"; 
+            if (!defaultValue) defaultValue = "4";
+        } else {
+            if (!defaultValue) defaultValue = "#DD2727FF";
+        }
+
         if (!selectElement.disabled) {
             // disable option in menu
             Array.prototype.find.call(
@@ -84,18 +97,31 @@ let preview = {
             } else {
                 selectElement.disabled = true;
             }
+            
             // label
             const label = document.createElement("label");
             label.innerText = property;
             label.setAttribute("data-property", property);
-            // color picker
+            
+            // Input setup
             const input = document.createElement("input");
-            input.className = "param jscolor";
-            input.id = property;
-            input.name = property;
+            input.id = inputId;
+            input.name = inputId;
             input.setAttribute("data-property", property);
-            input.setAttribute("data-jscolor", "{ format: 'hexa' }");
-            input.value = value;
+            input.value = defaultValue;
+            
+            // Apply the 'param' class so the update() function finds it
+            // Use type="text" for Border Radius to match the Username styling
+            input.className = "param";
+            input.type = "text"; 
+
+            if (isColor) {
+                input.className += " jscolor"; // Add jscolor class for color picker
+                input.setAttribute("data-jscolor", "{ format: 'hexa' }");
+            } else {
+                input.pattern = "[0-9]*"; 
+            }
+
             // removal button
             const minus = document.createElement("button");
             minus.className = "minus btn";
@@ -105,14 +131,17 @@ let preview = {
             );
             minus.innerText = "−";
             minus.setAttribute("data-property", property);
+            
             // add elements
             const parent = document.querySelector(".advanced .parameters");
             parent.appendChild(label);
             parent.appendChild(input);
             parent.appendChild(minus);
 
-            //initialise jscolor on element
-            jscolor.install(parent);
+            //initialise jscolor on element only if it is a color
+            if (isColor) {
+                jscolor.install(parent);
+            }
 
             // update and exit
             this.update();

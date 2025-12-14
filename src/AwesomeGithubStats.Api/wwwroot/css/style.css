@@ -54,9 +54,9 @@ body {
     margin-bottom: 12px;
 }
 
-    .github a {
-        color: var(--text);
-    }
+.github a {
+    color: var(--text);
+}
 
 @media only screen and (max-width: 340px) {
     .github a {
@@ -119,19 +119,19 @@ h2 {
     transition: 0.2s ease-in-out;
 }
 
-    .btn:focus {
-        outline: var(--button-outline) auto 2px;
-    }
+.btn:focus {
+    outline: var(--button-outline) auto 2px;
+}
 
-    .btn:hover {
-        background-color: var(--blue-dark);
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    }
+.btn:hover {
+    background-color: var(--blue-dark);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 
-    .btn:disabled {
-        background: var(--blue-transparent);
-        box-shadow: none;
-    }
+.btn:disabled {
+    background: var(--blue-transparent);
+    box-shadow: none;
+}
 
 .parameters {
     margin: auto;
@@ -143,46 +143,39 @@ h2 {
     grid-gap: 8px;
 }
 
-    .parameters .btn {
-        margin-top: 8px;
-    }
+.parameters .btn {
+    margin-top: 8px;
+}
 
-    .parameters input[type="text"],
-    .parameters input.jscolor,
-    .parameters select {
-        padding: 10px 14px;
-        display: inline-block;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        box-sizing: border-box;
-        font-family: inherit;
-        background: var(--card-background);
-        width: 100%;
-        color: inherit;
-    }
+.parameters input[type="text"],
+.parameters input.jscolor,
+.parameters select {
+    padding: 10px 14px;
+    display: inline-block;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+    background: var(--card-background);
+    width: 100%;
+    color: inherit;
+}
 
-    .parameters input.jscolor {
-        font-size: 12px;
-        max-width: 130px;
-    }
-
-@media only screen and (max-width: 1024px) {
-    .parameters input.jscolor {
-        max-width: none;
-    }
+.parameters input.jscolor {
+    font-size: 12px;
 }
 
 .parameters select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-image: url("../assets/chevron-down.svg");
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 5px;
 }
 
-[data-theme="dark"] .parameters select {
-    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+[data-theme="dark"] .parameters select svg {
+    fill: white;
 }
 
 .parameters select option[disabled] {
@@ -206,18 +199,18 @@ input:focus:invalid {
     grid-column-end: -1;
 }
 
-    .advanced summary {
-        padding: 6px;
-    }
+.advanced summary {
+    padding: 6px;
+}
 
-    .advanced .parameters {
-        margin-top: 8px;
-        grid-template-columns: auto 1fr auto;
-    }
+.advanced .parameters {
+    margin-top: 8px;
+    grid-template-columns: auto 1fr auto;
+}
 
-        .advanced .parameters label:first-of-type {
-            font-weight: bold;
-        }
+.advanced .parameters label:first-of-type {
+    font-weight: bold;
+}
 
 .plus.btn,
 .minus.btn {
@@ -230,10 +223,10 @@ input:focus:invalid {
     width: 40px;
 }
 
-    .plus.btn:hover,
-    .minus.btn:hover {
-        background: var(--background);
-    }
+.plus.btn:hover,
+.minus.btn:hover {
+    background: var(--background);
+}
 
 .output img {
     max-width: 100%;
@@ -272,46 +265,46 @@ input:focus:invalid {
     align-items: center;
 }
 
-    /* tooltip bubble */
-    .btn.tooltip:before {
-        content: attr(title);
-        position: absolute;
-        transform: translateY(-45px);
-        height: auto;
-        width: auto;
-        background: #4a4a4afa;
-        border-radius: 4px;
-        color: white;
-        line-height: 30px;
-        font-size: 1em;
-        padding: 0 12px;
-        pointer-events: none;
-        opacity: 0;
-    }
+/* tooltip bubble */
+.btn.tooltip:before {
+    content: attr(title);
+    position: absolute;
+    transform: translateY(-45px);
+    height: auto;
+    width: auto;
+    background: #4a4a4afa;
+    border-radius: 4px;
+    color: white;
+    line-height: 30px;
+    font-size: 1em;
+    padding: 0 12px;
+    pointer-events: none;
+    opacity: 0;
+}
 
-    /* tooltip bottom triangle */
-    .btn.tooltip:after {
-        content: "";
-        position: absolute;
-        transform: translateY(-27px);
-        border-style: solid;
-        border-color: #4a4a4afa transparent transparent transparent;
-        pointer-events: none;
-        opacity: 0;
-    }
+/* tooltip bottom triangle */
+.btn.tooltip:after {
+    content: "";
+    position: absolute;
+    transform: translateY(-27px);
+    border-style: solid;
+    border-color: #4a4a4afa transparent transparent transparent;
+    pointer-events: none;
+    opacity: 0;
+}
 
-    /* show tooltip on hover */
-    .btn.tooltip[title]:hover:before,
-    .btn.tooltip[title]:hover:after,
-    .btn.tooltip:disabled:hover:before,
-    .btn.tooltip:disabled:hover:after {
-        transition: 0.2s ease-in opacity;
-        opacity: 1;
-    }
+/* show tooltip on hover */
+.btn.tooltip[title]:hover:before,
+.btn.tooltip[title]:hover:after,
+.btn.tooltip:disabled:hover:before,
+.btn.tooltip:disabled:hover:after {
+    transition: 0.2s ease-in opacity;
+    opacity: 1;
+}
 
-    .btn.tooltip:disabled:before {
-        content: "You must first input a valid username.";
-    }
+.btn.tooltip:disabled:before {
+    content: "You must first input a valid username.";
+}
 
 pre {
     white-space: pre-wrap;
