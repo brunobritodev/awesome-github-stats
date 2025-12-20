@@ -94,7 +94,7 @@ namespace Tests.UnitTests
                 CommitsToMyRepositories = 2827
             });
             rank.Level.Should().Be("S++");
-            rank.Score.Should().BeGreaterOrEqualTo(69884);
+            rank.Score.Should().BeGreaterThanOrEqualTo(69884);
         }
 
         [Fact]
@@ -117,7 +117,7 @@ namespace Tests.UnitTests
                 CommitsToMyRepositories = 365
             });
             rank.Level.Should().Be("S");
-            rank.Score.Should().BeGreaterOrEqualTo(58937);
+            rank.Score.Should().BeGreaterThanOrEqualTo(58937);
         }
 
 
@@ -142,7 +142,7 @@ namespace Tests.UnitTests
 
             });
             rank.Level.Should().Be("S+");
-            rank.Score.Should().BeGreaterOrEqualTo(58937);
+            rank.Score.Should().BeGreaterThanOrEqualTo(58937);
         }
 
 
@@ -166,7 +166,7 @@ namespace Tests.UnitTests
                 PullRequestsToAnotherRepositories = 10,
             });
             rank.Level.Should().Be("A++");
-            rank.Score.Should().BeGreaterOrEqualTo(29997);
+            rank.Score.Should().BeGreaterThanOrEqualTo(29997);
         }
     }
 }
