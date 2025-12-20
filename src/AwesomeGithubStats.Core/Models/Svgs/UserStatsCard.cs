@@ -73,7 +73,7 @@ namespace AwesomeGithubStats.Core.Models.Svgs
             var fontUrlName = fontName.Replace(" ", "+");
             
             // Construct the @import URL for Google Fonts
-            var fontCss = $"@import url('https://fonts.googleapis.com/css2?family={fontUrlName}:wght@400;500;600;700;800;900&display=swap');";
+            var fontCss = $"@import url('https://fonts.googleapis.com/css2?family={fontUrlName}:wght@400;500;600;700;800;900&amp;display=swap');";
             
             var fontFamily = $"'{fontName}', serif";
 
