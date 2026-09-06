@@ -392,6 +392,14 @@
     "IconColor": "002776FF",
     "TextColor": "009B3AFF",
     "BackgroundColor": "fffefe"
+  },
+  {
+    "Theme": "flag-bangladesh",
+    "TitleColor": "F42A41",
+    "RingColor": "F42A41",
+    "IconColor": "006A4E",
+    "TextColor": "006A4E",
+    "BackgroundColor": "ffffff"
   }
 
 ]
