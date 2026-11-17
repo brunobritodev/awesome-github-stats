@@ -1,6 +1,6 @@
 ﻿using AwesomeGithubStats.Core.Models;
 using AwesomeGithubStats.Core.Services;
-using FluentAssertions;
+using AwesomeAssertions;
 using Microsoft.Extensions.Options;
 using Moq;
 using Xunit;

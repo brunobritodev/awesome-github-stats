@@ -1,4 +1,5 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+# Build context is the repository root (Directory.Build.props, Directory.Packages.props, global.json):
+#   docker build -f src/AwesomeGithubStats.Api/Dockerfile .
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
 WORKDIR /app
@@ -6,12 +7,13 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
-WORKDIR /src
-COPY ["AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj", "AwesomeGithubStats.Api/"]
-COPY ["AwesomeGithubStats.Core/AwesomeGithubStats.Core.csproj", "AwesomeGithubStats.Core/"]
-RUN dotnet restore "AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj"
-COPY . .
-WORKDIR "/src/AwesomeGithubStats.Api"
+WORKDIR /repo
+COPY ["Directory.Build.props", "Directory.Packages.props", "global.json", "./"]
+COPY ["src/AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj", "src/AwesomeGithubStats.Api/"]
+COPY ["src/AwesomeGithubStats.Core/AwesomeGithubStats.Core.csproj", "src/AwesomeGithubStats.Core/"]
+RUN dotnet restore "src/AwesomeGithubStats.Api/AwesomeGithubStats.Api.csproj"
+COPY ["src/", "src/"]
+WORKDIR "/repo/src/AwesomeGithubStats.Api"
 RUN dotnet build "AwesomeGithubStats.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish

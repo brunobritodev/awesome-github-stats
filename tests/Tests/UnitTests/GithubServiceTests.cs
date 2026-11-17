@@ -1,7 +1,7 @@
 using AwesomeGithubStats.Core.Interfaces;
 using AwesomeGithubStats.Core.Models;
 using AwesomeGithubStats.Core.Services;
-using FluentAssertions;
+using AwesomeAssertions;
 using Moq;
 using System.Threading.Tasks;
 using Tests.Fakes;

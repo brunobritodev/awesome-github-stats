@@ -1,8 +1,11 @@
-name: Pull Request Analisys
+name: Pull Request Analysis
 
 on:
   pull_request:
     branches: [ master ]
+
+permissions:
+  contents: read
 
 jobs:
   dotnet-testing-pr:
@@ -15,18 +18,23 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup .NET 10
-        uses: actions/setup-dotnet@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: 10.0.x
+          global-json-file: global.json
 
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build --no-restore -c Release
 
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --no-build -c Release
+
+      - name: Check vulnerable packages
+        run: |
+          dotnet list package --vulnerable --include-transitive 2>&1 | tee vulnerable.txt
+          ! grep -q "has the following vulnerable packages" vulnerable.txt
