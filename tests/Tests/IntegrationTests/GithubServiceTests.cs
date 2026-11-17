@@ -1,11 +1,10 @@
 using AwesomeGithubStats.Core.Interfaces;
-using FluentAssertions;
+using AwesomeAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Tests.Configuration;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Tests.IntegrationTests
 {
